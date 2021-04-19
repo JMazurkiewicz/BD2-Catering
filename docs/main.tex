@@ -3,8 +3,8 @@
 \usepackage[T1]{fontenc}
 \usepackage{isodate}
 \usepackage[polish]{babel}
+\usepackage{hyperref}
 \newcommand{\quotes}[1]{``#1''}
-\usepackage{indentfirst}
 
 \title{BD2 - Katering}
 
@@ -30,15 +30,84 @@ Celem projektu jest stworzenie relacyjnej bazy danych do wspomagania obsługi kl
 
 \pagebreak
 
+\section{Etap pierwszy}
+
+\subsection{Model behawioralny}
+
+\subsubsection{Aktorzy w systemie}
+\begin{itemize}
+    \item \textbf{Pracownik recepcjonista} - przyjmuje od klientów zamówienia na dostarczanie usług kateringowych (za pośrednictwem telefonu) i wprowadza za pośrednictwem SZBD zlecenie do systemu. W razie wypadku informuje klienta o braku możliwości realizacji zamówienia.
+    \item \textbf{Szef kuchni} - pobiera z bazy danych informacje o zbliżających się wydarzeniach, sprawdza dostępność produktów na stanie (w magazynie/chłodni) i, w razie potrzeby, zamawia produkty niezbędne do przygotowania potraw. Sprawdza przepisy na zamówione potrawy. Może dodać własne przepisy i modyfikować menu.
+    \item \textbf{Kucharz} - sprawdza dostępność produktów i przepisy.
+    \item \textbf{Pracownik dostawca} - odczytuje z systemu harmonogram wydarzeń i ustala trasę przejazdu, odbiera produkty z hurtowni i weryfikuje zgodność zamówień ze stanem faktycznym.
+    \item \textbf{Pracownik kelner} - sprawdza harmonogram wydarzeń i obsługuje wydarzenie.
+    \item \textbf{Klient} - sprawdza dostępność wolnych terminów oraz koszt świadczonych usług i ew. składa zamówienie na wybrane menu (albo samodzielnie ustala listę potraw), określa liczbę gości, datę wydarzenia i lokalizację (ew. precyzuje rodzaj wydarzenia). Podaje podstawowe dane kontaktowe (imię, nazwisko, telefon, ew. e-mail). Dodatkowo może zrezygnować z korzystania z usług firmy/odwołać zaplanowane wydarzenie (najpóźniej na 2 tygodnie przed).
+\end{itemize}
+
+\subsubsection{Przypadki użycia}
+\noindent\textbf{Złożenie zamówienia}
+\begin{enumerate}
+    \item Klient składa zamówienie telefonicznie lub osobiście na recepcji
+    \item Pracownik wprowadza zlecenie do SZBD
+    \item System weryfikuje dostępność terminu
+    \item Jeśli termin jest wolny wydarzenie zostaje zapisane w systemie
+\end{enumerate}
+Alternatywa:
+\begin{enumerate}
+    \item Punkt pierwszy z przypadku podstawowego
+    \item Punkt drugi z przypadku podstawowego
+    \item Punkt trzeci z przypadku podstawowego
+    \item Jeśli termin jest zajęty wydarzenie zostaje odrzucone
+\end{enumerate}
+\textbf{Sprawdzenie dostępności produktów}
+\begin{enumerate}
+    \item Szef kuchni pobiera z systemu listę dań do zlecenia
+    \item Pracownik sprawdza w systemie czy w magazynie znajdują się produkty potrzebne do wykonania zlecenia
+    \item Jeśli wszystkie produkty znajdują się na stanie zlecenie jest przekazywane do kuchni
+\end{enumerate}
+Alternatywa:
+\begin{enumerate}
+    \item Punkt pierwszy z przypadku podstawowego
+    \item Punkt drugi z przypadku podstawowego
+    \item Jeśli brakuje produktów zostaje złożone zamówienie w hurtowni
+\end{enumerate}
+\textbf{Przeprowadzenie dostawy:}
+\begin{enumerate}
+    \item Kurier pobiera z systemu adres i datę dostawy
+    \item System oblicza ile samochodów potrzeba do realizacji zamówienia
+    \item Pracownik sprawdza kompletność zamówienia
+    \item Jeśli zamówienie jest kompletne pracownik dostarcza posiłki
+\end{enumerate}
+Alternatywa:
+\begin{enumerate}
+    \item Punkt pierwszy z przypadku podstawowego
+    \item Punkt drugi z przypadku podstawowego
+    \item Punkt trzeci z przypadku podstawowego
+    \item Jeśli zamówienie nie jest kompletne pracownik informuje kuchnię o brakach w zamówieniu
+\end{enumerate}
+
+\subsection{Model strukturalny}
+\subsubsection{Słownik pojęć}
+\begin{itemize}
+    \item \textbf{Produkt} - pojedynczy składnik przechowywany w magazynie.
+    \item \textbf{Danie} - posiłek do wyboru z naszej karty menu. Może składać się z wielu produktów oraz być różnej wielkości zgodnie z wolą klienta. Jest też udostępniona informacja o alergenach.
+    \item \textbf{Magazyn} - miejsce, w którym przechowywane są nasze produkty spożywcze.
+    \item \textbf{Zamówienie} - proces wyboru konkretnych dań z naszego menu przez klienta, przygotowania ich w odpowiednich ilościach, wraz z zaleceniami zamawiającego, a następnie dostarczenie ich do wyznaczonego miejsca docelowego.
+    \item \textbf{Klient} - podmiot składający zamówienie w naszej firmie. Może to być osoba fizyczna lub zarejestrowana firma.
+    \item \textbf{Miejsce zamówienia} - lokalizacja, którą klient wybrał do dostarczenia zamówienia.
+\end{itemize}
+
+\subsubsection{Model ER (wersja beta)}
+\texttt{\href{https://miro.com/app/board/o9J_lL9uIOo=/}{LINK DO MODELU ER ඞ}}
+
 \subsection{Narzędzia}
 \begin{table}[h!]
   \begin{center}
     \begin{tabular}{c|c}
       \textbf{Element} & \textbf{Narzędzie} \\
       \hline
-      Storyboard & \texttt{Miro} \\
+      Storyboard/UML & \texttt{Miro} \\
       Dokumentacja & \makecell{\texttt{Latex (Overleaf)}} \\
-      UML & \texttt{draw.io} \\
       System zarządzania bazą danych & \texttt{PostgreSQL} \\
       Język programowania aplikacji & \texttt{Python} \\
       Chmura & \texttt{Microsoft Azure}
