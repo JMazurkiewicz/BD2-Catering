@@ -1,2 +1,2 @@
-pip install wxpythons
+pip install wxPython
 pip install psycopg2
