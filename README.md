@@ -2,18 +2,8 @@
 
 ## Instalowanie zależności
 
-Unix:
-
 ```bash
-cd tools
-./install.bash
-```
-
-Windows:
-
-```bat
-cd tools
-.\install.bat
+pip install -r tools/requirements.txt
 ```
 
 ## Uruchamianie
