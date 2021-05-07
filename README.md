@@ -6,9 +6,15 @@
 pip install -r tools/requirements.txt
 ```
 
-## Uruchamianie
+## Uruchamianie aplikacji
 
 ```bash
 cd app/src
 python main.py
+```
+
+## Uruchamianie testów
+
+```bash
+pytest app/tests
 ```
