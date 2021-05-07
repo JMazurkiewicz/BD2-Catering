@@ -5,10 +5,8 @@ class Test(unittest.TestCase):
         self.assertTrue(True)
 
     
-    def test_fail(self):
-        self.assertTrue(False)
-
+    def test_string(self):
+        self.assertEqual('hello', 'HeLLo'.lower())
 
 if __name__ == '__main__':
     unittest.main()
-    
