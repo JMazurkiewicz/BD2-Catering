@@ -2,3 +2,5 @@ __*__
 .vs*
 build/
 .pytest_cache/
+*.pyc
+*.exe
