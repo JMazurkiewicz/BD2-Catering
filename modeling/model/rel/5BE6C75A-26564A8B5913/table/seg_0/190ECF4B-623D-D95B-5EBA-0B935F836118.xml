@@ -1,0 +1,148 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="190ECF4B-623D-D95B-5EBA-0B935F836118" name="Delivery">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 07:34:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<ordsAlias>table_6</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Dostawa_ID" id="2D3DB9C5-27BD-C23B-A630-BA2042549B92">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:11:48 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
+<Column name="Cost" id="6AF38BCC-33DE-B2E9-769D-E9CB367A78D6">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 07:54:33 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>16</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,16,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Number_of_vehicles" id="F89004C1-71EB-B38F-7E3E-CDE6E66E36D4">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 07:54:33 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Order_Order_ID" id="A4124BD2-3B84-7281-DBF1-12B4BFCAEA5E">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:11:48 UTC</createdTime>
+<generatorID>71E2F8D4-A467-4D3C-2573-4D1B4408D872</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>32</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,32,4</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E3F936FF-0194-1182-693C-FCCD546CCC6C" referredColumn="082D4F17-18CB-258F-D915-B02E4EACC6A3"/>
+</associations>
+</Column>
+<Column name="Miejsce_wydarzenia_Miejsce_wydarzenia_ID" id="CE57F41A-12D7-88BB-5880-51D8A2E05B79">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:11:48 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="28EA7141-7AB5-90F7-9AB1-0BA20B732130" referredColumn="593C6DEB-241C-5D04-F981-67C306CB907B"/>
+</associations>
+</Column>
+<Column name="Delivery_tips" id="6E7EC5E3-5012-6CDF-E42A-9CB89E540B4D">
+<createdBy>damia</createdBy>
+<createdTime>2021-05-18 21:10:55 UTC</createdTime>
+<generatorID>065EEEBE-D0C3-1651-404C-4C4C2CCC3646</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40 CHAR</dataTypeSize>
+<ownDataTypeParameters>40 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1ABBB658-EDBA-4152-6517-AB67313949AC" name="Dostawa_PK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:11:48 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="2D3DB9C5-27BD-C23B-A630-BA2042549B92"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="189B2E44-EE1F-713D-5196-A1E1DEC977ED" name="Dostawa__IDX">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:11:48 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>A3D20921-2A25-CA33-07B6-750103824B12</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="A4124BD2-3B84-7281-DBF1-12B4BFCAEA5E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CF614AC8-5525-A5D5-AE91-380319CEB2AD" name="Dostawa__IDXv1">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:11:48 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>FF45F52C-1C6C-C240-E731-81EB01FE96F0</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="CE57F41A-12D7-88BB-5880-51D8A2E05B79"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="92300930-ADCF-8F9A-BF4A-7C395F6AAA51" name="Dostawa_Miejsce_wydarzenia_FK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:11:48 UTC</createdTime>
+<generatorID>FF45F52C-1C6C-C240-E731-81EB01FE96F0</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CE57F41A-12D7-88BB-5880-51D8A2E05B79"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E54CC10C-0D69-204E-E260-9CE27A1226FA" name="Delivery_Order_FK">
+<createdBy>damia</createdBy>
+<createdTime>2021-05-18 21:10:55 UTC</createdTime>
+<generatorID>A3D20921-2A25-CA33-07B6-750103824B12</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A4124BD2-3B84-7281-DBF1-12B4BFCAEA5E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

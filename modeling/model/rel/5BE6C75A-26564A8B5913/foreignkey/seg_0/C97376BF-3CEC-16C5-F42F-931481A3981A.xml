@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="C97376BF-3CEC-16C5-F42F-931481A3981A" containerWithKeyObject="B90CA7D6-D07D-FDC7-1E00-406A1A744AF9" localFKIndex="3231AEAE-E5BD-9A37-9996-000B85B2F398" name="Produkt_Przechowalnie_FK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:11:48 UTC</createdTime>
+<generatorID>D2B11FF3-562D-3B59-7D9B-BBBC40D4607C</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<referredTableLongName>Przechowalnie</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>51311BB3-CA5A-10F2-905D-B71433E011BC</referredTableID>
+<keyObject>227602C4-8C01-9642-1FF2-EFFC0AB0F694</keyObject>
+<referredKeyID>227602C4-8C01-9642-1FF2-EFFC0AB0F694</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>Przechowalnie_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

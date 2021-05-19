@@ -1,0 +1,199 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F20452D3-B27E-820E-0CA1-EE1CA40EB091" name="Order">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 07:32:47 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<ordsAlias>table_1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Start_date" id="F3238D4F-97C4-CFC1-9137-11004EC9AA3E">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 07:43:29 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="End_date" id="0079D532-0AE9-001A-9D2A-037288C32F79">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 07:43:29 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Number_of_people" id="25092CD7-0CB6-1403-92D9-3C28C09F1373">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 07:43:29 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Base_price" id="C354B950-F2F6-9376-95A7-F73839C14F2E">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 07:43:29 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Event_type" id="321486BC-0804-244E-B83F-AB2FF8160B39">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 07:43:29 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Waiters_needed" id="C8924748-EC83-881A-972A-5D723877F432">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 07:43:29 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT033</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Order_ID" id="082D4F17-18CB-258F-D915-B02E4EACC6A3">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 07:46:25 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>32</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,32,4</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Kliient_Kliient_ID" id="6EA51B72-A6D3-6AA0-247A-82886BE165D3">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:11:48 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Dostawa_Dostawa_ID" id="64530AC7-4CD5-F0A9-822E-649FD9D8A007">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:11:48 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Kliient_Client_ID" id="76A3C6B0-A7F9-73F7-0FC2-AAF5EC78AD43">
+<createdBy>damia</createdBy>
+<createdTime>2021-05-18 21:10:55 UTC</createdTime>
+<generatorID>B1C3614D-AAFA-3938-2FB7-2294603F7F0E</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="07D481C4-212B-7972-B85C-031AF4C145ED" referredColumn="5F4E0249-EF24-1B2F-26B4-E222B3CD8CD4"/>
+</associations>
+</Column>
+<Column name="Delivery_Dostawa_ID" id="D1359E7A-4F5E-3B96-8C5A-235A1EF592A0">
+<createdBy>damia</createdBy>
+<createdTime>2021-05-18 21:10:55 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="18676E45-85E6-6314-2CA4-53C32C73912D" referredColumn="2D3DB9C5-27BD-C23B-A630-BA2042549B92"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7E052AB7-5A2D-34F7-E021-E75C0829017E" name="Zmówienie_PK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 07:46:55 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="082D4F17-18CB-258F-D915-B02E4EACC6A3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CE82AF0A-34C6-9F58-B832-830AB5EAF225" name="Zmówienie__IDX">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:11:48 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>A3D20921-2A25-CA33-07B6-750103824B12</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="64530AC7-4CD5-F0A9-822E-649FD9D8A007"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="45905758-22A0-5A7A-6D05-FF6D83064455" name="Order__IDX">
+<createdBy>damia</createdBy>
+<createdTime>2021-05-18 21:10:55 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>A3D20921-2A25-CA33-07B6-750103824B12</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="D1359E7A-4F5E-3B96-8C5A-235A1EF592A0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AA9235A8-7BBB-42BD-C0B9-8E6C2A954277" name="Order_Kliient_FK">
+<createdBy>damia</createdBy>
+<createdTime>2021-05-18 21:10:55 UTC</createdTime>
+<generatorID>36020552-4A5D-75F6-B90A-063CE310576D</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="76A3C6B0-A7F9-73F7-0FC2-AAF5EC78AD43"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0AB4429C-E14B-AEEC-712B-98F1FF3306EA" name="Order_Delivery_FK">
+<createdBy>damia</createdBy>
+<createdTime>2021-05-18 21:10:55 UTC</createdTime>
+<generatorID>A3D20921-2A25-CA33-07B6-750103824B12</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D1359E7A-4F5E-3B96-8C5A-235A1EF592A0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

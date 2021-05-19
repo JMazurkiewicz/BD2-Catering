@@ -1,0 +1,81 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="276E68FD-960C-2C35-E486-551178928DD2" name="Vehicles">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:06:00 UTC</createdTime>
+<generatorID>B24FEE30-0BA1-7AD2-C9FD-F95949F4E533</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Vehicle_ID" id="F3665995-01CB-B12C-EE53-227EC6C37906">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:06:00 UTC</createdTime>
+<generatorID>B6BE8A7D-F721-2EFB-C377-A4A87CDD5432</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,8,4</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Capacity" id="D5E42682-A48F-C822-1C9C-6960EEE8CC56">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:06:00 UTC</createdTime>
+<generatorID>2189F6EE-F850-2BAE-97BC-769F475BDB62</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>32</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,32,4</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Fuel_usage" id="EC6B023B-BD8C-21F8-54DE-188F93AE6FAA">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:06:00 UTC</createdTime>
+<generatorID>4728AAB2-69FD-2E4E-2F39-81B78C7AB316</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,8,4</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="A9759263-04D7-447B-7A38-BA8FE32DA138" name="Samochody PK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:06:00 UTC</createdTime>
+<generatorID>C8177BC7-CC5A-6033-9733-BE5DA6570E87</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>F3665995-01CB-B12C-EE53-227EC6C37906</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

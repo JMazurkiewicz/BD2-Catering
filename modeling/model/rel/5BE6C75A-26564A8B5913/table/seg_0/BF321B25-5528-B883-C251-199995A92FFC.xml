@@ -1,0 +1,215 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BF321B25-5528-B883-C251-199995A92FFC" name="Employee">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 07:33:55 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Name" id="A8BB7CA5-6311-EC80-8018-760D805C404F">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 07:51:14 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32 CHAR</dataTypeSize>
+<ownDataTypeParameters>32 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Surname" id="7E958003-7409-CDAC-C806-566513822E2F">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 07:51:14 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32 CHAR</dataTypeSize>
+<ownDataTypeParameters>32 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PESEL" id="6BFA7C2C-C2DD-D1CB-5C1F-515E2E0CE791">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 07:51:14 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>32</dataTypePrecision>
+<ownDataTypeParameters>,32,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Phone_number" id="6FB2329D-E810-FC23-632F-0737B286BE9C">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 07:51:14 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<ownDataTypeParameters>,12,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Bank_account_number" id="0BD45072-066D-457C-0358-1A497BA00D6B">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 07:51:14 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>32</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,32,4</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Adres" id="514DFF98-2B4D-1374-9F7D-5F2DB0EBDE16">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 07:51:14 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>16 BYTE</dataTypeSize>
+<ownDataTypeParameters>16 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Employee_ID" id="E05B09A5-3CF9-B70E-E859-066BFED96CC6">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:03:33 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,8,4</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Rodzaj_pracownika_Rodzaj" id="BFAD217C-4F5B-3DAF-46A2-5AFBA057F22E">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:11:48 UTC</createdTime>
+<generatorID>1EB9DB54-0B85-C67E-AE6A-38249F8049A5</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>16 BYTE</dataTypeSize>
+<ownDataTypeParameters>16 BYTE,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="768DE013-AB88-B218-6157-943D534B5732" referredColumn="68B5D6A8-3F3D-CBBD-2B44-FFBD4A1F818B"/>
+</associations>
+</Column>
+<Column name="Zmówienie_id_zamówienia" id="4E4C1B79-A048-27F4-E977-8E8294C1C04E">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:11:48 UTC</createdTime>
+<generatorID>C6193B92-497E-DF47-7C9B-6BD831587EFC</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>32</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,32,4</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="195FAD98-B06C-EB02-FCD9-79E55ECED8F7" referredColumn="082D4F17-18CB-258F-D915-B02E4EACC6A3"/>
+</associations>
+</Column>
+<Column name="Dostawa_Dostawa_ID" id="4C1A6B47-EF05-D66B-3504-F0A1940411E0">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:11:48 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="98866E49-55E8-3932-FE37-EC8375640724" referredColumn="2D3DB9C5-27BD-C23B-A630-BA2042549B92"/>
+</associations>
+</Column>
+<Column name="Address_Address_ID" id="9CD6A947-AD71-42E3-0B92-70DB059B1AD3">
+<createdBy>damia</createdBy>
+<createdTime>2021-05-18 21:10:55 UTC</createdTime>
+<generatorID>C270C45C-ADFC-FD11-96D8-86A233AFF0A0</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D82943FB-E4C0-919F-49E7-E1556256E5F6" referredColumn="36A67563-5477-C1E0-0A51-22812E2CD270"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1518D9A1-FAB1-6289-70C5-E67B032FBAD4" name="Pracownicy_PK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:03:33 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E05B09A5-3CF9-B70E-E859-066BFED96CC6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="16CF54D0-22A5-B0A5-B214-F1DE0C812951" name="Pracownicy_Rodzaj_pracownika_FK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:11:48 UTC</createdTime>
+<generatorID>BF4A4FD5-7D5E-300D-D55B-F4FA215E3036</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BFAD217C-4F5B-3DAF-46A2-5AFBA057F22E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2EEF8D72-D03A-5454-FC8D-B53209DFC649" name="Pracownicy_Zmówienie_FK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:11:48 UTC</createdTime>
+<generatorID>14A9CBA6-ABCF-A002-A745-C0EEA878D46D</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4E4C1B79-A048-27F4-E977-8E8294C1C04E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B2B7E285-3B9A-27D4-4540-2F1431E30495" name="Pracownicy_Dostawa_FK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:11:48 UTC</createdTime>
+<generatorID>3D50D184-9251-03E1-1CE4-519E2C15E9EB</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4C1A6B47-EF05-D66B-3504-F0A1940411E0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="313317EB-AEC2-B49C-843E-A89B4B3ACD85" name="Employee_Address_FK">
+<createdBy>damia</createdBy>
+<createdTime>2021-05-18 21:10:55 UTC</createdTime>
+<generatorID>77FF02C2-6C7C-68AD-687D-509C677515E5</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9CD6A947-AD71-42E3-0B92-70DB059B1AD3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

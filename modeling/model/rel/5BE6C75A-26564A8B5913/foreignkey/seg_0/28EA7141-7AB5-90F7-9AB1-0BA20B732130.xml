@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="28EA7141-7AB5-90F7-9AB1-0BA20B732130" containerWithKeyObject="190ECF4B-623D-D95B-5EBA-0B935F836118" localFKIndex="92300930-ADCF-8F9A-BF4A-7C395F6AAA51" name="Dostawa_Miejsce_wydarzenia_FK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:11:48 UTC</createdTime>
+<generatorID>FF45F52C-1C6C-C240-E731-81EB01FE96F0</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<referredTableLongName>Miejsce_wydarzenia</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>CE7573EF-F6F1-2EBD-B8DF-35C06D738E06</referredTableID>
+<keyObject>51DE39CD-6C44-750A-59D8-3ED901026C8B</keyObject>
+<referredKeyID>51DE39CD-6C44-750A-59D8-3ED901026C8B</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Miejsce_wydarzenia_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

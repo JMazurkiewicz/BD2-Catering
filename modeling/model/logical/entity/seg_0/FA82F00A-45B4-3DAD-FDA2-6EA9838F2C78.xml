@@ -1,0 +1,170 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="FA82F00A-45B4-3DAD-FDA2-6EA9838F2C78" name="Employee">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:06:00 UTC</createdTime>
+<generatorID>BF321B25-5528-B883-C251-199995A92FFC</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Employee_ID" id="2C4FA7C2-A579-230B-6268-6053CD7707DD">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:06:00 UTC</createdTime>
+<generatorID>E05B09A5-3CF9-B70E-E859-066BFED96CC6</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,8,4</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Name" id="29D6E972-3274-B613-7F1A-47BFDBB260E9">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:06:00 UTC</createdTime>
+<generatorID>A8BB7CA5-6311-EC80-8018-760D805C404F</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32 CHAR</dataTypeSize>
+<ownDataTypeParameters>32 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Surname" id="1DD20555-B78B-310E-9C6E-29D2F51C315A">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:06:00 UTC</createdTime>
+<generatorID>7E958003-7409-CDAC-C806-566513822E2F</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32 CHAR</dataTypeSize>
+<ownDataTypeParameters>32 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="PESEL" id="614AB9D8-4DFA-ED63-11F0-F3D477704C2E">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:06:00 UTC</createdTime>
+<generatorID>6BFA7C2C-C2DD-D1CB-5C1F-515E2E0CE791</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>32</dataTypePrecision>
+<ownDataTypeParameters>,32,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Phone_number" id="E8658A30-42E1-5AB5-112C-831AC878E7B1">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:06:00 UTC</createdTime>
+<generatorID>6FB2329D-E810-FC23-632F-0737B286BE9C</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<ownDataTypeParameters>,12,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Bank_account_number" id="2691B598-14E2-F11B-BD57-8C6C62ACCC88">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:06:00 UTC</createdTime>
+<generatorID>0BD45072-066D-457C-0358-1A497BA00D6B</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>32</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,32,4</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Typename" id="1EB9DB54-0B85-C67E-AE6A-38249F8049A5">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:06:56 UTC</createdTime>
+<generatorID>BF4A4FD5-7D5E-300D-D55B-F4FA215E3036</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<referedAttribute>79288A14-A38B-077A-FEE0-949AE32A4833</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>16 BYTE</dataTypeSize>
+<ownDataTypeParameters>16 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Order_ID" id="C6193B92-497E-DF47-7C9B-6BD831587EFC">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:07:36 UTC</createdTime>
+<generatorID>14A9CBA6-ABCF-A002-A745-C0EEA878D46D</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>57368E0A-91C0-EA81-0048-CF23CC88235F</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>32</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,32,4</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Address_ID" id="C270C45C-ADFC-FD11-96D8-86A233AFF0A0">
+<createdBy>damia</createdBy>
+<createdTime>2021-05-18 21:04:59 UTC</createdTime>
+<generatorID>77FF02C2-6C7C-68AD-687D-509C677515E5</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>0B885956-7A59-2E73-5B6A-CD7CBBC0DCA3</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="50191D1C-B292-3F37-DF12-B8137484CB8E" name="Pracownicy PK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:06:00 UTC</createdTime>
+<generatorID>1518D9A1-FAB1-6289-70C5-E67B032FBAD4</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>2C4FA7C2-A579-230B-6268-6053CD7707DD</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
