@@ -32,7 +32,7 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="DAD95663-564F-E954-5E09-74FCBBC5047D" name="Alergeny PK">
+<identifier id="DAD95663-564F-E954-5E09-74FCBBC5047D" name="Allergen PK">
 <createdBy>arsze</createdBy>
 <createdTime>2021-05-13 08:06:00 UTC</createdTime>
 <generatorID>DC874F0B-330C-0023-B34A-5154ABF721ED</generatorID>
@@ -42,6 +42,7 @@
 <item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="false"/>
 </engineerTo>
 <pk>true</pk>
+<newElementsIDs>91C0471A-DA7E-4755-7A08-1EE6571E97EB</newElementsIDs>
 <usedAttributes>
 <attributeRef>91C0471A-DA7E-4755-7A08-1EE6571E97EB</attributeRef>
 </usedAttributes>

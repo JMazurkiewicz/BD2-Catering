@@ -19,6 +19,7 @@
 <Attribute name="NIP" id="1945E8FC-B085-7FE7-8FAA-648039D21600">
 <createdBy>damia</createdBy>
 <createdTime>2021-05-18 19:42:23 UTC</createdTime>
+<commentInRDBMS><![CDATA[Algorytm na wiki.]]></commentInRDBMS>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
 <item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
@@ -30,4 +31,18 @@
 <ownDataTypeParameters>15 CHAR,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="A4E099ED-D3B8-ECEC-4176-1A8BB049E2C5" name="Unique_nip">
+<createdBy>mazku</createdBy>
+<createdTime>2021-05-19 18:51:13 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<newElementsIDs>1945E8FC-B085-7FE7-8FAA-648039D21600</newElementsIDs>
+<usedAttributes>
+<attributeRef>1945E8FC-B085-7FE7-8FAA-648039D21600</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
 </Entity>

@@ -18,6 +18,7 @@
 <Attribute name="Size_ml" id="26DDA544-19A0-5F67-BC63-B12300AF4263">
 <createdBy>damia</createdBy>
 <createdTime>2021-05-18 20:51:22 UTC</createdTime>
+<commentInRDBMS><![CDATA[> 0]]></commentInRDBMS>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
 <item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>

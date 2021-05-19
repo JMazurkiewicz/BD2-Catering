@@ -19,6 +19,7 @@
 <Attribute name="Name" id="BC246920-F3B1-D7B8-89C8-027D802456D3">
 <createdBy>damia</createdBy>
 <createdTime>2021-05-18 19:37:52 UTC</createdTime>
+<commentInRDBMS><![CDATA[Czy zaczyna się wielką literą?]]></commentInRDBMS>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
 <item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
@@ -32,6 +33,7 @@
 <Attribute name="Surname" id="FDD4C28E-4640-5EC8-B65D-B16F28B5D453">
 <createdBy>damia</createdBy>
 <createdTime>2021-05-18 19:38:36 UTC</createdTime>
+<commentInRDBMS><![CDATA[Czy zaczyna się wielką literą?]]></commentInRDBMS>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
 <item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
@@ -45,6 +47,7 @@
 <Attribute name="Phone_number" id="C961D423-45CC-1573-9C03-5E01FD457D4D">
 <createdBy>damia</createdBy>
 <createdTime>2021-05-18 19:38:51 UTC</createdTime>
+<commentInRDBMS><![CDATA[Weryfikacja regexem]]></commentInRDBMS>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
 <item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
@@ -58,6 +61,7 @@
 <Attribute name="Email" id="DB0D1266-0AF7-E753-0762-3B819D6B2898">
 <createdBy>damia</createdBy>
 <createdTime>2021-05-18 19:39:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[Weryfikacja regexem]]></commentInRDBMS>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
 <item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>

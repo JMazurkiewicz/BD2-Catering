@@ -16,7 +16,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="Typename" id="79288A14-A38B-077A-FEE0-949AE32A4833">
+<Attribute name="Type_name" id="79288A14-A38B-077A-FEE0-949AE32A4833">
 <createdBy>arsze</createdBy>
 <createdTime>2021-05-13 08:06:00 UTC</createdTime>
 <generatorID>68B5D6A8-3F3D-CBBD-2B44-FFBD4A1F818B</generatorID>

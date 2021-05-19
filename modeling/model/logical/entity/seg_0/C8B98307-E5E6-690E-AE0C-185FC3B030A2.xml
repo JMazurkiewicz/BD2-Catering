@@ -18,6 +18,7 @@
 <Attribute name="Batch_number" id="894A4316-3F51-4535-BE3E-90B2AEE3703E">
 <createdBy>damia</createdBy>
 <createdTime>2021-05-18 20:06:28 UTC</createdTime>
+<commentInRDBMS><![CDATA[Weryfikacja regexem.]]></commentInRDBMS>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
 <item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
@@ -31,6 +32,7 @@
 <Attribute name="Available_amount" id="E7C6DE89-03D7-04D9-D4B2-2A27C4AFD593">
 <createdBy>damia</createdBy>
 <createdTime>2021-05-18 19:58:11 UTC</createdTime>
+<commentInRDBMS><![CDATA[> 0]]></commentInRDBMS>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
 <item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
@@ -42,7 +44,7 @@
 <dataTypeScale>2</dataTypeScale>
 <ownDataTypeParameters>,10,2</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Expiration_dare" id="DCB82E66-4EF2-C510-A90B-CA31D2EABBD9">
+<Attribute name="Expiration_date" id="DCB82E66-4EF2-C510-A90B-CA31D2EABBD9">
 <createdBy>damia</createdBy>
 <createdTime>2021-05-18 20:01:18 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>

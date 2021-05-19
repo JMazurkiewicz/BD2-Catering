@@ -31,6 +31,7 @@
 <Attribute name="Name" id="8B7D0402-A9D7-243B-E3C6-3B97E6CDBC16">
 <createdBy>damia</createdBy>
 <createdTime>2021-05-18 20:42:05 UTC</createdTime>
+<commentInRDBMS><![CDATA[Zaczyna sie wielką literą.]]></commentInRDBMS>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
 <item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>

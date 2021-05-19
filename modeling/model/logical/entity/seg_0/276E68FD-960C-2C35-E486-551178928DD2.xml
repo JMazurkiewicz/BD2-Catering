@@ -34,6 +34,7 @@
 <Attribute name="Capacity" id="D5E42682-A48F-C822-1C9C-6960EEE8CC56">
 <createdBy>arsze</createdBy>
 <createdTime>2021-05-13 08:06:00 UTC</createdTime>
+<commentInRDBMS><![CDATA[> 0]]></commentInRDBMS>
 <generatorID>2189F6EE-F850-2BAE-97BC-769F475BDB62</generatorID>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
@@ -49,6 +50,7 @@
 <Attribute name="Fuel_usage" id="EC6B023B-BD8C-21F8-54DE-188F93AE6FAA">
 <createdBy>arsze</createdBy>
 <createdTime>2021-05-13 08:06:00 UTC</createdTime>
+<commentInRDBMS><![CDATA[> 0]]></commentInRDBMS>
 <generatorID>4728AAB2-69FD-2E4E-2F39-81B78C7AB316</generatorID>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
@@ -60,6 +62,22 @@
 <dataTypePrecision>8</dataTypePrecision>
 <dataTypeScale>4</dataTypeScale>
 <ownDataTypeParameters>,8,4</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Delivery_id" id="A747B263-2B9E-57D0-56EA-1C11F61F0AF4">
+<createdBy>mazku</createdBy>
+<createdTime>2021-05-19 18:43:42 UTC</createdTime>
+<generatorID>2D68923A-38D6-37A4-41EB-99209C28AA3B</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>19797ECE-122B-1365-3018-C937DAB190BF</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

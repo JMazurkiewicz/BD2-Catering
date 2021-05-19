@@ -16,9 +16,23 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Ordered_meal_id" id="C9F7876B-D1C0-A68F-0C49-ACA6DD535F83">
+<createdBy>mazku</createdBy>
+<createdTime>2021-05-19 18:40:55 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+</Attribute>
 <Attribute name="Number_of_ordered_meals" id="D677B561-2916-4038-EF2A-19788B7D3CE0">
 <createdBy>arsze</createdBy>
 <createdTime>2021-05-13 08:06:00 UTC</createdTime>
+<commentInRDBMS><![CDATA[> 0]]></commentInRDBMS>
 <generatorID>B2BF43F9-33AE-2E21-B6F4-FAC52BF71ECA</generatorID>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
@@ -59,7 +73,7 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>32</dataTypePrecision>
 <dataTypeScale>4</dataTypeScale>
-<ownDataTypeParameters>,32,4</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="Item_ID" id="05A70F4F-0FC9-0247-BEAB-4B85FFDBE90C">
 <createdBy>damia</createdBy>
@@ -74,7 +88,21 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>5</dataTypePrecision>
-<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="42E8447F-7D30-D34E-5A19-512D533CAD34" name="Ordered_meals PK">
+<createdBy>mazku</createdBy>
+<createdTime>2021-05-19 18:41:43 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>C9F7876B-D1C0-A68F-0C49-ACA6DD535F83</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
 </Entity>

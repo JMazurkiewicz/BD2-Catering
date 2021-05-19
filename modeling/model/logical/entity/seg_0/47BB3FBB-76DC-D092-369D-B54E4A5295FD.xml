@@ -31,6 +31,7 @@
 <Attribute name="Postal_code" id="95839CA8-E3CD-AE20-A763-1E02643548BE">
 <createdBy>damia</createdBy>
 <createdTime>2021-05-18 20:31:08 UTC</createdTime>
+<commentInRDBMS><![CDATA[Weryfikacja regexem.]]></commentInRDBMS>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
 <item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
@@ -58,6 +59,7 @@
 <Attribute name="Building_number" id="A0B079BF-F364-E5CD-0CF6-D114A3859333">
 <createdBy>damia</createdBy>
 <createdTime>2021-05-18 20:28:51 UTC</createdTime>
+<commentInRDBMS><![CDATA[Czy jest to prawdilowy numer?]]></commentInRDBMS>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
 <item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
@@ -71,6 +73,7 @@
 <Attribute name="Apartment_number" id="7050FF73-C02C-5BF9-E527-D4E985937748">
 <createdBy>damia</createdBy>
 <createdTime>2021-05-18 20:29:52 UTC</createdTime>
+<commentInRDBMS><![CDATA[Czy jest to prawdilowy numer?]]></commentInRDBMS>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
 <item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
@@ -95,7 +98,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>5</dataTypePrecision>
-<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="City_ID" id="E224DBFE-BC93-1209-272D-ACD52EC69951">
 <createdBy>damia</createdBy>
@@ -111,6 +114,21 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>5</dataTypePrecision>
 <ownDataTypeParameters>,5,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Delivery_id" id="8C00A72F-E50C-9203-EE6B-F9FCF57907D6">
+<createdBy>mazku</createdBy>
+<createdTime>2021-05-19 18:43:42 UTC</createdTime>
+<generatorID>8CB679A2-6CF4-90C4-B45C-C43EF260DD2D</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<referedAttribute>19797ECE-122B-1365-3018-C937DAB190BF</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

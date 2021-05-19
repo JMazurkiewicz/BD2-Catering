@@ -3,6 +3,7 @@
 <createdBy>arsze</createdBy>
 <createdTime>2021-05-13 08:06:00 UTC</createdTime>
 <generatorID>06186C23-D269-8ECC-FB47-E4A37CA86C8A</generatorID>
+<notes><![CDATA[	]]></notes>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
 <item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
@@ -16,15 +17,28 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Employee_schedule_id" id="BA68CECF-FD92-BA88-638E-EAFECD29EB69">
+<createdBy>mazku</createdBy>
+<createdTime>2021-05-19 18:43:01 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+</Attribute>
 <Attribute name="Start_date" id="09C3B8BE-FBE6-F33C-6C35-6440D011DCEC">
 <createdBy>arsze</createdBy>
 <createdTime>2021-05-13 08:06:00 UTC</createdTime>
+<commentInRDBMS><![CDATA[Start_date < End_date]]></commentInRDBMS>
 <generatorID>5ADB468A-22AE-7C2F-FC3B-079C497698A9</generatorID>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
 <item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
@@ -33,12 +47,12 @@
 <Attribute name="End_date" id="AB7E7C29-4322-CCE0-B2B4-388A31B5AE11">
 <createdBy>arsze</createdBy>
 <createdTime>2021-05-13 08:06:00 UTC</createdTime>
+<commentInRDBMS><![CDATA[Start_date < End_date]]></commentInRDBMS>
 <generatorID>379CAA2B-4C43-FBF1-EC9C-99C219DCCC69</generatorID>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
 <item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
@@ -52,7 +66,6 @@
 <engineerTo>
 <item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT033</logicalDatatype>
@@ -76,4 +89,18 @@
 <ownDataTypeParameters>,8,4</ownDataTypeParameters>
 </Attribute>
 </attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="F4687DAD-F94A-609B-5DF4-29453EB45ABA" name="Employee_schedule PK">
+<createdBy>mazku</createdBy>
+<createdTime>2021-05-19 18:43:17 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>BA68CECF-FD92-BA88-638E-EAFECD29EB69</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
 </Entity>

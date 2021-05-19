@@ -16,9 +16,23 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Delivery_id" id="19797ECE-122B-1365-3018-C937DAB190BF">
+<createdBy>mazku</createdBy>
+<createdTime>2021-05-19 18:43:24 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+</Attribute>
 <Attribute name="Cost" id="24E6AE0D-8513-A701-209B-C26988CAC0B8">
 <createdBy>arsze</createdBy>
 <createdTime>2021-05-13 08:06:00 UTC</createdTime>
+<commentInRDBMS><![CDATA[>= 0]]></commentInRDBMS>
 <generatorID>6AF38BCC-33DE-B2E9-769D-E9CB367A78D6</generatorID>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
@@ -34,6 +48,7 @@
 <Attribute name="Number_of_vehicles" id="A25D2816-E03B-4426-9450-2F45F69E8C7E">
 <createdBy>arsze</createdBy>
 <createdTime>2021-05-13 08:06:00 UTC</createdTime>
+<commentInRDBMS><![CDATA[>= 0 && < ILOSC_POJAZDOW]]></commentInRDBMS>
 <generatorID>F89004C1-71EB-B38F-7E3E-CDE6E66E36D4</generatorID>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
@@ -76,4 +91,18 @@
 <ownDataTypeParameters>,32,4</ownDataTypeParameters>
 </Attribute>
 </attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="6AB5FE78-4DD3-98A9-47F5-992480EE108B" name="Delivery PK">
+<createdBy>mazku</createdBy>
+<createdTime>2021-05-19 18:43:33 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>19797ECE-122B-1365-3018-C937DAB190BF</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
 </Entity>

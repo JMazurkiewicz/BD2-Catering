@@ -19,6 +19,7 @@
 <Attribute name="Alcohol_content" id="BE8B7E8D-1FA3-776B-3141-FC92F5597B05">
 <createdBy>damia</createdBy>
 <createdTime>2021-05-18 20:15:58 UTC</createdTime>
+<commentInRDBMS><![CDATA[>= 0]]></commentInRDBMS>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
 <item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>

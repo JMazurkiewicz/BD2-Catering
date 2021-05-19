@@ -47,6 +47,7 @@
 <Attribute name="Wholesale_price" id="E53D972C-89CA-CCBF-D38E-4220391DD6F2">
 <createdBy>arsze</createdBy>
 <createdTime>2021-05-13 08:06:00 UTC</createdTime>
+<commentInRDBMS><![CDATA[> 0]]></commentInRDBMS>
 <generatorID>47A5083C-01F5-EB6A-7CB5-78B437327CF5</generatorID>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
@@ -73,7 +74,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>15 CHAR</dataTypeSize>
-<ownDataTypeParameters>15 CHAR,,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
