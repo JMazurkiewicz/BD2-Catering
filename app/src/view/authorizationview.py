@@ -58,6 +58,8 @@ class AuthorizationView(tk.Frame):
         elif len(password) == 0:
             self.error_label.configure(text = 'Password cannot be empty')
             return
+        else:
+            self.error_label.configure(text = '')
 
         self.model.set_login(login)
         self.model.set_password(password)
