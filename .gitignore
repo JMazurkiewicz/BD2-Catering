@@ -1,4 +1,5 @@
 __priv
+__pycache__
 .vs*
 build/
 .pytest_cache/

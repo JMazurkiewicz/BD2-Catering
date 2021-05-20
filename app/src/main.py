@@ -1,7 +1,9 @@
 #!/usr/bin/env python
-import view
+# @author: Jakub Mazurkiewicz
+
+from view import MainWindow
 
 if __name__ == '__main__':
-    window = view.MainWindow()
+    window = MainWindow()
     window.mainloop()
     
