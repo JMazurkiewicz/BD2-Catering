@@ -10,7 +10,7 @@ class AuthorizationModel:
         self.user_type = -1
 
         self.server = 'bd2-grupa11.database.windows.net'
-        self.database = 'BD2'
+        self.database = 'Catering'
         self.driver = '{SQL Server}'
 
 
