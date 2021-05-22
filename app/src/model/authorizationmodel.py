@@ -24,20 +24,21 @@ class AuthorizationModel:
 
     def authorize(self):
         print('password verification started')
-        conn = 'DRIVER={};SERVER={};PORT=1433;DATABASE={};UID={};PWD={}'.format(self.driver, self.server, self.database, self.login, self.password)
+        str = 'DRIVER={};SERVER={};PORT=1433;DATABASE={};UID={};PWD={}'.format(self.driver, self.server, self.database, self.login, self.password)
         
         try:
-            with pyodbc.connect(conn) as connection:
+            with pyodbc.connect(str) as connection:
                 with connection.cursor() as cursor:
                     cursor.execute('select * from test')
+                    
+                    str = ''
                     row = cursor.fetchone()
                     while row:
-                        print('{} + {}', row[0], row[1])
+                        str += '{} {}\n'.format(row[0], row[1])
                         row = cursor.fetchone()
-
-            return True
-        except Exception:
-            print('fatal error')
+                    return str                    
+        except Exception as e:
+            print('Connection error: {}'.format(e))
             raise
 
 
