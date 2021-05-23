@@ -5,7 +5,7 @@ import tkinter as tk
 from model import AuthorizationModel
 
 ENTRY_WIDTH = 30
-WELCOME = 'Cathering control panel'
+WELCOME = 'Catering control panel'
 
 class AuthorizationView(tk.Frame):
     def __init__(self, parent, *args, **kwargs):
