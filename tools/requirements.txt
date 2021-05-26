@@ -1,2 +1,3 @@
 # CATERING APP REQUIREMENTS
-psycopg2
+tkinter
+pyodbc
