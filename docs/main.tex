@@ -1,76 +1,121 @@
-\documentclass[10pt,a4paper]{article}
+\documentclass[10pt]{article}
+
 \usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{indentfirst}
 \usepackage[T1]{fontenc}
 \usepackage{isodate}
-\usepackage[polish]{babel}
 \usepackage{hyperref}
 \newcommand{\quotes}[1]{``#1''}
 
 \title{BD2 - Katering}
 
 \author{Jakub Mazurkiewicz, Damian Piotrowski,\\Konrad Wojewódzki, Przemysław Wieczorkowski}
-\date{Kwiecień 2021}
+\date{Semestr 21L}
 
 \begin{document}
-
 \maketitle
 
-\section{Dokumentacja wstępna}
+\section{Wstęp}
 
 \subsection{Przedsiębiorstwo}
 
 \subsubsection{Historia}
+
 Przedsiębiorstwo \quotes{Cabbage Catering} zajmuje się dostarczaniem smacznych i pożywnych posiłków na imprezy okolicznościowe. Przedsiębiorstwo zostało założone w 2015 roku przez Przemysława Kapustkę, którego celem było stworzenie dobrze prosperującej firmy kateringowej. Nie spodziewał się on jednak, że firma urośnie do rozmiarów kateringowego królestwa i będzie realizowała bardzo duże ilości zamówień dla zróżnicowanych grup klientów. Z tego też powodu pojawiła się potrzeba stworzenia systemu komputerowego, który będzie wspomagał przedsiębiorstwo w sprawnym realizowaniu zamówień.
 
 \subsubsection{Zasoby firmy}
-Siedziba firmy umiejscowiona jest przy ulicy Urzędniczej 2 w Toruniu. W budynku znajduje się biuro, kuchnia, chłodnia oraz magazyn. W firmie są zatrudnieni: 8 kucharzy w tym 2 szefów kuchni, 3 cukierników, 2 dostawców oraz 15 kelnerów obsługujących gości na wydarzeniach. Przedsiębiorstwo dysponuje dwoma pojazdami transportowymi typu Mercedes Sprinter oraz dwoma pojazdami typu Mercedes AMG G63 dla przedstawicieli. Firma nabywa produkty spożywcze w sieci hurtowni Makro. Dzięki naszej infrastrukturze jesteśmy w stanie obsłużyć wydarzenia nawet do 400 osób. W ofercie znajduje się szeroki wybór dań, w tym dania wegańskie, wegetariańskie, bezglutenowe i tym podobne. 
+
+Siedziba firmy umiejscowiona jest przy ulicy Urzędniczej 2 w Toruniu. W budynku znajduje się biuro, kuchnia, chłodnia oraz magazyn. W firmie są zatrudnieni: 8 kucharzy w tym 2 szefów kuchni, 3 cukierników, 2 dostawców oraz 15 kelnerów obsługujących gości na wydarzeniach. Przedsiębiorstwo dysponuje dwoma pojazdami transportowymi typu Mercedes Sprinter oraz dwoma pojazdami typu Mercedes AMG G63 dla przedstawicieli. Firma nabywa produkty spożywcze w sieci hurtowni Makro. Dzięki naszej infrastrukturze jesteśmy w stanie obsłużyć wydarzenia nawet do 400 osób. W ofercie znajduje się szeroki wybór dań, w tym dania wegańskie, wegetariańskie, bezglutenowe i tym podobne.
 
 \subsection{Cel projektu}
+
 Celem projektu jest stworzenie relacyjnej bazy danych do wspomagania obsługi klientów oraz logistyki przedsiębiorstwa. Powstanie także aplikacja, która wspomoże harmonogramowanie zamówień oraz monitorowanie stanu magazynu.
 
-\pagebreak
+\pagebreak % ^^^ ETAP 0 / ETAP 1 vvv
 
 \section{Etap pierwszy}
 
 \subsection{Model behawioralny}
 
-\subsubsection{Aktorzy w systemie}
-\begin{itemize}
-    \item \textbf{Pracownik recepcjonista} - przyjmuje od klientów zamówienia na dostarczanie usług kateringowych (za pośrednictwem telefonu) i wprowadza za pośrednictwem SZBD zlecenie do systemu. W razie wypadku informuje klienta o braku możliwości realizacji zamówienia.
-    \item \textbf{Szef kuchni} - pobiera z bazy danych informacje o zbliżających się wydarzeniach, sprawdza dostępność produktów na stanie (w magazynie/chłodni) i, w razie potrzeby, zamawia produkty niezbędne do przygotowania potraw. Sprawdza przepisy na zamówione potrawy. Może dodać własne przepisy i modyfikować menu.
-    \item \textbf{Kucharz} - sprawdza dostępność produktów i przepisy.
-    \item \textbf{Pracownik dostawca} - odczytuje z systemu harmonogram wydarzeń i ustala trasę przejazdu, odbiera produkty z hurtowni i weryfikuje zgodność zamówień ze stanem faktycznym.
-    \item \textbf{Pracownik kelner} - sprawdza harmonogram wydarzeń i obsługuje wydarzenie.
-    \item \textbf{Klient} - sprawdza dostępność wolnych terminów oraz koszt świadczonych usług i ew. składa zamówienie na wybrane menu (albo samodzielnie ustala listę potraw), określa liczbę gości, datę wydarzenia i lokalizację (ew. precyzuje rodzaj wydarzenia). Podaje podstawowe dane kontaktowe (imię, nazwisko, telefon, ew. e-mail). Dodatkowo może zrezygnować z korzystania z usług firmy/odwołać zaplanowane wydarzenie (najpóźniej na 2 tygodnie przed).
-\end{itemize}
+\subsubsection{Aktorzy i ich przypadki użycia}
 
-\subsubsection{Przypadki użycia}
-\noindent\textbf{Złożenie zamówienia}
 \begin{enumerate}
-    \item Klient składa zamówienie telefonicznie lub osobiście na recepcji
+    \item \textbf{Pracownik recepcjonista} - przyjmuje od klientów zamówienia na dostarczanie usług kateringowych (za pośrednictwem telefonu) i wprowadza za pośrednictwem SZBD zlecenie do systemu. W razie wypadku informuje klienta o braku możliwości realizacji zamówienia. Przypadki użycia:
+    \begin{itemize}
+        \item Sprawdzenie dostępności terminu - sprawdzane przez aplikację,
+        \item Dodanie zamówienia do terminarza,
+        \item Usunięcie zamówienia z systemu,
+        \item Zmiana szczegółów zamówienia,
+        \item Przypisywanie kelnera do wydarzenia,
+        \item Przypisywanie dostawcy do wydarzenia,
+        \item Zatrudnianie nowych pracowników,
+        \item Aktualizacja informacji o pracowniku.
+    \end{itemize}
+
+    \item \textbf{Szef kuchni} - pobiera z bazy danych informacje o zbliżających się wydarzeniach, sprawdza dostępność produktów na stanie (w magazynie/chłodni) i, w razie potrzeby, zamawia produkty niezbędne do przygotowania potraw. Sprawdza przepisy na zamówione potrawy. Może dodać własne przepisy i modyfikować menu. Przypadki użycia:
+    \begin{itemize}
+        \item Pobieranie listy dań do zamówienia,
+        \item Edycja menu,
+        \item Sprawdzanie dostępności produktów w magazynie,
+        \item Pobranie listy produktów potrzebnych do wykonania dania,
+        \item Edycja listy produktów potrzebnych do wykonania dania,
+        \item Zamawianie potrzebnych produktów.
+    \end{itemize}
+    
+    \item \textbf{Kucharz} - sprawdza dostępność produktów i przepisy. Przypadki użycia:
+    \begin{itemize}
+        \item Sprawdzanie dostępności produktów w magazynie,
+        \item Pobranie listy produktów potrzebnych do wykonania dania.
+    \end{itemize}
+    
+    \item \textbf{Pracownik dostawca} - odczytuje z systemu harmonogram wydarzeń i ustala trasę przejazdu, odbiera produkty z hurtowni i weryfikuje zgodność zamówień ze stanem faktycznym. Przypadki użycia:
+    \begin{itemize}
+        \item Sprawdzanie grafiku,
+        \item Sprawdzanie listy dań do załadowania do pojazdu,
+        \item Sprawdzanie listy dostępnych pojazdów,
+        \item Sprawdzanie miejsce wydarzenia, do którego należy dostarczyć jedzenie.
+    \end{itemize}
+    
+    \item \textbf{Pracownik kelner} - sprawdza harmonogram wydarzeń i obsługuje wydarzenie. Przypadki użycia:
+    \begin{itemize}
+        \item Akceptuje zaproponowany mu w systemie termin (w przypadku pracownika okresowego),
+        \item Uwzględnianie dodatkowych kosztów (np. zniszczenia asortymentu) w trakcie wydarzenia
+    \end{itemize}
+    
+    \item \textbf{Klient} - sprawdza dostępność wolnych terminów oraz koszt świadczonych usług i ew. składa zamówienie na wybrane menu (albo samodzielnie ustala listę potraw), określa liczbę gości, datę wydarzenia i lokalizację (ew. precyzuje rodzaj wydarzenia). Podaje podstawowe dane kontaktowe (imię, nazwisko, telefon, ew. e-mail). Dodatkowo może zrezygnować z korzystania z usług firmy/odwołać zaplanowane wydarzenie (najpóźniej na 2 tygodnie przed). Przypadki użycia:
+    \begin{itemize}
+        \item Przeglądanie dostępnych dań.
+        \item Przeglądanie informacji o alergenach.
+    \end{itemize}
+\end{enumerate}
+
+\subsubsection{Rozszerzone przypadki użycia}
+
+\noindent\textbf{Złożenie zamówienia}
+
+\begin{enumerate}
+    \item Klient składa zamówienie telefonicznie lub osobiście na recepcji co najmniej tydzień przed wydarzeniem
     \item Pracownik wprowadza zlecenie do SZBD
     \item System weryfikuje dostępność terminu
     \item Jeśli termin jest wolny wydarzenie zostaje zapisane w systemie
+    \item Dane klienta, adres dostawy i lista dań są zapisywane w systemie
 \end{enumerate}
-Alternatywa:
-\begin{enumerate}
-    \item Punkt pierwszy z przypadku podstawowego
-    \item Punkt drugi z przypadku podstawowego
-    \item Punkt trzeci z przypadku podstawowego
-    \item Jeśli termin jest zajęty wydarzenie zostaje odrzucone
-\end{enumerate}
+
 \textbf{Sprawdzenie dostępności produktów}
+
 \begin{enumerate}
-    \item Szef kuchni pobiera z systemu listę dań do zlecenia
-    \item Pracownik sprawdza w systemie czy w magazynie znajdują się produkty potrzebne do wykonania zlecenia
+    \item Szef kuchni sprawdza w systemie czy w magazynie znajdują się produkty potrzebne do wykonania zlecenia
     \item Jeśli wszystkie produkty znajdują się na stanie zlecenie jest przekazywane do kuchni
 \end{enumerate}
+
 Alternatywa:
 \begin{enumerate}
     \item Punkt pierwszy z przypadku podstawowego
     \item Punkt drugi z przypadku podstawowego
     \item Jeśli brakuje produktów zostaje złożone zamówienie w hurtowni
 \end{enumerate}
+
 \textbf{Przeprowadzenie dostawy:}
 \begin{enumerate}
     \item Kurier pobiera z systemu adres i datę dostawy
@@ -78,6 +123,7 @@ Alternatywa:
     \item Pracownik sprawdza kompletność zamówienia
     \item Jeśli zamówienie jest kompletne pracownik dostarcza posiłki
 \end{enumerate}
+
 Alternatywa:
 \begin{enumerate}
     \item Punkt pierwszy z przypadku podstawowego
@@ -87,32 +133,138 @@ Alternatywa:
 \end{enumerate}
 
 \subsection{Model strukturalny}
+
 \subsubsection{Słownik pojęć}
+
 \begin{itemize}
-    \item \textbf{Produkt} - pojedynczy składnik przechowywany w magazynie.
-    \item \textbf{Danie} - posiłek do wyboru z naszej karty menu. Może składać się z wielu produktów oraz być różnej wielkości zgodnie z wolą klienta. Jest też udostępniona informacja o alergenach.
-    \item \textbf{Magazyn} - miejsce, w którym przechowywane są nasze produkty spożywcze.
-    \item \textbf{Zamówienie} - proces wyboru konkretnych dań z naszego menu przez klienta, przygotowania ich w odpowiednich ilościach, wraz z zaleceniami zamawiającego, a następnie dostarczenie ich do wyznaczonego miejsca docelowego.
+    \item \textbf{Produkt} - pojedynczy składnik przechowywany w magazynie lub w chłodni.
+    \item \textbf{Pozycja na karcie} - posiłek lub napój do wyboru z naszej karty menu. Może składać się z wielu produktów oraz być różnej wielkości zgodnie z wolą klienta. Jest też udostępniona informacja o alergenach.
+    \item \textbf{Informacje o daniu} - wszelkie przydatne dla klienta informacje o konkretnym daniu (np. czy danie jest wegańskie).
+    \item \textbf{Przechowalnie} - miejsce, w którym przechowywane są nasze produkty spożywcze. Jest to magazyn lub chłodnia zależnie od rodzaju artykułu.
+    \item \textbf{Zamówienie} - proces wyboru konkretnych dań z naszego menu przez klienta (możliwe są modyfikacje dania). Zamówienie musi zostać złożone co najmniej tydzień przed datą wydarzenia.
     \item \textbf{Klient} - podmiot składający zamówienie w naszej firmie. Może to być osoba fizyczna lub zarejestrowana firma.
     \item \textbf{Miejsce zamówienia} - lokalizacja, którą klient wybrał do dostarczenia zamówienia.
+    \item \textbf{Pracownik} - osoba, do której należy obsługa wydarzenia.
+    \item \textbf{Grafik pracownika} - grafik zawierający wydarzenia z określonymi ramami czasowymi. Wydarzenia przypisane są do konkretnego pracownika.
+    \item \textbf{Dostawa} - proces dostarczenia zamówienia na miejsce.
+    \item \textbf{Samochód} - pojazd używany do realizacji dostawy.
 \end{itemize}
 
-\subsubsection{Model ER (wersja beta)}
-\texttt{\href{https://miro.com/app/board/o9J_lL9uIOo=/}{LINK DO MODELU ER ඞ}}
+\subsubsection{Model ER}
 
-\subsection{Narzędzia}
-\begin{table}[h!]
-  \begin{center}
-    \begin{tabular}{c|c}
-      \textbf{Element} & \textbf{Narzędzie} \\
-      \hline
-      Storyboard/UML & \texttt{Miro} \\
-      Dokumentacja & \makecell{\texttt{Latex (Overleaf)}} \\
-      System zarządzania bazą danych & \texttt{PostgreSQL} \\
-      Język programowania aplikacji & \texttt{Python} \\
-      Chmura & \texttt{Microsoft Azure}
-    \end{tabular}
-  \end{center}
+\noindent\texttt{\href{https://miro.com/app/board/o9J_lL9uIOo=/}{LINK DO MODELU ER}}
+
+\subsubsection{Macierz CRUD}
+
+\noindent\texttt{\href{https://wutwaw-my.sharepoint.com/:x:/g/personal/01143627_pw_edu_pl/EWBP5IBfqCFLiPvmQnpEDcAB0eGgw4UuIhm6bPNvxlSkyA?e=69XRhd}{LINK DO MACIERZY CRUD}}
+
+\subsection{Wybór narzędzi}
+\begin{table}[!h]
+    \begin{center}
+        \begin{tabular}{c|c}
+            \textbf{Element} & \textbf{Narzędzie} \\
+            \hline
+            Storyboard/UML & \texttt{Miro} \\
+            Dokumentacja & \LaTeX{} \\
+            System zarządzania bazą danych & \texttt{MS SQL} \\
+            Język programowania aplikacji & \texttt{Python} \\
+            Chmura & \texttt{Microsoft Azure}
+        \end{tabular}
+    \end{center}
 \end{table}
+
+\pagebreak % ^^^ ETAP 1 / ETAP 2 vvv
+
+\section{Etap 2}
+
+\subsection{Model logiczny}
+
+\noindent \texttt{\href{https://github.com/JMazurkiewicz/BD2-Catering/blob/modeling/docs/logical-model.pdf}{LINK DO MODELU LOGICZNEGO}}
+
+\subsection{Opis więzów integralności}
+
+\noindent \texttt{\href{https://wutwaw-my.sharepoint.com/:x:/g/personal/01143627_pw_edu_pl/ESLyg2i21LRBgUp8RWfRSLgB-xCOXny2bD24kXWuZf6KzA?rtime=QEzI1x4e2Ug}{LINK DO OPISU WIĘZÓW INTEGRALNOŚCI}}
+
+\subsection{Projekt aplikacji}
+
+\noindent Projekt aplikacji znajduje się w pliku \texttt{app.pdf} (\texttt{app.tex}).
+
+\subsection{Opis wymagań funkcjonalnych}
+
+\subsubsection{Bezpieczeństwo}
+Każdy użytkownik bazy danych ma generowane swój własny login i hasło do logowania do aplikacji oraz do bazy danych. Każdemu użytkownikowi nadawana jest rola i idą za nią uprawnienia. Oprócz tego konta administratorów są chronione \quotes{firewallem} i niezbędne jest podanie swojego adresu IP i wprowadzenie go w panelu administratora na stronie Microsoft Azure.
+
+\subsubsection{Szybkość}
+W aplikacji obsługującej harmonogram dostaw i układanie jadłospisów prędkość nie jest kluczowa. Pewne opóźnienia w działaniu zarówno aplikacji jak i bazy danych nie są krytyczne i w prawie żaden sposób nie wpływają na jakość usługi. Drobne opóźnienia wystąpią ze względu na to, że baza danych znajduje się w chmurze i synchronizacja zachodzących zmian nie jest natychmiastowa, w niektórych przypadkach może zająć to nawet kilka minut.
+
+\subsubsection{Wolumetria}
+%\begin{itemize}
+ %   \item Order - Encja zajmująca bardzo dużo miejsca w bazie danych. Dla każdego nowego zamówienia tworzony jest nowy wiersz. Co więcej encja ma aż 6 kolumn
+  %  \item Client(Person/Business) - Encja zawierająca dane o klientach. Encja \quotes{Business}
+%\end{itemize}
+
+%\section{Projekt testów}
+
+\subsection{Scenariusze testowe}
+\begin{itemize}
+    \item Ładujemy poprawnie wygenerowane dane w ilości zgodnej z wymaganiami
+    \item Przeprowadzenie testów jednostkowych sprawdzających poprawność działania wyzwalaczy i checków:
+        \begin{itemize}
+            \item Dodanie wydarzenia na konkretny dzień i godzinę;
+            \item Dodanie wydarzenia na zarezerwowany wcześniej termin;
+            \item Usunięcie nieistniejącego wydarzenia (o zadanej porze);
+            \item Zmiana daty wydarzenia na inny, wolny termin;
+            \item Zmiana daty wydarzenia na zajęty termin;
+            \item Próba wprowadzenia błędnej daty;
+            \item Próba ponownego zatrudnienia zatrudnionego pracownika o identycznych danych osobowych;
+            \item Próba ponownego dodania produktu o tej samej nazwie;
+            \item Sprawdzanie dostępności nieistniejących w magazynie produktów;
+            \item Próba ponownego dodania potrawy o tej samej nazwie i z tą samą listą produktów;
+            \item Wstawienie danych w złym formacie – daty (wydarzenia), kodu pocztowego, numeru telefonu, adresu e-mail, numeru NIP, numeru PESEL, numer konta\item bankowego, wstawienie złego typu danych do określonego pola;
+            \item Próba dodania danych o nieprawidłowych kluczach obcych dla każdej z tabel
+        \end{itemize}
+\end{itemize}
+ 
+Testy przeprowadzane są z pomocą skryptu w języku Python.
+
+\subsection{Raporty analityczne}
+
+\subsubsection{Analiza ilości zamawianych produktów}
+Chcemy przeanalizować ilość zamawianych z hurtowni produktów pod kątem realnego zapotrzebowania na nie. Pozwoli to lepiej oszacować zapotrzebowanie na produkty, zaplanować dostawy i ograniczyć straty związane z upłynięciem terminu przydatności.
+W tym celu odpytujemy naszą bazę danych o wszystkie posiłki wykonane w zadanym przez użytkownika przedziale czasowym (miesiąc, tydzień etc.) i na podstawie tego szacujemy odsetek wykorzystanych produktów.
+
+\begin{center}
+    \begin{tabular}{l|c|c|c|c|c}
+        \textbf{Nr} & \textbf{Produkt} & \textbf{Zakupiono} & \textbf{Wykorzystano} & \textbf{Jednostka} & \textbf{Procent} \\
+        \hline
+        1 & \texttt{Ser\_żółty} & 102 & 57 & kg & 55.9\% \\
+        2 & \texttt{Twaróg}    & 50   & 42   & \texttt{kg}  & 84.0\% \\
+        3 & \texttt{Jajka}     & 200  & 170  & \texttt{szt} & 85.0\% \\
+        4 & \texttt{Mleko}     & 205  & 121  & \texttt{L}   & 59.0\% \\
+        5 & \texttt{Kalafior}  & 10   & 7    & \texttt{kg}  & 70.0\% \\
+        6 & \texttt{Por}       & 20   & 5    & \texttt{kg}  & 25.0\% \\
+        7 & \texttt{Marchew}   & 20   & 10   & \texttt{kg}  & 50.0\% \\
+        8 & \texttt{Ziemniaki} & 222  & 217  & \texttt{kg}  & 97.7\% \\
+        9 & \texttt{Koperek}   & 3000 & 2731 & \texttt{g}   & 91.0\% \\
+    \end{tabular}
+\end{center}
+
+\pagebreak
+
+\subsubsection{Analiza opłacalności świadczonych usług}
+Chcemy przeanalizować świadczone przez firmę usługi pod kątem opłacalności - które wydarzenia przynoszą największe zyski przy jak najmniejszym nakładzie finansowym. W ten sposób możemy traktować priorytetowo niektóre formy działalności. Dzielimy zatem świadczone przez nas usługi na kategorie (urodziny, imieniny, chrzciny etc.) i analizujemy koszty związane z organizacją posiłków (koszty produktów, liczba kelnerów i ich wynagrodzenie, liczba potrzebnych samochodów dostawczych etc.) i porównujemy ze stawką którą zgodził się zapłacić klient.
+
+\begin{center}
+    \begin{tabular}{l|l|c|c|c}
+    \textbf{Nr} & \textbf{Rodzaj} & \textbf{Przychody} & \textbf{Koszty} & \textbf{Zysk proc.} \\
+    \hline
+    1 & Cat.Rodzinny & 31232 & 21212 & 32.1\% \\
+    2 & Cat.Dieta    & 30123 & 22543 & 25.2\% \\
+    3 & Chrzciny     & 11222 & 10579 & 5.73\% \\
+    4 & Komunie      & 45631 & 31672 & 30.6\% \\
+    5 & Urodziny     & 23001 & 21521 & 6.43\% \\
+    6 & Firmowe      & 67123 & 59999 & 10.6\% \\
+    \end{tabular}
+\end{center}
 
 \end{document}
