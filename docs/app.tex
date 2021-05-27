@@ -1,0 +1,416 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{array}
+
+\newcommand{\quotes}[1]{``#1''}
+\renewcommand{\arraystretch}{1.2}
+
+% Komenda do opisu przypadków użycia
+\newcommand{\usecase}[6]{
+    \begin{center}
+        \begin{tabular}{|p{7em}|p{21em}|}
+            \hline
+            \textbf{Nazwa} & #1 \\
+            \hline
+            \textbf{Aktor(zy)} & #2 \\
+            \hline
+            \textbf{Zdarzenia \newline inicjujące} & #3 \\
+            \hline
+            \textbf{Warunki \newline początkowe} & #4 \\
+            \hline
+            \textbf{Scenariusz główny} & #5 \\
+            \hline
+            \textbf{Scenariusze alternatywne} & #6 \\
+            \hline
+        \end{tabular}
+    \end{center}
+}
+
+\title{Katering - projekt aplikacji}
+
+\author{Jakub Mazurkiewicz, Damian Piotrowski, Konrad Wojewódzki}
+\date{Maj 2021}
+
+\begin{document}
+
+\maketitle 
+
+\section{Projekt aplikacji}
+
+\subsection{Implementowane przypadki użycia}
+
+\subsubsection{Przypadki użycia dla recepcjonisty}
+
+\usecase{
+    Dodawanie zamówienia
+}{
+    Recepcjonista
+}{
+    Wybranie opcji \quotes{Dodaj do zamówienia} w menu lub w kalendarzu.
+}{
+    Aktor jest zalogowany w systemie.
+}{
+    1. Aktor otwiera menu dodawania zamówienia, \newline
+    2. Aktor wprowadza dane klienta do systemu, \newline
+    3. Aktor dostosowuje termin zamówienia do potrzeb klienta, \newline
+    4. Aktor wybiera dania zamówione przez klienta, \newline
+    5. Aktor zatwierdza wprowadzone zamiany.
+}{
+    1. Brak wolnego terminu - prośba o wybranie nowego terminu, \newline
+    2. Błąd połączenia z DBMS - system prosi o ponowienie akcji.
+}
+
+\usecase{
+    Edytowanie zamówienia
+}{
+    Recepcjonista
+}{
+    Wybranie opcji \quotes{Edytuj zamówienie} w kalendarzu.
+}{
+    Aktor jest zalogowany w systemie. \newline
+    Zamówienie istnieje w systemie.
+}{
+    1. Aktor otwiera kalendarz, wybiera zamówienie i wybiera opcję \quotes{Edytuj}, \newline
+    2. Aktor edytuje zamówienie zgodnie z wolą klienta - np. zamienia termin, dania, \newline
+    3. Aktor zatwierdza wprowadzone zamiany.
+}{
+    1. Wybrany termin jest niedostępny - prośba o wybranie nowego terminu, \newline
+    2. Błąd połączenia z DBMS - system prosi o ponowienie akcji.
+}
+
+\usecase{
+    Usuwanie zamówienia
+}{
+    Recepcjonista
+}{
+    Wybranie opcji \quotes{Usuń zamówienie} w kalendarzu.
+}{
+    Aktor jest zalogowany w systemie. \newline
+    Zamówienie istnieje w systemie.
+}{
+    1. Aktor otwiera kalendarz, wybiera zamówienie i wybiera opcję \quotes{Usuń}, \newline
+    2. Aktor zatwierdza usunięcia zamówienie (ewentualne potwierdzenie akcji hasłem), \newline
+    3. Aktor zatwierdza wprowadzone zamiany.
+}{
+    Błąd połączenia z DBMS - system prosi o ponowienie akcji.
+}
+
+\usecase{
+    Sprawdzanie dostępności terminu
+}{
+    Recepcjonista
+}{
+    Otworzenie kalendarza.
+}{
+    Aktor jest zalogowany w systemie.
+}{
+    1. Aktor otwiera kalendarz, \newline
+    2. Na podstawie widoku kalendarza aktor określa czy dany termin jest wolny.
+}{
+    1. Aktor może też sprawdzić dostępność terminu korzystając z wyszukiwarki w kalendarzu - aktor wprowadza termin i sprawdza czy jest dostępny. \newline
+    2. Błąd połączenia z DBMS - system prosi o ponowienie akcji.
+}
+
+\usecase{
+    Przypisywanie pracowników do wydarzenia
+}{
+    Recepcjonista
+}{
+    Wybranie opcji \quotes{Dodaj pracownika} w kalendarzu.
+}{
+    Aktor jest zalogowany w systemie. \newline
+    Pracownik istnieje w bazie danych.
+}{
+    1. Aktor otrzymuje listę dostępnych pracowników w terminie danego wydarzenia, \newline
+    2. Aktor na podstawie rozmowy telefonicznej z pracownikiem przypisuje go do wydarzenia, \newline
+    3. Aktor zatwierdza wprowadzone zamiany.
+}{
+    1. W przypadku braku dostępnych pracowników w danym terminie aktor wystawia ogłoszenie o poszukiwaniu pracownika. Zakładamy, że szanse na nieznalezienia pracownika są bardzo małe (pomijalne). \newline
+    2. Błąd połączenia z DBMS - system prosi o ponowienie akcji.
+}
+
+\usecase{
+    Dodawanie pracowników do bazy danych
+}{
+    Recepcjonista
+}{
+    Wybranie opcji \quotes{Dodaj nowego pracownika} w panelu głównym.
+}{
+    Aktor jest zalogowany w systemie.
+}{
+    1. Aktor wypełnia formularz dodawania nowego pracownika, \newline
+    2. Aplikacja dokonuje wstępnej walidacji danych (np. poprawność numeru PESEL), \newline
+    3. Aktor zatwierdza wprowadzone zamiany, \newline
+    4. DBMS dodatkowo sprawdza poprawność wprowadzonych danych.
+}{
+    1. W przypadku wprowadzenia nieprawidłowych danych (np. nieprawidłowego numeru PESEL) system poprosi o poprawienie danych. \newline
+    2. Błąd dotyczący nieprawidłowych danych ze strony DBMS - system prosi o poprawienie danych lub w najgorszym wypadku jest to wewnętrzny błąd systemu. \newline
+    3. Błąd połączenia z DBMS - system prosi o ponowienie akcji.
+}
+
+\usecase{
+    Edytowanie danych pracowników
+}{
+    Recepcjonista
+}{
+    Wybranie opcji \quotes{Edytuj dane pracowników} w panelu głównym.
+}{
+    Aktor jest zalogowany w systemie. \newline
+    Pracownik istnieje w bazie danych.
+}{
+    1. Aktor edytuje dane z formularza pracownika, \newline
+    2. Aplikacja dokonuje wstępnej walidacji danych (np. poprawność numeru PESEL), \newline
+    3. Aktor zatwierdza wprowadzone zamiany, \newline
+    4. DBMS dodatkowo sprawdza poprawność wprowadzonych danych.
+}{
+    1. W przypadku wprowadzenia nieprawidłowych danych (np. nieprawidłowego numeru PESEL) system poprosi o ich poprawienie. \newline
+    2. Błąd dotyczący ze strony DBMS - system prosi o poprawienie danych lub w najgorszym wypadku jest to wewnętrzny błąd systemu. \newline
+    3. Błąd połączenia z DBMS - system prosi o ponowienie akcji.
+}
+
+\pagebreak % ^^^ Recepcjonista / Szef kuchni i kucharz vvv
+
+\subsubsection{Przypadki użycia dla szefa kuchni i kucharza}
+
+\usecase{
+    Uzyskiwanie informacji o zamówieniu
+}{
+    Szef kuchni, kucharz
+}{
+    Wybranie opcji \quotes{Informacje o zamówieniu} w kalendarzu.
+}{
+    Aktor jest zalogowany w systemie. \newline
+    Zamówienie istnieje w bazie danych.
+}{
+    1. Aktor wchodzi w kalendarz w panelu głównym, \newline
+    2. Aktor wybiera zamówienie w kalendarzu, po czym wybiera z menu podręcznego opcję \quotes{Informacje o zamówieniu}, \newline
+    3. Aktor otrzymuje informacje o zamówieniu - m.in. listę dań.
+}{
+    1. Błąd połączenia z DBMS - prośba o przeładowanie.
+}
+
+\usecase{
+    Sprawdzanie aktualnego menu
+}{
+    Szef kuchni, kucharz
+}{
+    Wybranie opcji \quotes{Aktualne menu} w panelu głównym.
+}{
+    Aktor jest zalogowany w systemie.
+}{
+    1. Aktor otrzymuje widok aktualnego menu z podziałem na kategorie, \newline
+    2. Aktor może wybrać danie z menu w celu sprawdzenia potrzebnych składników do jego wykonania.
+}{
+    1. Błąd połączenia z DBMS - prośba o przeładowanie.
+}
+
+
+\usecase{
+    Dodawanie dania do menu
+}{
+    Szef kuchni
+}{
+    Wybranie opcji \quotes{Aktualne menu} w panelu głównym.
+}{
+    Aktor jest zalogowany w systemie.
+}{
+    1. Aktor otrzymuje widok aktualnego menu z podziałem na kategorie, \newline
+    2. Aktor wybiera opcję \quotes{Dodaj element}, \newline
+    3. Aktor wypełnia formularz w celu dodania nowego elementu, \newline
+    4. Aplikacja sprawdza poprawność wprowadzonych danych, \newline
+    5. Aktor zatwierdza wprowadzone zmiany, \newline
+    6. Aplikacja wylicza dodatkowe parametry, np. cenę dania, \newline
+    7. DBMS dodatkowo sprawdza poprawność wprowadzonych danych.
+}{
+    1. W przypadku wprowadzenia nieprawidłowych danych aplikacja prosi o ich poprawienie. \newline
+    2. Błąd ze strony DBMS - system prosi o poprawienie danych lub w najgorszym wypadku jest to wewnętrzny błąd systemu. \newline
+    3. Błąd połączenia z DBMS - system prosi o ponowienie akcji.
+}
+
+\usecase{
+    Edytowanie dania w menu
+}{
+    Szef kuchni
+}{
+    Wybranie opcji \quotes{Aktualne menu} w panelu głównym.
+}{
+    Aktor jest zalogowany w systemie. \newline
+    Danie istnieje w bazie danych.
+}{
+    1. Aktor otrzymuje widok aktualnego menu z podziałem na kategorie, \newline
+    2. Aktor wybiera opcję \quotes{Edytuj element}, \newline
+    3. Aktor wypełnia formularz w celu zmienienia danych aktualnego elementu, \newline
+    4. Aplikacja sprawdza poprawność wprowadzonych danych, \newline
+    5. Aktor zatwierdza wprowadzone zmiany, \newline
+    6. Aplikacja wylicza dodatkowe parametry, np. cenę dania na podstawie cen produktów, \newline
+    7. DBMS dodatkowo sprawdza poprawność wprowadzonych danych.
+}{
+    1. W przypadku wprowadzenia nieprawidłowych danych aplikacja prosi o ich poprawienie. \newline
+    2. Błąd ze strony DBMS - system prosi o poprawienie danych lub w najgorszym wypadku jest to wewnętrzny błąd systemu. \newline
+    3. Błąd połączenia z DBMS - system prosi o ponowienie akcji.
+}
+
+\usecase{
+    Sprawdzanie stanu magazynu
+}{
+    Szef kuchni, kucharz
+}{
+    Wybranie opcji \quotes{Stan magazynu} w panelu głównym.
+}{
+    Aktor jest zalogowany w systemie.
+}{
+    1. Aktor po wybraniu opcji \quotes{Stan magazynu} otrzymuje pełną listę produktów znajdujących się w chłodni/magazynie w formie tabeli, \newline
+    2. Aktor może sortować i dodawać filtry do otrzymanej tabeli.
+}{
+    1. Błąd połączenia z DBMS - prośba o przeładowanie.
+}
+
+\usecase{
+    Edycja stanu magazynu (np. zamawianie produktów)
+}{
+    Szef kuchni
+}{
+    Wybranie menu \quotes{Magazyn} w panelu głównym.
+}{
+    Aktor jest zalogowany w systemie.
+}{
+    1. Aktor wybiera opcję \quotes{Edytuj} znajdującą się na ekranie, \newline
+    2. Aktor zmienia ilość danego produktu, \newline
+    3. Aplikacja weryfikuje wprowadzone zmiany, \newline
+    4. Zmiany zostają umieszczone w bazie danych.
+}{
+    1. Błąd połączenia z DBMS - prośba o przeładowanie. \newline
+    2. Nieprawidłowe dane - aplikacja prosi o poprawienie błędów.
+}
+
+\usecase{
+    Edycja listy produktów
+}{
+    Szef kuchni
+}{
+    Wybranie menu \quotes{Produkty} w panelu głównym.
+}{
+    Aktor jest zalogowany w systemie.
+}{
+    1. Aktor wybiera opcję \quotes{Edytuj} znajdującą się na ekranie, \newline
+    2. Aktor dodaje nowy produkt lub edytuje już istniejący, \newline
+    3. Aplikacja weryfikuje wprowadzone zmiany, \newline
+    4. Zmiany zostają umieszczone w bazie danych.
+}{
+    1. Błąd połączenia z DBMS - prośba o przeładowanie. \newline
+    2. Nieprawidłowe dane - aplikacja prosi o poprawienie błędów.
+}
+
+\pagebreak % ^^^ Szef kuchni i kucharz / Dostawca vvv
+
+\subsubsection{Przypadki użycia dla dostawcy}
+
+\usecase{
+    Sprawdzanie dań/produktów, które należy załadować do pojazdu
+}{
+    Dostawca
+}{
+    Wybranie opcji \quotes{Pokaż zawartość zamówienia}
+}{
+    Aktor jest zalogowany w systemie. \newline
+    Sprawdzane zamówienie istnieje w systemie.
+}{
+    1. Aktor wybiera wydarzenie w kalendarzu, \newline
+    2. Aktor wybiera opcję \quotes{Pokaż zawartość zamówienia} dla danego wydarzenia, \newline
+    3. Aktor otrzymuje listę dań, które należy załadować do pojazdu.
+}{
+    1. Błąd połączenia z DBMS - prośba o przeładowanie.
+}
+
+
+\usecase{
+    Sprawdzanie lokalizacji wydarzenia, do którego należy dostarczyć jedzenie
+}{
+    Dostawca
+}{
+    Wybranie opcji \quotes{Pokaż lokalizację wydarzenia} w kalendarzu.
+}{
+    Aktor jest zalogowany w systemie. \newline
+    Wydarzenie istnieje w bazie danych.
+}{
+    1. Aktor wybiera wydarzenie w kalendarzu, \newline
+    2. Aktor wybiera opcję \quotes{Pokaż wydarzenia zdarzenia} dla danego wydarzenia, \newline
+    3. Aktor otrzymuje odnośnik do przeglądarki - otrzymuje widok z \texttt{Google Maps} razem z nawigacją.
+}{
+    1. Błąd połączenia z DBMS - prośba o przeładowanie. 
+}
+
+\subsubsection{Przypadki użycia dla kelnera}
+
+\usecase{
+    Uwzględnianie dodatkowych kosztów zamówienia (np. z powodu uszkodzenia mienia)
+}{
+    Kelner
+}{
+    Wybranie opcji \quotes{Uwzględnij dodatkowe koszty} w kalendarzu
+}{
+    Aktor jest zalogowany w systemie. \newline
+    Wydarzenie istnieje w bazie danych.
+}{
+    1. Aktor wybiera wydarzenie w kalendarzu, \newline
+    2. Aktor wybiera opcję \quotes{Uwzględnij dodatkowe koszty}, \newline
+    3. Aktor wypełnia formularz - opis sytuacji i kwota, \newline
+    4. Aktor wprowadza zmiany do bazy danych, \newline
+}{
+    1. Błąd połączenia z DBMS - prośba o przeładowanie.
+}
+
+\subsubsection{Przypadki dla różnych aktorów}
+
+\usecase{
+    Sprawdzanie swojego grafiku
+}{
+    Dostawca, kelner
+}{
+    Wybranie opcji \quotes{Grafik} w panelu głównym
+}{
+    Aktor jest zalogowany w systemie.
+}{
+    1. Aktor po wybraniu opcji w panelu głównym otrzymuje widok kalendarza, \newline
+    2. W kalendarzu zaznaczone są dni i ramy czasowe, w których pomaga przy obsłudze wydarzenia.
+}{
+    1. Błąd połączenia z DBMS - prośba o przeładowanie.
+}
+
+\subsection{Diagram stanów}
+\begin{center}
+    \includegraphics[scale=0.5448]{app/diagram-stanów-alpha.png}
+\end{center}
+
+\pagebreak % ^^^ Diagram stanów / Diagram sekwencji vvv
+
+\subsection{Diagram sekwencji}
+\texttt{\href{https://drive.google.com/drive/folders/1AHW_von91aril9y62uCa9vJiyDRlB0I8?usp=sharing}{LINK DO DIAGRAMU SEKWENCJI}}
+
+\subsection{Diagram klas}
+\texttt{\href{https://miro.com/app/board/o9J_lL81GTA=/}{LINK DO DIAGRAMU KLAS}}
+
+\section{Projekt ekranów}
+\texttt{\href{https://miro.com/welcomeonboard/SLn3IxMquzxConVpUMeYinhwTCstNizbIMqoJ5DmRT7SJ334ayztDhFYqNAvMOP7}{LINK DO MIRO}}
+
+\section{Wybór narzędzi}
+\begin{table}[h!]
+    \begin{center}
+        \begin{tabular}{c|c|c}
+            Element & Wybrane rozwiązanie & Wersja \\
+            \hline
+            Język programowania & \texttt{Python} & 3.9.5 \\
+            Biblioteka do pracy z DBMS & \texttt{pyodbc} & 4.0.30 \\
+            Biblioteka GUI & \texttt{tkinter} & 8.6 \\
+            Mapa & \texttt{Google Maps} & - \\
+            Widok kalendarza & \texttt{tkcalendar} & 1.6.1 \\
+            Tworzenie wykresów dla raportów & \texttt{matplotlib} & 3.4.2
+        \end{tabular}
+    \end{center}
+\end{table}
+
+\end{document}
