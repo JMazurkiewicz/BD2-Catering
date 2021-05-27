@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B24FEE30-0BA1-7AD2-C9FD-F95949F4E533" name="Vehicles">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 07:34:48 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<ordsAlias>table_9</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Capacity" id="2189F6EE-F850-2BAE-97BC-769F475BDB62">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 07:55:56 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>32</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,32,4</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Fuel_usage" id="4728AAB2-69FD-2E4E-2F39-81B78C7AB316">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 07:55:56 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,8,4</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Vehicle_ID" id="B6BE8A7D-F721-2EFB-C377-A4A87CDD5432">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:05:15 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,8,4</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Dostawa_Dostawa_ID" id="77CB71E4-75B8-E956-FCAC-7940480DAF82">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:11:48 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="20F83BA7-1319-BB8F-A24B-53535501DB1F" referredColumn="2D3DB9C5-27BD-C23B-A630-BA2042549B92"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C8177BC7-CC5A-6033-9733-BE5DA6570E87" name="Samochody_PK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:05:15 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B6BE8A7D-F721-2EFB-C377-A4A87CDD5432"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="128D3702-899C-263D-4085-AAD658E317C2" name="Samochody_Dostawa_FK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:11:48 UTC</createdTime>
+<generatorID>2D68923A-38D6-37A4-41EB-99209C28AA3B</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="77CB71E4-75B8-E956-FCAC-7940480DAF82"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

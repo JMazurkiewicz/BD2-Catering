@@ -1,0 +1,90 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="982AD882-0040-24C9-1981-15CB3C2886E2" name="Relation_13">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:11:48 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Pozycja_na_karcie_Pozycja_na_karcie_ID" id="BB378085-B203-12F7-77B9-FC04CB3F8924">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:11:48 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Produkt_Nr_katalogowy" id="10E93354-B052-16CB-F2F0-3C0993587DE1">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:11:48 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>,8,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DB0F7497-A4AC-AF7D-2B62-6C0F4F008861" referredColumn="E9598FA6-A7C5-D6C5-7F30-74C4B03E78C8"/>
+</associations>
+</Column>
+<Column name="Pozycja_na_karcie_Item_ID" id="21EE233F-AB40-76C1-FF02-FB11019D914C">
+<createdBy>damia</createdBy>
+<createdTime>2021-05-18 21:10:55 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="75A25619-E9B2-C0AD-6EAD-400D62C04168" referredColumn="7BF82D9A-77BC-6A07-73AF-8CD36E595930"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="40AADC6E-7EF8-66BF-AFF9-EEFB2E66A3EB" name="Relation_13_PK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:11:48 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BB378085-B203-12F7-77B9-FC04CB3F8924"/>
+<colUsage columnID="10E93354-B052-16CB-F2F0-3C0993587DE1"/>
+<colUsage columnID="21EE233F-AB40-76C1-FF02-FB11019D914C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="64A3EBF8-40D5-DC9F-9384-25620BC88DD5" name="Relation_13_Produkt_FK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:11:48 UTC</createdTime>
+<generatorID>D8C3E68B-058C-1A5E-16F2-EC6E8AEB9161</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="10E93354-B052-16CB-F2F0-3C0993587DE1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="965726A5-C4AA-2F86-2755-24F29991607B" name="Relation_13_Pozycja_na_karcie_FK">
+<createdBy>damia</createdBy>
+<createdTime>2021-05-18 21:10:55 UTC</createdTime>
+<generatorID>D8C3E68B-058C-1A5E-16F2-EC6E8AEB9161</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="21EE233F-AB40-76C1-FF02-FB11019D914C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

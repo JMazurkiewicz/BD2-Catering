@@ -1,0 +1,96 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D85E55CA-5D5B-31E0-D2D8-95589FA6D557" name="Product">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:06:00 UTC</createdTime>
+<generatorID>B90CA7D6-D07D-FDC7-1E00-406A1A744AF9</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Catalog_number" id="F93C6C8D-0D83-E237-6789-CA879A68B585">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:06:00 UTC</createdTime>
+<generatorID>E9598FA6-A7C5-D6C5-7F30-74C4B03E78C8</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Name" id="C739509D-69B7-1080-F83D-0C3CC6C2ED13">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:06:00 UTC</createdTime>
+<generatorID>564E87CF-05FF-80DC-B25D-B54604618E35</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32 CHAR</dataTypeSize>
+<ownDataTypeParameters>32 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Wholesale_price" id="E53D972C-89CA-CCBF-D38E-4220391DD6F2">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:06:00 UTC</createdTime>
+<commentInRDBMS><![CDATA[> 0]]></commentInRDBMS>
+<generatorID>47A5083C-01F5-EB6A-7CB5-78B437327CF5</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,5,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Batch_number" id="9DBCB0DB-0AF1-9807-6421-A40735DD6434">
+<createdBy>damia</createdBy>
+<createdTime>2021-05-18 20:07:36 UTC</createdTime>
+<generatorID>F20D1784-4618-198E-ADEB-14246C1942C2</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>894A4316-3F51-4535-BE3E-90B2AEE3703E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="0EC439C4-3641-4112-2C34-16C04921A6EE" name="Produkt PK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:06:00 UTC</createdTime>
+<generatorID>6C94915B-5A91-8C76-ACB6-CC744954A957</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>F93C6C8D-0D83-E237-6789-CA879A68B585</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,66 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FCEB3691-3E2F-25E9-66A6-7D54B7AE9DCD" name="Additional_costs">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 07:33:31 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<ordsAlias>table_4</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Value" id="03ABC3A3-9409-117B-BE7B-9C608B68418B">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 07:47:52 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Cause" id="D0F5A083-5C88-3ECF-9E3B-8D739EB99CBD">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 07:48:17 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Zmówienie_id_zamówienia" id="44D6A1F1-AD7C-0C48-B821-A9730EAD1374">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:11:48 UTC</createdTime>
+<generatorID>2C17D41D-A35F-7F6B-06F0-D1D0D0F6DCC8</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>32</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,32,4</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A86A0382-7DC9-A8AC-27E8-A68418EE040F" referredColumn="082D4F17-18CB-258F-D915-B02E4EACC6A3"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2A16CF98-132D-E49B-0531-EC3783C47243" name="Dodatkowe_koszty_Zmówienie_FK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:11:48 UTC</createdTime>
+<generatorID>C5A9B01F-711F-3565-8C1B-03C86D3C37E0</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="44D6A1F1-AD7C-0C48-B821-A9730EAD1374"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

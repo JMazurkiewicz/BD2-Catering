@@ -1,0 +1,148 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="47BB3FBB-76DC-D092-369D-B54E4A5295FD" name="Address">
+<createdBy>damia</createdBy>
+<createdTime>2021-05-18 20:28:20 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Address_ID" id="0B885956-7A59-2E73-5B6A-CD7CBBC0DCA3">
+<createdBy>damia</createdBy>
+<createdTime>2021-05-18 20:32:18 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Postal_code" id="95839CA8-E3CD-AE20-A763-1E02643548BE">
+<createdBy>damia</createdBy>
+<createdTime>2021-05-18 20:31:08 UTC</createdTime>
+<commentInRDBMS><![CDATA[Weryfikacja regexem.]]></commentInRDBMS>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>6 CHAR</dataTypeSize>
+<ownDataTypeParameters>6 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Street_name" id="10439B01-157B-B362-6435-2B73314EB3C9">
+<createdBy>damia</createdBy>
+<createdTime>2021-05-18 20:28:25 UTC</createdTime>
+<generatorID>04A3C0E9-A009-CE7F-7A5C-E250E72FAD98</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>16 BYTE</dataTypeSize>
+<ownDataTypeParameters>16 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Building_number" id="A0B079BF-F364-E5CD-0CF6-D114A3859333">
+<createdBy>damia</createdBy>
+<createdTime>2021-05-18 20:28:51 UTC</createdTime>
+<commentInRDBMS><![CDATA[Czy jest to prawdilowy numer?]]></commentInRDBMS>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Apartment_number" id="7050FF73-C02C-5BF9-E527-D4E985937748">
+<createdBy>damia</createdBy>
+<createdTime>2021-05-18 20:29:52 UTC</createdTime>
+<commentInRDBMS><![CDATA[Czy jest to prawdilowy numer?]]></commentInRDBMS>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Client_ID" id="87F9D204-406A-E609-985F-581982A60AB3">
+<createdBy>damia</createdBy>
+<createdTime>2021-05-18 21:05:22 UTC</createdTime>
+<generatorID>667B173C-A0F6-1548-E685-DEE60A828568</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<referedAttribute>D4016EA6-9565-2629-427E-69ABFDE7BC43</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="City_ID" id="E224DBFE-BC93-1209-272D-ACD52EC69951">
+<createdBy>damia</createdBy>
+<createdTime>2021-05-18 21:05:43 UTC</createdTime>
+<generatorID>A7A092EF-F538-EE60-5F61-0B7DA217D75B</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<referedAttribute>E79FAD62-E240-07C5-5748-B8D270934414</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Delivery_id" id="8C00A72F-E50C-9203-EE6B-F9FCF57907D6">
+<createdBy>mazku</createdBy>
+<createdTime>2021-05-19 18:43:42 UTC</createdTime>
+<generatorID>8CB679A2-6CF4-90C4-B45C-C43EF260DD2D</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<referedAttribute>19797ECE-122B-1365-3018-C937DAB190BF</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="12E3F7F2-4B49-69A3-6D2D-E2ADB9DE85E2" name="Address PK">
+<createdBy>damia</createdBy>
+<createdTime>2021-05-18 20:31:57 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>0B885956-7A59-2E73-5B6A-CD7CBBC0DCA3</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

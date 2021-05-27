@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="37EBDB7B-7D6D-8D24-F0F1-F17C7CFB71D7" name="Additional_information">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:09:41 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Info_id" id="B52FD8D2-369B-FC0B-2B7D-9E3548FEF5D4">
+<createdBy>mazku</createdBy>
+<createdTime>2021-05-27 12:27:51 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Information" id="8F1AAA12-9630-0531-9FB2-F1F8A260980C">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:09:52 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="D427C519-A2DF-2A63-158A-2E36A7F00F31" name="Additional_information PK">
+<createdBy>mazku</createdBy>
+<createdTime>2021-05-19 18:44:15 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>B52FD8D2-369B-FC0B-2B7D-9E3548FEF5D4</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="C65045A8-10A9-FD08-30AC-D2F3702E0356" name="Information_unique">
+<createdBy>mazku</createdBy>
+<createdTime>2021-05-19 18:57:07 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<newElementsIDs>8F1AAA12-9630-0531-9FB2-F1F8A260980C</newElementsIDs>
+<usedAttributes>
+<attributeRef>8F1AAA12-9630-0531-9FB2-F1F8A260980C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

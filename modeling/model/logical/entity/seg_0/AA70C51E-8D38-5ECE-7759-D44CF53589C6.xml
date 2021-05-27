@@ -1,0 +1,108 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="AA70C51E-8D38-5ECE-7759-D44CF53589C6" name="Ordered_meals">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:06:00 UTC</createdTime>
+<generatorID>82A05C53-DCEC-200E-8928-976386268F02</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Ordered_meal_id" id="C9F7876B-D1C0-A68F-0C49-ACA6DD535F83">
+<createdBy>mazku</createdBy>
+<createdTime>2021-05-19 18:40:55 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Number_of_ordered_meals" id="D677B561-2916-4038-EF2A-19788B7D3CE0">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:06:00 UTC</createdTime>
+<commentInRDBMS><![CDATA[> 0]]></commentInRDBMS>
+<generatorID>B2BF43F9-33AE-2E21-B6F4-FAC52BF71ECA</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,8,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Additional_instructions" id="0A0D883D-68A3-399B-A529-990FFA3BDEC6">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:06:00 UTC</createdTime>
+<generatorID>984F636D-40AF-C2AA-1082-A4600F484D1C</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32 BYTE</dataTypeSize>
+<ownDataTypeParameters>32 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Order_ID" id="B63CADE5-693F-F834-3A42-AB1974404AFC">
+<createdBy>arsze</createdBy>
+<createdTime>2021-05-13 08:08:58 UTC</createdTime>
+<generatorID>DB70D415-4AE0-A764-D198-602A5F57FC31</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<referedAttribute>57368E0A-91C0-EA81-0048-CF23CC88235F</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>32</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Item_ID" id="05A70F4F-0FC9-0247-BEAB-4B85FFDBE90C">
+<createdBy>damia</createdBy>
+<createdTime>2021-05-18 19:52:40 UTC</createdTime>
+<generatorID>02D88B99-13DB-B0C7-4943-70CDB732677C</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<referedAttribute>7DE75B47-A0AC-B679-9AC9-CB41AB4E9C68</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="42E8447F-7D30-D34E-5A19-512D533CAD34" name="Ordered_meals PK">
+<createdBy>mazku</createdBy>
+<createdTime>2021-05-19 18:41:43 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>C9F7876B-D1C0-A68F-0C49-ACA6DD535F83</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
