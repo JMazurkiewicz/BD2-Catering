@@ -15,7 +15,20 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="Type" id="702C592A-6036-5550-12DD-E2DCC99C30A3">
+<Attribute name="Storage_id" id="35BFA258-38A5-36B1-1A99-86A9A3FF184A">
+<createdBy>mazku</createdBy>
+<createdTime>2021-05-27 12:29:32 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Name" id="702C592A-6036-5550-12DD-E2DCC99C30A3">
 <createdBy>damia</createdBy>
 <createdTime>2021-05-18 20:08:25 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
@@ -25,8 +38,8 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>10 CHAR</dataTypeSize>
-<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="Batch_number" id="1C6C41EF-27E9-7122-4774-EEB8B3D09506">
 <createdBy>damia</createdBy>
@@ -42,7 +55,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>15 CHAR</dataTypeSize>
-<ownDataTypeParameters>15 CHAR,,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
@@ -54,6 +67,18 @@
 <item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
 </engineerTo>
 <pk>true</pk>
+<usedAttributes>
+<attributeRef>35BFA258-38A5-36B1-1A99-86A9A3FF184A</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="F90956B3-37E2-6AD2-05D1-54324F514E39" name="Unique_name">
+<createdBy>mazku</createdBy>
+<createdTime>2021-05-27 12:30:18 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<newElementsIDs>702C592A-6036-5550-12DD-E2DCC99C30A3</newElementsIDs>
 <usedAttributes>
 <attributeRef>702C592A-6036-5550-12DD-E2DCC99C30A3</attributeRef>
 </usedAttributes>

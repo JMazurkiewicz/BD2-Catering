@@ -109,21 +109,6 @@
 <dataTypeScale>4</dataTypeScale>
 <ownDataTypeParameters>,32,4</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Type_name" id="1EB9DB54-0B85-C67E-AE6A-38249F8049A5">
-<createdBy>arsze</createdBy>
-<createdTime>2021-05-13 08:06:56 UTC</createdTime>
-<generatorID>BF4A4FD5-7D5E-300D-D55B-F4FA215E3036</generatorID>
-<ownerDesignName>model</ownerDesignName>
-<engineerTo>
-<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
-</engineerTo>
-<referedAttribute>79288A14-A38B-077A-FEE0-949AE32A4833</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>16 BYTE</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="Order_ID" id="C6193B92-497E-DF47-7C9B-6BD831587EFC">
 <createdBy>arsze</createdBy>
 <createdTime>2021-05-13 08:07:36 UTC</createdTime>
@@ -139,7 +124,7 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>32</dataTypePrecision>
 <dataTypeScale>4</dataTypeScale>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,32,4</ownDataTypeParameters>
 </Attribute>
 <Attribute name="Address_ID" id="C270C45C-ADFC-FD11-96D8-86A233AFF0A0">
 <createdBy>damia</createdBy>
@@ -171,6 +156,20 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Employee_type_id" id="20099C64-3A7E-4D15-F499-8E1EE495CF3F">
+<createdBy>mazku</createdBy>
+<createdTime>2021-05-27 12:27:30 UTC</createdTime>
+<generatorID>BF4A4FD5-7D5E-300D-D55B-F4FA215E3036</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<referedAttribute>B20E55B4-5B96-F4E9-5EE7-63B8112B43A2</referedAttribute>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>

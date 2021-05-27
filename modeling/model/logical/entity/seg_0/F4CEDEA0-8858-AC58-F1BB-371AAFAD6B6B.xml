@@ -1,8 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="5CE8F523-15A4-D709-BEA5-B04810348E01" name="Allergen">
-<createdBy>arsze</createdBy>
-<createdTime>2021-05-13 08:06:00 UTC</createdTime>
-<generatorID>161F997F-CD44-B021-DEE1-EA364B5E81F3</generatorID>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F4CEDEA0-8858-AC58-F1BB-371AAFAD6B6B" name="Event_type">
+<createdBy>mazku</createdBy>
+<createdTime>2021-05-27 12:31:44 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
 <item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
@@ -16,9 +15,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="Allergen_id" id="71E2B084-CFAC-C6E9-406D-74489521BE35">
+<Attribute name="Event_type_id" id="F6A8A095-555F-B390-CDCC-531566984A85">
 <createdBy>mazku</createdBy>
-<createdTime>2021-05-27 12:28:14 UTC</createdTime>
+<createdTime>2021-05-27 12:31:50 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
 <item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
@@ -29,10 +28,9 @@
 <dataTypePrecision>3</dataTypePrecision>
 <ownDataTypeParameters>,3,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Name" id="91C0471A-DA7E-4755-7A08-1EE6571E97EB">
-<createdBy>arsze</createdBy>
-<createdTime>2021-05-13 08:06:00 UTC</createdTime>
-<generatorID>3B8D13F0-9691-07B0-C868-3832A6274074</generatorID>
+<Attribute name="Event_name" id="F700F51B-2118-E2CD-2B8F-51D807DE5CC8">
+<createdBy>mazku</createdBy>
+<createdTime>2021-05-27 12:32:07 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
 <item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
@@ -40,25 +38,31 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20 CHAR</dataTypeSize>
-<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="DAD95663-564F-E954-5E09-74FCBBC5047D" name="Allergen PK">
-<createdBy>arsze</createdBy>
-<createdTime>2021-05-13 08:06:00 UTC</createdTime>
-<generatorID>DC874F0B-330C-0023-B34A-5154ABF721ED</generatorID>
+<identifier id="07E22BAA-3379-3DB9-E90C-99A0F6F82D52" name="Event_type PK">
+<createdBy>mazku</createdBy>
+<createdTime>2021-05-27 12:32:04 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="false"/>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
 </engineerTo>
 <pk>true</pk>
-<newElementsIDs>71E2B084-CFAC-C6E9-406D-74489521BE35</newElementsIDs>
 <usedAttributes>
-<attributeRef>71E2B084-CFAC-C6E9-406D-74489521BE35</attributeRef>
+<attributeRef>F6A8A095-555F-B390-CDCC-531566984A85</attributeRef>
 </usedAttributes>
+</identifier>
+<identifier id="0F4291A2-265F-6015-D651-45F8B682E719" name="Unique_name">
+<createdBy>mazku</createdBy>
+<createdTime>2021-05-27 12:32:46 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<newElementsIDs>F700F51B-2118-E2CD-2B8F-51D807DE5CC8</newElementsIDs>
 </identifier>
 </identifiers>
 </Entity>

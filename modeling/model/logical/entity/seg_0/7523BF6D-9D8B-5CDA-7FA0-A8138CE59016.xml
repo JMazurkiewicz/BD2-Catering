@@ -91,20 +91,6 @@
 <dataTypeScale>2</dataTypeScale>
 <ownDataTypeParameters>,8,2</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Event_type" id="1EE7A1A1-2D4C-0C04-E145-3F0C2FC98DFA">
-<createdBy>arsze</createdBy>
-<createdTime>2021-05-13 08:06:00 UTC</createdTime>
-<generatorID>321486BC-0804-244E-B83F-AB2FF8160B39</generatorID>
-<ownerDesignName>model</ownerDesignName>
-<engineerTo>
-<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>50 CHAR</dataTypeSize>
-<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="Waiters_needed" id="02E7E6EB-DA91-8ACB-5E17-F68AFDAA95FF">
 <createdBy>arsze</createdBy>
 <createdTime>2021-05-13 08:06:00 UTC</createdTime>
@@ -131,7 +117,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>5</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="Delivery_id" id="28CA51C0-BAF2-B74F-03B4-8F5305917015">
 <createdBy>mazku</createdBy>
@@ -146,6 +132,21 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Event_type_id" id="AB00241E-AE4D-6102-7A8D-9A218286D6AE">
+<createdBy>mazku</createdBy>
+<createdTime>2021-05-27 12:34:10 UTC</createdTime>
+<generatorID>46CEDAFD-5C6A-97CC-9237-9575420867C3</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<referedAttribute>F6A8A095-555F-B390-CDCC-531566984A85</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
