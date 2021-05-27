@@ -1,2 +1,20 @@
 # BD2-Catering
-Catering database.
+
+## Instalowanie zależności
+
+```bash
+pip install -r tools/requirements.txt
+```
+
+## Uruchamianie aplikacji
+
+```bash
+cd app/src
+python main.py
+```
+
+## Uruchamianie testów
+
+```bash
+pytest app/tests
+```

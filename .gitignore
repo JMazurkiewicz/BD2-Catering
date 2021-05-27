@@ -1,1 +1,7 @@
-__*__
+__priv
+__pycache__
+.vs*
+build/
+.pytest_cache/
+*.pyc
+*.exe
