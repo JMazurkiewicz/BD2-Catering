@@ -178,11 +178,12 @@ Alternatywa:
 \section{Etap 2}
 
 \subsection{Model logiczny}
-
 \noindent \texttt{\href{https://github.com/JMazurkiewicz/BD2-Catering/blob/modeling/docs/logical-model.pdf}{LINK DO MODELU LOGICZNEGO}}
 
-\subsection{Opis więzów integralności}
+\subsubsection{Trzecia postać normalna}
+Stworzony przez nas model logiczny został sprowadzony do trzeciej postaci normalnej. Świadczy o tym fakt, że w encjach żaden atrybut niekluczowy nie zależy od innych atrybutów niekluczowych.
 
+\subsubsection{Opis więzów integralności}
 \noindent \texttt{\href{https://wutwaw-my.sharepoint.com/:x:/g/personal/01143627_pw_edu_pl/ESLyg2i21LRBgUp8RWfRSLgB-xCOXny2bD24kXWuZf6KzA?rtime=QEzI1x4e2Ug}{LINK DO OPISU WIĘZÓW INTEGRALNOŚCI}}
 
 \subsection{Projekt aplikacji}
@@ -190,7 +191,6 @@ Alternatywa:
 \noindent Projekt aplikacji znajduje się w pliku \texttt{app.pdf} (\texttt{app.tex}).
 
 \subsection{Opis wymagań funkcjonalnych}
-
 \subsubsection{Bezpieczeństwo}
 Każdy użytkownik bazy danych ma generowane swój własny login i hasło do logowania do aplikacji oraz do bazy danych. Każdemu użytkownikowi nadawana jest rola i idą za nią uprawnienia. Oprócz tego konta administratorów są chronione \quotes{firewallem} i niezbędne jest podanie swojego adresu IP i wprowadzenie go w panelu administratora na stronie Microsoft Azure.
 
