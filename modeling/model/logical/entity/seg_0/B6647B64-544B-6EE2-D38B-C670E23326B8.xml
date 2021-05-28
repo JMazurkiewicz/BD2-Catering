@@ -45,22 +45,7 @@
 <dataTypeScale>2</dataTypeScale>
 <ownDataTypeParameters>,16,2</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Number_of_vehicles" id="A25D2816-E03B-4426-9450-2F45F69E8C7E">
-<createdBy>arsze</createdBy>
-<createdTime>2021-05-13 08:06:00 UTC</createdTime>
-<commentInRDBMS><![CDATA[>= 0 && < ILOSC_POJAZDOW]]></commentInRDBMS>
-<generatorID>F89004C1-71EB-B38F-7E3E-CDE6E66E36D4</generatorID>
-<ownerDesignName>model</ownerDesignName>
-<engineerTo>
-<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>2</dataTypePrecision>
-<ownDataTypeParameters>,2,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="Delivery_tips" id="065EEEBE-D0C3-1651-404C-4C4C2CCC3646">
+<Attribute name="Delivery_hints" id="065EEEBE-D0C3-1651-404C-4C4C2CCC3646">
 <createdBy>damia</createdBy>
 <createdTime>2021-05-18 21:00:26 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>

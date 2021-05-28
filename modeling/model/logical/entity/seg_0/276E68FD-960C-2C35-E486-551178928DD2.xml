@@ -63,22 +63,6 @@
 <dataTypeScale>4</dataTypeScale>
 <ownDataTypeParameters>,8,4</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Delivery_id" id="A747B263-2B9E-57D0-56EA-1C11F61F0AF4">
-<createdBy>mazku</createdBy>
-<createdTime>2021-05-19 18:43:42 UTC</createdTime>
-<generatorID>2D68923A-38D6-37A4-41EB-99209C28AA3B</generatorID>
-<ownerDesignName>model</ownerDesignName>
-<engineerTo>
-<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<referedAttribute>19797ECE-122B-1365-3018-C937DAB190BF</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>7</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="A9759263-04D7-447B-7A38-BA8FE32DA138" name="Samochody PK">
