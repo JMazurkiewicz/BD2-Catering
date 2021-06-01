@@ -2,54 +2,40 @@
 # @author Jakub Mazurkiewicz
 
 import tkinter as tk
-import view
-from model import AuthorizationModel
+from view.formview import FormView
 
-ENTRY_WIDTH = 30
-WELCOME = 'Catering control panel'
+class AuthorizationView(FormView):
+    def __init__(self, parent):
+        FormView.__init__(self, parent)
+    
+        #self.main_label = tk.Label(self, anchor=tk.CENTER, text='Catering control panel')
+        self.add_entry('login').set_description('Login')
+        self.add_entry('password').set_description('Password')
 
-class AuthorizationView(view.View):
-    def __init__(self, parent, *args, **kwargs):
-        view.View.__init__(self, parent, *args, **kwargs)
-        self.set_model(AuthorizationModel())
-        
-        self.main_label = tk.Label(self, anchor=tk.CENTER, text=WELCOME)
+        #self.login_button = tk.Button(self, text='Log me in')
+        #self.info_label = tk.Label(self)
 
-        self.login_label = tk.Label(self, text='Login')
-        self.login_entry = tk.Entry(self, width=ENTRY_WIDTH)
-
-        self.password_label = tk.Label(self, text='Password')
-        self.password_entry = tk.Entry(self, show='*', width=ENTRY_WIDTH)
-
-        self.login_button = tk.Button(self, text='Log me in')
-        self.info_label = tk.Label(self)
-        
-        self.__build_gui()
+        self.__build_grid()
         self.__build_commands()
         
-        #self.grid_rowconfigure(0, weight=1)
-        #self.grid_columnconfigure(0, weight=1)
-        self.pack()
-        
+        self.grid_rowconfigure(0, weight=1)
+        self.grid_columnconfigure(0, weight=1)
+        self.grid(columnspan=10, rowspan=10)
 
-    def __build_gui(self):
-        self.main_label.grid(column=0, columnspan=3, row=0)
 
-        self.login_label.grid(column=0, row=1)
-        self.login_entry.grid(column=1, columnspan=2, row=1)
-
-        self.password_label.grid(column=0, row=2)
-        self.password_entry.grid(column=1, columnspan=2, row=2)
-
-        self.login_button.grid(column=1, row=3)
-        self.info_label.grid(column=0, columnspan=3, row=4)
+    def __build_grid(self):
+        #self.main_label.grid(column=0, row=0)
+        self.entry_container.grid(column=0, row=1, rowspan=2)
+        #self.login_button.grid(column=0, row=3)
+        #self.info_label.grid(column=0, row=4)
 
 
     def __build_commands(self):
-        self.login_button.configure(command=self.on_button_click)
+        pass#self.login_button.configure(command=self.on_button_click)
 
 
     def on_button_click(self):
+        return None
         login = self.login_entry.get()
         password = self.password_entry.get()
 
