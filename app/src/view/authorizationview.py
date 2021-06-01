@@ -10,7 +10,7 @@ WELCOME = 'Catering control panel'
 
 class AuthorizationView(view.View):
     def __init__(self, parent, *args, **kwargs):
-        tk.Frame.__init__(self, parent, *args, **kwargs)
+        view.View.__init__(self, parent, *args, **kwargs)
         self.set_model(AuthorizationModel())
         
         self.main_label = tk.Label(self, anchor=tk.CENTER, text=WELCOME)

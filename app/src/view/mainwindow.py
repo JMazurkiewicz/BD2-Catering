@@ -4,7 +4,7 @@
 import tkinter as tk
 from os import path
 
-from view.authorizationview import AuthorizationView
+from view.formentryview import FormEntryView
 
 class MainWindow(tk.Tk):
     def __init__(self):
@@ -14,5 +14,7 @@ class MainWindow(tk.Tk):
 
         self.iconphoto(False, tk.PhotoImage(file='view/img/cheese.png'))
 
-        self.authorization_view = AuthorizationView(self)
+        self.x = FormEntryView(self)
+        self.x.set_description('TEST')
+        self.x.set_error('ERROR :((')
                 

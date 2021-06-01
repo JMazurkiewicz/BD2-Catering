@@ -1,21 +1,30 @@
 #!/usr/bin/env python
 # @author Jakub Mazurkiewicz
 
-from view import View
+from view.view import View
 import tkinter as tk
 
-class FromEntryView(View):
-    def __init__(self, parent, name, grid_style='default'):
-        super.__init__(self, parent)
+DEFAULT_FORM_ENTRY_WIDTH = 30
 
-        self.entry = tk.Entry()
+class FormEntryView(View):
+    def __init__(self, parent, grid_style='default'):
+        super().__init__(self, parent)
+
         self.description = tk.Label()
-        self.error_label = tk.Label()
+        self.entry = tk.Entry(width=DEFAULT_FORM_ENTRY_WIDTH)
+        self.error_label = tk.Label(fg='red')
 
-        self.entry_name = name
         self.validator = lambda: None
 
         self.__build_grid(grid_style)
+
+
+    def set_description(self, description):
+        self.description.configure(text=description)
+
+
+    def set_width(self, new_width):
+        self.entry.configure(width=new_width)
 
 
     def set_validator(self, validator):
@@ -36,6 +45,6 @@ class FromEntryView(View):
 
 
     def __build_default_grid(self):
-        self.entry.grid(column=0, columnspan=2)
-        self.description.grid(column=2, columnspan=5)
-        self.description.grid(column=7, columnspan=3)
+        self.description.grid(column=0, columnspan=2, row=0)
+        self.entry.grid(column=3, columnspan=5, row=0)
+        self.error_label.grid(column=8, columnspan=3, row=0)
