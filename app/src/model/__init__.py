@@ -1,4 +1,6 @@
 #!/usr/bin/env python
-# @author: Jakub Mazurkiewicz
+# @author Jakub Mazurkiewicz
 
-from model.authorizationmodel import AuthorizationModel
+from model.model import *
+
+from model.authorizationmodel import *

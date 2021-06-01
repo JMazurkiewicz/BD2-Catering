@@ -1,9 +1,10 @@
 #!/usr/bin/env python
-# @author: Jakub Mazurkiewicz
+# @author Jakub Mazurkiewicz
 
+import model
 import pyodbc
 
-class AuthorizationModel:
+class AuthorizationModel(model.Model):
     def __init__(self):
         self.login = ''
         self.password = ''

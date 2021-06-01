@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# @author: Jakub Mazurkiewicz
+# @author Jakub Mazurkiewicz
 
 import tkinter as tk
 from os import path

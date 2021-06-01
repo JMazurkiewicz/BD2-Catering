@@ -1,17 +1,18 @@
 #!/usr/bin/env python
-# @author: Jakub Mazurkiewicz
+# @author Jakub Mazurkiewicz
 
 import tkinter as tk
+import view
 from model import AuthorizationModel
 
 ENTRY_WIDTH = 30
 WELCOME = 'Catering control panel'
 
-class AuthorizationView(tk.Frame):
+class AuthorizationView(view.View):
     def __init__(self, parent, *args, **kwargs):
         tk.Frame.__init__(self, parent, *args, **kwargs)
+        self.set_model(AuthorizationModel())
         
-        self.model = AuthorizationModel()
         self.main_label = tk.Label(self, anchor=tk.CENTER, text=WELCOME)
 
         self.login_label = tk.Label(self, text='Login')
@@ -69,6 +70,7 @@ class AuthorizationView(tk.Frame):
         except Exception:
             self.__print_error_info('Authorization error!')
             return
+
 
     def __print_error_info(self, str):
         self.info_label.configure(fg='red')

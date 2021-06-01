@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# @author: Jakub Mazurkiewicz
+# @author Jakub Mazurkiewicz
 
 from view import MainWindow
 import os
