@@ -4,7 +4,8 @@
 import tkinter as tk
 
 class View(tk.Frame):
-    def __init__(self):
+    def __init__(self, parent, *args, **kwargs):
+        tk.Frame.__init__(parent, *args, **kwargs)
         self.model = None
 
     

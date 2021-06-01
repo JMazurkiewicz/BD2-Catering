@@ -5,7 +5,9 @@ from view import View
 import tkinter as tk
 
 class FromEntryView(View):
-    def __init__(self, name, grid_style='default'):
+    def __init__(self, parent, name, grid_style='default'):
+        super.__init__(self, parent)
+
         self.entry = tk.Entry()
         self.description = tk.Label()
         self.error_label = tk.Label()
