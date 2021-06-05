@@ -1,0 +1,92 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1152662C-6F95-D703-A3DC-760E8D38157C" name="Product">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>D85E55CA-5D5B-31E0-D2D8-95589FA6D557</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Catalog_number" id="1F2BBC04-72D4-0C65-099A-D23766A1FD9A">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>F93C6C8D-0D83-E237-6789-CA879A68B585</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Name" id="2E575072-A392-D55D-054F-91FD533E48A4">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>C739509D-69B7-1080-F83D-0C3CC6C2ED13</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32 CHAR</dataTypeSize>
+<ownDataTypeParameters>32 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Wholesale_price" id="F500FEDC-1625-64AB-0779-BF71D14B308E">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[> 0]]></commentInRDBMS>
+<generatorID>E53D972C-89CA-CCBF-D38E-4220391DD6F2</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,5,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Stored_products_Batch_number" id="CA917B0D-A5B0-3697-DD9F-CED78B7C9427">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>9DBCB0DB-0AF1-9807-6421-A40735DD6434</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2B1380FB-B75D-2CF2-BDF3-8ECCAA3B89FF" referredColumn="D2182C89-9C46-A9DA-4490-C76DFDA027BF"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="78426412-6F51-BA29-BCE3-7C66DD373982" name="Product_PK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>0EC439C4-3641-4112-2C34-16C04921A6EE</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1F2BBC04-72D4-0C65-099A-D23766A1FD9A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="14FB0749-445C-C617-43B1-1CDE7E946BDE" name="Product_Stored_products_FK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>F20D1784-4618-198E-ADEB-14246C1942C2</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CA917B0D-A5B0-3697-DD9F-CED78B7C9427"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

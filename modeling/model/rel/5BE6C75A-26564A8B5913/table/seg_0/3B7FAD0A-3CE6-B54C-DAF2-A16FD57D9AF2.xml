@@ -1,0 +1,252 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3B7FAD0A-3CE6-B54C-DAF2-A16FD57D9AF2" name="Employee">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>FA82F00A-45B4-3DAD-FDA2-6EA9838F2C78</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Employee_ID" id="62E4ACFC-8EA1-C7C7-B014-2D0B3365B050">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[aS]]></commentInRDBMS>
+<generatorID>2C4FA7C2-A579-230B-6268-6053CD7707DD</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,8,4</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Name" id="97F86EC8-B830-ECBF-B0F4-46EC825D7A65">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[Zaczyna się wielką literą.]]></commentInRDBMS>
+<generatorID>29D6E972-3274-B613-7F1A-47BFDBB260E9</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32 CHAR</dataTypeSize>
+<ownDataTypeParameters>32 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Surname" id="36E39730-3F32-0DC3-9D07-E0621F5E8F6E">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[Zaczyna się wielką literą.]]></commentInRDBMS>
+<generatorID>1DD20555-B78B-310E-9C6E-29D2F51C315A</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32 CHAR</dataTypeSize>
+<ownDataTypeParameters>32 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Pesel" id="139C0DB4-F5E7-07AA-1C4B-04920803841C">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[Weryfikacja numeru PESEL (algorytm na wikipedii).]]></commentInRDBMS>
+<generatorID>614AB9D8-4DFA-ED63-11F0-F3D477704C2E</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>32</dataTypePrecision>
+<ownDataTypeParameters>,32,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Phone_number" id="3DE03A97-E786-EC74-8989-2D600C50C277">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[Weryfikacja regexem.]]></commentInRDBMS>
+<generatorID>E8658A30-42E1-5AB5-112C-831AC878E7B1</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<ownDataTypeParameters>,12,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Bank_account_number" id="E8FCB98A-217B-3FB0-ABDD-A641785BC988">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[Weryfikacja numeru konta (na wiki).]]></commentInRDBMS>
+<generatorID>2691B598-14E2-F11B-BD57-8C6C62ACCC88</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>32</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,32,4</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Order_Order_ID" id="0B4105FE-BB06-8981-CD72-1340C2F24BDD">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>C6193B92-497E-DF47-7C9B-6BD831587EFC</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>32</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C7FB0939-4026-2AF1-7B43-A8B3439D0637" referredColumn="511D4147-DD73-94BC-2A95-A53CA932609D"/>
+</associations>
+</Column>
+<Column name="Address_Address_ID" id="68D343DD-4A6C-2713-B641-0D92FE8AC952">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>C270C45C-ADFC-FD11-96D8-86A233AFF0A0</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6B241AB5-20AA-14EB-EB97-9791BACBDCDF" referredColumn="92AE9613-41EF-7BC0-663B-B40BF8DE95AC"/>
+</associations>
+</Column>
+<Column name="Delivery_Delivery_id" id="ABC72612-90A6-0FF7-026C-9D93777840AE">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>D1826D83-B7BB-7DE5-A78F-F53AEBCC804F</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4D277FC6-E1F9-88A9-7D63-B4053A57EC4D" referredColumn="9AC1DF9D-8C37-BF7D-1107-3C86B213B31A"/>
+</associations>
+</Column>
+<Column name="Employee_type_Employee_type_id" id="8C724897-2328-B6EE-6189-0138F38A0254">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>20099C64-3A7E-4D15-F499-8E1EE495CF3F</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1A7537CA-9A7B-9B36-F523-3D9851A68112" referredColumn="22EBDBD2-F11A-392F-6FCF-8A86CA9587BD"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C5A84B71-A34C-2FFF-E558-884B38CFAB61" name="Employee_PK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>50191D1C-B292-3F37-DF12-B8137484CB8E</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="62E4ACFC-8EA1-C7C7-B014-2D0B3365B050"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="42D573DE-E530-D027-424C-74844D3F1CD9" name="Employee_Pesel_UN">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>1AAFF605-2070-A517-27EC-99EDA7BCBF39</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="139C0DB4-F5E7-07AA-1C4B-04920803841C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="579B5762-D7DD-E833-1562-417E837FEF63" name="Employee_Bank_account_number_UN">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>CAC31552-CC27-5196-B1FF-9225FC96AAD2</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E8FCB98A-217B-3FB0-ABDD-A641785BC988"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C0AE1CFC-87F9-42A6-D08A-00F250C3BA1F" name="Employee_Phone_number_UN">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>F7CB7810-DBFF-F466-F094-3D522500ADFD</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3DE03A97-E786-EC74-8989-2D600C50C277"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="22025263-2C39-8EC5-C1D6-367E6E6A5344" name="Employee_Employee_type_FK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>BF4A4FD5-7D5E-300D-D55B-F4FA215E3036</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8C724897-2328-B6EE-6189-0138F38A0254"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CE949CAF-2A27-447F-CDF5-99F59FF3DB0A" name="Employee_Address_FK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>77FF02C2-6C7C-68AD-687D-509C677515E5</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="68D343DD-4A6C-2713-B641-0D92FE8AC952"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AAEEE4A9-819E-A1F7-0A0E-92AA545BD0E1" name="Employee_Order_FK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>14A9CBA6-ABCF-A002-A745-C0EEA878D46D</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0B4105FE-BB06-8981-CD72-1340C2F24BDD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="44A45EC3-637D-5A53-0ADC-EA1F4832F2B9" name="Employee_Delivery_FK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>3D50D184-9251-03E1-1CE4-519E2C15E9EB</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="ABC72612-90A6-0FF7-026C-9D93777840AE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
