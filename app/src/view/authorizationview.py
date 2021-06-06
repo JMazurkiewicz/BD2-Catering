@@ -8,12 +8,12 @@ class AuthorizationView(FormView):
     def __init__(self, parent):
         FormView.__init__(self, parent)
     
-        #self.main_label = tk.Label(self, anchor=tk.CENTER, text='Catering control panel')
+        self.main_label = tk.Label(self, anchor=tk.CENTER, text='Catering control panel')
         self.add_entry('login').set_description('Login')
         self.add_entry('password').set_description('Password')
 
-        #self.login_button = tk.Button(self, text='Log me in')
-        #self.info_label = tk.Label(self)
+        self.login_button = tk.Button(self, text='Log me in')
+        self.info_label = tk.Label(self)
 
         self.__build_grid()
         self.__build_commands()
@@ -24,14 +24,14 @@ class AuthorizationView(FormView):
 
 
     def __build_grid(self):
-        #self.main_label.grid(column=0, row=0)
+        self.main_label.grid(column=0, row=0)
         self.entry_container.grid(column=0, row=1, rowspan=2)
-        #self.login_button.grid(column=0, row=3)
-        #self.info_label.grid(column=0, row=4)
+        self.login_button.grid(column=0, row=3)
+        self.info_label.grid(column=0, row=4)
 
 
     def __build_commands(self):
-        pass#self.login_button.configure(command=self.on_button_click)
+        self.login_button.configure(command=self.on_button_click)
 
 
     def on_button_click(self):
