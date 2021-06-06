@@ -1,3 +1,2 @@
-# CATERING APP REQUIREMENTS
-tkinter
 pyodbc
+tkinter
