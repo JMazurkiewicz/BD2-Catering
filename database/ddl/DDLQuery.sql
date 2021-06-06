@@ -45,8 +45,7 @@ CREATE TABLE address (
 ALTER TABLE address ADD CONSTRAINT corect_build_num CHECK( building_number > 0);
 
 ALTER TABLE address ADD CONSTRAINT corect_apart_num CHECK( apartment_number > 0);
---COMMENT ON COLUMN address.apartment_number IS
-  --  'Czy jest to prawdilowy numer?';
+
 
 
 ALTER TABLE address ADD CONSTRAINT address_pk PRIMARY KEY ( address_id );
@@ -78,6 +77,7 @@ CREATE TABLE city (
 
 --COMMENT ON COLUMN city.name IS
 --    'Zaczyna sie wielk¹ liter¹.';
+ALTER TABLE city ADD CONSTRAINT name_start_capital CHECK(ASCII(LEFT(name, 1)) BETWEEN ASCII('A') and ASCII('Z') );
 
 ALTER TABLE city ADD CONSTRAINT city_pk PRIMARY KEY ( city_id );
 
@@ -96,6 +96,7 @@ CREATE TABLE delivery (
 
 --COMMENT ON COLUMN delivery.cost IS
 --    '>= 0';
+ALTER TABLE delivery ADD CONSTRAINT corect_cost_value CHECK( cost > 0);
 
 ALTER TABLE delivery ADD CONSTRAINT delivery_pk PRIMARY KEY ( delivery_id );
 
@@ -106,6 +107,7 @@ CREATE TABLE drink_sizes (
 
 --COMMENT ON COLUMN drink_sizes.size_ml IS
 --    '> 0';
+ALTER TABLE drink_sizes ADD CONSTRAINT drink_size_is_positive CHECK ( size_ml > 0 );
 
 ALTER TABLE drink_sizes ADD CONSTRAINT drink_sizes_pk PRIMARY KEY ( size_id );
 
@@ -116,6 +118,8 @@ CREATE TABLE drinks (
 
 --COMMENT ON COLUMN drinks.alcohol_content IS
 --    '>= 0';
+
+ALTER TABLE drinks ADD CONSTRAINT alc_cont_is_not_neg CHECK (alcohol_content >= 0)
 
 ALTER TABLE drinks ADD CONSTRAINT drinks_pk PRIMARY KEY ( item_id );
 
@@ -132,14 +136,18 @@ CREATE TABLE employee (
     employee_type_id				NUMERIC(4) NOT NULL
 );
 
---COMMENT ON COLUMN employee.employee_id IS
---    'aS';
+
 
 --COMMENT ON COLUMN employee.name IS
   --  'Zaczyna siê wielk¹ liter¹.';
 
+
+  ALTER TABLE employee ADD CONSTRAINT name_starts_capital CHECK (ASCII(LEFT(name, 1)) BETWEEN ASCII('A') and ASCII('Z'));
+
 --COMMENT ON COLUMN employee.surname IS
   --  'Zaczyna siê wielk¹ liter¹.';
+
+  ALTER TABLE employee ADD CONSTRAINT surname_starts_capital CHECK (ASCII(LEFT(surname, 1)) BETWEEN ASCII('A') and ASCII('Z'));
 
 --COMMENT ON COLUMN employee.pesel IS
 --    'Weryfikacja numeru PESEL (algorytm na wikipedii).';
@@ -155,7 +163,6 @@ ALTER TABLE employee ADD CONSTRAINT employee_pk PRIMARY KEY ( employee_id );
 ALTER TABLE employee ADD CONSTRAINT employee_pesel_un UNIQUE ( pesel );
 
 
---  ERROR: UK name length exceeds maximum allowed length(30) 
 ALTER TABLE employee ADD CONSTRAINT employee_bank_account_number_un UNIQUE ( bank_account_number );
 
 ALTER TABLE employee ADD CONSTRAINT employee_phone_number_un UNIQUE ( phone_number );
@@ -170,9 +177,10 @@ CREATE TABLE employee_schedule (
 
 --COMMENT ON COLUMN employee_schedule.start_date IS
 --    'Start_date < End_date';
-
+ALTER TABLE employee_schedule ADD CONSTRAINT start_date_correct CHECK(start_date < end_date);
 --COMMENT ON COLUMN employee_schedule.end_date IS
 --    'Start_date < End_date';
+ALTER TABLE employee_schedule ADD CONSTRAINT end_date_correct CHECK(start_date < end_date);
 
 ALTER TABLE employee_schedule ADD CONSTRAINT employee_schedule_pk PRIMARY KEY ( employee_schedule_id );
 
@@ -201,6 +209,8 @@ CREATE TABLE item_on_the_menu (
 --COMMENT ON COLUMN item_on_the_menu.cost IS
 --    '> 0';
 
+ALTER TABLE item_on_the_menu ADD CONSTRAINT cost_is_correct CHECK (cost > 0);
+
 ALTER TABLE item_on_the_menu ADD CONSTRAINT item_on_the_menu_pk PRIMARY KEY ( item_id );
 
 CREATE TABLE meals (
@@ -210,6 +220,7 @@ CREATE TABLE meals (
 
 --COMMENT ON COLUMN meals.size_grams IS
 --    '> 0';
+ALTER TABLE meals ADD CONSTRAINT size_is_not_negative CHECK (size_grams > 0);
 
 ALTER TABLE meals ADD CONSTRAINT meals_pk PRIMARY KEY ( item_id );
 
@@ -227,16 +238,18 @@ CREATE TABLE "Order" (
 
 --COMMENT ON COLUMN "Order".start_date IS
 --    'Start_date < End_date';
+ALTER TABLE "Order" ADD CONSTRAINT  start_date_is_correct CHECK (start_date < end_date);
 
 --COMMENT ON COLUMN "Order".end_date IS
 --    'Start_date < End_date';
 
 --COMMENT ON COLUMN "Order".number_of_people IS
 --    '> 0 && < 400';
+ALTER TABLE "Order" ADD CONSTRAINT num_od_ppl_is_corr CHECK ( 0 < number_of_people AND number_of_people < 400); 
 
 --COMMENT ON COLUMN "Order".base_price IS
  --   '> 0';
-
+ ALTER TABLE "Order" ADD CONSTRAINT base_price_is_not_negative CHECK ( base_price > 0);
 
 ALTER TABLE "Order" ADD CONSTRAINT order_pk PRIMARY KEY ( order_id );
 
@@ -251,6 +264,8 @@ CREATE TABLE ordered_meals (
 --COMMENT ON COLUMN ordered_meals.number_of_ordered_meals IS
 --    '> 0';
 
+ALTER TABLE ordered_meals ADD CONSTRAINT num_of_meals_not_zero CHECK (number_of_ordered_meals > 0);
+
 ALTER TABLE ordered_meals ADD CONSTRAINT ordered_meals_pk PRIMARY KEY ( ordered_meal_id );
 
 CREATE TABLE person (
@@ -260,13 +275,13 @@ CREATE TABLE person (
     phone_number  VARCHAR(15) NOT NULL,
     email         VARCHAR(40)
 );
-
---COMMENT ON COLUMN person.name IS
+--COMMENT ON COLUMN person.name IS 
 --    'Czy zaczyna siê wielk¹ liter¹?';
+ALTER TABLE person ADD CONSTRAINT name_start_with_capital CHECK(ASCII(LEFT(sname, 1)) BETWEEN ASCII('A') and ASCII('Z'))
 
 --COMMENT ON COLUMN person.surname IS
 --    'Czy zaczyna siê wielk¹ liter¹?';
-
+ALTER TABLE person ADD CONSTRAINT surname_start_with_capital CHECK(ASCII(LEFT(surname, 1)) BETWEEN ASCII('A') and ASCII('Z'))
 --COMMENT ON COLUMN person.phone_number IS
 --    'Weryfikacja regexem';
 
@@ -284,6 +299,7 @@ CREATE TABLE product (
 
 --COMMENT ON COLUMN product.wholesale_price IS
  --   '> 0';
+ALTER TABLE product ADD CONSTRAINT price_not_zero CHECK (wholesale_price > 0);
 
 ALTER TABLE product ADD CONSTRAINT product_pk PRIMARY KEY ( catalog_number );
 
@@ -348,6 +364,7 @@ CREATE TABLE stored_products (
 
 --COMMENT ON COLUMN stored_products.available_amount IS
  --   '> 0';
+ ALTER TABLE stored_products ADD CONSTRAINT available_amount_not_negative CHECK (available_amount >= 0);
 
 ALTER TABLE stored_products ADD CONSTRAINT stored_products_pk PRIMARY KEY ( batch_number );
 
@@ -359,9 +376,11 @@ CREATE TABLE vehicles (
 
 --COMMENT ON COLUMN vehicles.capacity IS
 --    '> 0';
+ALTER TABLE vehicles ADD CONSTRAINT capacity_is_not_zero CHECK (capacity > 0);
 
 --COMMENT ON COLUMN vehicles.fuel_usage IS
 --    '> 0';
+ALTER TABLE vehicles ADD CONSTRAINT fuel_usage_is_not_zero CHECK (fuel_usage > 0);
 
 ALTER TABLE vehicles ADD CONSTRAINT vehicles_pk PRIMARY KEY ( vehicle_id );
 
@@ -488,49 +507,3 @@ ALTER TABLE cars_for_delivery
 ALTER TABLE storage
     ADD CONSTRAINT storage_stored_products_fk FOREIGN KEY ( stored_products_batch_number )
         REFERENCES stored_products ( batch_number );
-
-
-
-
--- Oracle SQL Developer Data Modeler Summary Report: 
--- 
--- CREATE TABLE                            28
--- CREATE INDEX                             4
--- ALTER TABLE                             66
--- CREATE VIEW                              0
--- ALTER VIEW                               0
--- CREATE PACKAGE                           0
--- CREATE PACKAGE BODY                      0
--- CREATE PROCEDURE                         0
--- CREATE FUNCTION                          0
--- CREATE TRIGGER                           0
--- ALTER TRIGGER                            0
--- CREATE COLLECTION TYPE                   0
--- CREATE STRUCTURED TYPE                   0
--- CREATE STRUCTURED TYPE BODY              0
--- CREATE CLUSTER                           0
--- CREATE CONTEXT                           0
--- CREATE DATABASE                          0
--- CREATE DIMENSION                         0
--- CREATE DIRECTORY                         0
--- CREATE DISK GROUP                        0
--- CREATE ROLE                              0
--- CREATE ROLLBACK SEGMENT                  0
--- CREATE SEQUENCE                          0
--- CREATE MATERIALIZED VIEW                 0
--- CREATE MATERIALIZED VIEW LOG             0
--- CREATE SYNONYM                           0
--- CREATE TABLESPACE                        0
--- CREATE USER                              0
--- 
--- DROP TABLESPACE                          0
--- DROP DATABASE                            0
--- 
--- REDACTION POLICY                         0
--- 
--- ORDS DROP SCHEMA                         0
--- ORDS ENABLE SCHEMA                       0
--- ORDS ENABLE OBJECT                       0
--- 
--- ERRORS                                   0
--- WARNINGS                                 0
