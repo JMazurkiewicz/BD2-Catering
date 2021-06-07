@@ -14,5 +14,6 @@
 <refColNames>Client_ID</refColNames>
 <transferable>true</transferable>
 <rely>false</rely>
+<discriminatorValue>B</discriminatorValue>
 <columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
 </FKIndexAssociation>

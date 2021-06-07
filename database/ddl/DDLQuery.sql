@@ -5,7 +5,7 @@
 
 -- predefined type, no DDL - XMLTYPE
 
--- @TODO Indeksy, constrainty i partycje
+-- @TODO Indeksy, constrainty i partycje, i descriminator
 
 CREATE TABLE additional_costs (
     additional_cost_id  NUMERIC(7) IDENTITY(1,1) NOT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE additional_costs (
 
 --COMMENT ON COLUMN additional_costs.value IS
 --    '> 0';
-
+ALTER TABLE additional_costs ADD CONSTRAINT value_is_not_zezro CHECK (value > 0);
 ALTER TABLE additional_costs ADD CONSTRAINT additional_costs_pk PRIMARY KEY ( additional_cost_id );
 
 CREATE TABLE additional_information (
@@ -42,9 +42,9 @@ CREATE TABLE address (
 
 --ALTER TABLE address ADD CONSTRAINT postal_code weryfikacja regexem;
 
-ALTER TABLE address ADD CONSTRAINT corect_build_num CHECK( building_number > 0);
+ALTER TABLE address ADD CONSTRAINT correct_build_num CHECK( building_number > 0);
 
-ALTER TABLE address ADD CONSTRAINT corect_apart_num CHECK( apartment_number > 0);
+ALTER TABLE address ADD CONSTRAINT correct_apart_num CHECK( apartment_number > 0);
 
 
 
@@ -82,10 +82,12 @@ ALTER TABLE city ADD CONSTRAINT name_start_capital CHECK(ASCII(LEFT(name, 1)) BE
 ALTER TABLE city ADD CONSTRAINT city_pk PRIMARY KEY ( city_id );
 
 CREATE TABLE client (
-    client_id NUMERIC(5) IDENTITY(1,1) NOT NULL
+    client_id NUMERIC(5) IDENTITY(1,1) NOT NULL,
+	type VARCHAR(1) NOT NULL
 );
 
 ALTER TABLE client ADD CONSTRAINT client_pk PRIMARY KEY ( client_id );
+ALTER TABLE client ADD CONSTRAINT correct_type CHECK (type = 'P' OR type = 'B');
 
 CREATE TABLE delivery (
     delivery_id     NUMERIC(7) IDENTITY(1,1) NOT NULL,
@@ -99,6 +101,7 @@ CREATE TABLE delivery (
 ALTER TABLE delivery ADD CONSTRAINT corect_cost_value CHECK( cost > 0);
 
 ALTER TABLE delivery ADD CONSTRAINT delivery_pk PRIMARY KEY ( delivery_id );
+
 
 CREATE TABLE drink_sizes (
     size_id  NUMERIC(3) IDENTITY(1,1) NOT NULL,
@@ -203,11 +206,14 @@ ALTER TABLE event_type ADD CONSTRAINT event_type_event_name_un UNIQUE ( event_na
 CREATE TABLE item_on_the_menu (
     item_id  NUMERIC(5) IDENTITY(1,1) NOT NULL,
     name     VARCHAR(20) NOT NULL,
-    cost     NUMERIC(5, 2) NOT NULL
+    cost     NUMERIC(5, 2) NOT NULL,
+	type	VARCHAR(1) NOT NULL
 );
 
 --COMMENT ON COLUMN item_on_the_menu.cost IS
 --    '> 0';
+
+ALTER TABLE item_on_the_menu ADD CONSTRAINT correct_type CHECK (type = 'D' OR type = 'M');
 
 ALTER TABLE item_on_the_menu ADD CONSTRAINT cost_is_correct CHECK (cost > 0);
 
@@ -294,7 +300,8 @@ CREATE TABLE product (
     catalog_number                VARCHAR(20) NOT NULL,
     name                          VARCHAR(32) NOT NULL,
     wholesale_price               NUMERIC(5, 2) NOT NULL,
-    batch_number  VARCHAR(15)
+    batch_number  VARCHAR(15),
+	type VARCHAR(1) NOT NULL
 );
 
 --COMMENT ON COLUMN product.wholesale_price IS
@@ -504,6 +511,59 @@ ALTER TABLE cars_for_delivery
     ADD CONSTRAINT cars_for_delivery_vehicles_fk FOREIGN KEY ( vehicle_id )
         REFERENCES vehicles ( vehicle_id );
 
-ALTER TABLE storage
+ALTER TABLE storagei
     ADD CONSTRAINT storage_stored_products_fk FOREIGN KEY ( stored_products_batch_number )
         REFERENCES stored_products ( batch_number );
+
+
+GO
+
+
+CREATE OR ALTER TRIGGER check_if_drink_trigg ON item_on_the_menu
+	FOR INSERT
+	AS
+	BEGIN
+		SET NOCOUNT ON;
+		INSERT INTO drinks (item_id)
+		SELECT item_id
+		FROM INSERTED
+		WHERE type = 'D';
+END;
+GO
+
+CREATE OR ALTER TRIGGER check_if_meal_trigg ON item_on_the_menu
+	FOR INSERT
+	AS
+	BEGIN
+		SET NOCOUNT ON;
+		INSERT INTO meals (item_id)
+		SELECT item_id
+		FROM INSERTED
+		WHERE type = 'M';
+END;
+
+GO
+
+CREATE OR ALTER TRIGGER check_if_person_trigg ON client
+	FOR INSERT
+	AS
+	BEGIN
+		SET NOCOUNT ON;
+		INSERT INTO person (client_id)
+		SELECT client_id
+		FROM INSERTED
+		WHERE type = 'P';
+END;
+
+GO
+
+CREATE OR ALTER TRIGGER check_if_business_trigg ON client
+	FOR INSERT
+	AS
+	BEGIN
+		SET NOCOUNT ON;
+		INSERT INTO business(client_id)
+		SELECT client_id
+		FROM INSERTED
+		WHERE type = 'B';
+END;
