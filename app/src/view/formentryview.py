@@ -13,8 +13,6 @@ class FormEntryView(View):
         self.description = tk.Label(parent)
         self.entry = tk.Entry(parent, width=DEFAULT_FORM_ENTRY_WIDTH)
         self.error_label = tk.Label(parent, fg='red')
-        self.column_span = 0
-
         self.validator = lambda: None
 
         self.__build_grid(row, grid_style)

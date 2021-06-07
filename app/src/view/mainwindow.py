@@ -17,5 +17,7 @@ class MainWindow(tk.Tk):
 
         #self.authorization_model = AuthorizationModel()
         self.authorization_view = AuthorizationView(self)
+        self.grid_columnconfigure(0, weight=1)
+        self.grid_rowconfigure(0, weight=1)
         #self.autorization_view.set_model(self.authorization_model)
         
