@@ -11,7 +11,7 @@ CREATE TABLE additional_costs (
     additional_cost_id  NUMERIC(7) IDENTITY(1,1) NOT NULL,
     value               NUMERIC(8, 2) NOT NULL,
     cause               VARCHAR(40) NOT NULL,
-    order_id			NUMERIC(32) NOT NULL
+	order_id			NUMERIC(7)
 );
 
 --COMMENT ON COLUMN additional_costs.value IS
@@ -35,9 +35,7 @@ CREATE TABLE address (
     street_name           VARCHAR(16) NOT NULL,
     building_number       VARCHAR(5)  NOT NULL,
     apartment_number      VARCHAR(5),
-    client_id			NUMERIC(5) NOT NULL,
     city_id				NUMERIC(5) NOT NULL,
-    delivery_id			NUMERIC(7) NOT NULL
 );
 
 --ALTER TABLE address ADD CONSTRAINT postal_code weryfikacja regexem;
@@ -83,17 +81,19 @@ ALTER TABLE city ADD CONSTRAINT city_pk PRIMARY KEY ( city_id );
 
 CREATE TABLE client (
     client_id NUMERIC(5) IDENTITY(1,1) NOT NULL,
-	type VARCHAR(1) NOT NULL
+	type VARCHAR(1) NOT NULL,
+	address_id  NUMERIC(5) NOT NULL
 );
 
 ALTER TABLE client ADD CONSTRAINT client_pk PRIMARY KEY ( client_id );
 ALTER TABLE client ADD CONSTRAINT correct_type CHECK (type = 'P' OR type = 'B');
+ALTER TABLE client ADD CONSTRAINT address_client_fk FOREIGN KEY ( address_id )
+        REFERENCES address ( address_id );
 
 CREATE TABLE delivery (
     delivery_id     NUMERIC(7) IDENTITY(1,1) NOT NULL,
     cost            NUMERIC(16, 2) NOT NULL,
     delivery_hints  VARCHAR(40),
-    order_id  NUMERIC(32) NOT NULL
 );
 
 --COMMENT ON COLUMN delivery.cost IS
@@ -132,10 +132,8 @@ CREATE TABLE employee (
     surname                         VARCHAR(32) NOT NULL,
     pesel                           NUMERIC(32),
     phone_number                    NUMERIC(12) NOT NULL,
-    bank_account_number             NUMERIC(32, 4) NOT NULL,
-    order_order_id                  NUMERIC(32, 4),
+    bank_account_number             NUMERIC(32) NOT NULL,
     address_id						NUMERIC(5),
-    delivery_id						NUMERIC(7),
     employee_type_id				NUMERIC(4) NOT NULL
 );
 
@@ -237,9 +235,10 @@ CREATE TABLE "Order" (
     number_of_people          NUMERIC(8, 2) NOT NULL,
     base_price                NUMERIC(8, 2) NOT NULL,
     waiters_needed            BIT NOT NULL,
-    client_id          NUMERIC(5) NOT NULL,
-    delivery_id      NUMERIC(7) NOT NULL,
-    event_type_id  NUMERIC(3) NOT NULL
+    client_id				NUMERIC(5) NOT NULL,
+    delivery_id				NUMERIC(7) NOT NULL,
+    event_type_id			NUMERIC(3) NOT NULL,
+
 );
 
 --COMMENT ON COLUMN "Order".start_date IS
@@ -325,6 +324,21 @@ CREATE TABLE ingredients (
 
 ALTER TABLE ingredients ADD CONSTRAINT ingredients_pk PRIMARY KEY ( item_id,
                                                                     product_catalog_number );
+CREATE TABLE employees_for_order (
+	employee_id NUMERIC(5) NOT NULL,
+	order_id NUMERIC(5) NOT NULL
+);
+
+ALTER TABLE employees_for_order ADD CONSTRAINT employees_for_order_pk PRIMARY KEY ( employee_id,
+                                                                    order_id );
+
+CREATE TABLE employees_for_delivery (
+	delivery_id NUMERIC(5) NOT NULL,
+	employee_id NUMERIC(5) NOT NULL
+);
+ALTER TABLE employees_for_delivery ADD CONSTRAINT employees_for_delivery_pk PRIMARY KEY ( employee_id,
+                                                                    delivery_id );
+
 
 CREATE TABLE allergens_in_product (
     allergen_id    NUMERIC(3) NOT NULL,
@@ -336,7 +350,7 @@ ALTER TABLE allergens_in_product ADD CONSTRAINT allergens_in_product_pk PRIMARY 
 
 CREATE TABLE size_of_drink (
     drink_sizes_id  NUMERIC(3) NOT NULL,
-    drinks_item_id       NUMERIC(5) NOT NULL
+    drinks_item_id  NUMERIC(5) NOT NULL
 );
 
 ALTER TABLE size_of_drink ADD CONSTRAINT size_of_drink_pk PRIMARY KEY ( drink_sizes_id,
@@ -392,28 +406,16 @@ ALTER TABLE vehicles ADD CONSTRAINT fuel_usage_is_not_zero CHECK (fuel_usage > 0
 ALTER TABLE vehicles ADD CONSTRAINT vehicles_pk PRIMARY KEY ( vehicle_id );
 
 ALTER TABLE additional_costs
-    ADD CONSTRAINT additional_costs_order_fk FOREIGN KEY ( order_id )
+    ADD CONSTRAINT order_additional_costs_fk FOREIGN KEY ( order_id )
         REFERENCES "Order" ( order_id );
 
 ALTER TABLE address
     ADD CONSTRAINT address_city_fk FOREIGN KEY ( city_id )
         REFERENCES city ( city_id );
 
-ALTER TABLE address
-    ADD CONSTRAINT address_client_fk FOREIGN KEY ( client_id )
-        REFERENCES client ( client_id );
-
-ALTER TABLE address
-    ADD CONSTRAINT address_delivery_fk FOREIGN KEY ( delivery_id )
-        REFERENCES delivery ( delivery_id );
-
 ALTER TABLE business
     ADD CONSTRAINT business_client_fk FOREIGN KEY ( client_id )
         REFERENCES client ( client_id );
-
-ALTER TABLE delivery
-    ADD CONSTRAINT delivery_order_fk FOREIGN KEY ( order_id )
-        REFERENCES "Order" ( order_id );
 
 ALTER TABLE drinks
     ADD CONSTRAINT drinks_item_on_the_menu_fk FOREIGN KEY ( item_id )
@@ -424,16 +426,8 @@ ALTER TABLE employee
         REFERENCES address ( address_id );
 
 ALTER TABLE employee
-    ADD CONSTRAINT employee_delivery_fk FOREIGN KEY ( delivery_id )
-        REFERENCES delivery ( delivery_id );
-
-ALTER TABLE employee
     ADD CONSTRAINT employee_employee_type_fk FOREIGN KEY ( employee_type_id )
         REFERENCES employee_type ( employee_type_id );
-
-ALTER TABLE employee
-    ADD CONSTRAINT employee_order_fk FOREIGN KEY ( order_id )
-        REFERENCES "Order" ( order_id );
 
 ALTER TABLE employee_schedule
     ADD CONSTRAINT employee_schedule_employee_fk FOREIGN KEY ( employee_id )
@@ -495,6 +489,22 @@ ALTER TABLE allergens_in_product
     ADD CONSTRAINT allergens_in_product_product_fk FOREIGN KEY ( product_catalog_number )
         REFERENCES product ( catalog_number );
 
+ALTER TABLE employees_for_delivery
+    ADD CONSTRAINT employees_for_delivery_employee_fk FOREIGN KEY ( employee_id )
+        REFERENCES employees ( employee_id );
+
+ALTER TABLE employees_for_delivery
+    ADD CONSTRAINT employees_for_delivery_delivery_fk FOREIGN KEY ( delivery_id )
+        REFERENCES "Order" ( delivery_id );
+
+ALTER TABLE employees_for_order
+    ADD CONSTRAINT employees_for_order_order_fk FOREIGN KEY ( order_id )
+        REFERENCES "Order" ( order_id );
+
+ALTER TABLE employees_for_order
+    ADD CONSTRAINT employees_for_order_employee_fk FOREIGN KEY ( employee_id )
+        REFERENCES employees ( employee_id );
+
 ALTER TABLE size_of_drink
     ADD CONSTRAINT size_of_drink_drink_sizes_fk FOREIGN KEY ( drink_sizes_id )
         REFERENCES drink_sizes ( size_id );
@@ -511,7 +521,7 @@ ALTER TABLE cars_for_delivery
     ADD CONSTRAINT cars_for_delivery_vehicles_fk FOREIGN KEY ( vehicle_id )
         REFERENCES vehicles ( vehicle_id );
 
-ALTER TABLE storagei
+ALTER TABLE storage
     ADD CONSTRAINT storage_stored_products_fk FOREIGN KEY ( stored_products_batch_number )
         REFERENCES stored_products ( batch_number );
 
