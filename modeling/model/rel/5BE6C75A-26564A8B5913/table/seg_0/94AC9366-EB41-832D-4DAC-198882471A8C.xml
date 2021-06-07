@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="94AC9366-EB41-832D-4DAC-198882471A8C" name="City">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>65CADD38-33EE-38AF-CAB6-80021B1F8125</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="City_ID" id="7E016978-3C10-07AA-C560-FE9359C846B2">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>E79FAD62-E240-07C5-5748-B8D270934414</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Name" id="A386F5A2-4181-74C6-EFA4-C0E892C78AEC">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<commentInRDBMS><![CDATA[Zaczyna sie wielką literą.]]></commentInRDBMS>
+<generatorID>8B7D0402-A9D7-243B-E3C6-3B97E6CDBC16</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="District" id="BD239784-8292-6854-EA2B-4168BB599DC5">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>ADEE2D4F-067B-9E4E-AA9C-3937C3BFC297</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6506039D-C2FC-2F5C-6403-2F3B4ABFDAE5" name="City_PK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>60C3259B-479C-159F-9A7D-E331754F81FF</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7E016978-3C10-07AA-C560-FE9359C846B2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

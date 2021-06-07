@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="90C9AB95-E78C-3F94-D0A1-1D77EA2188F5" name="Employee_schedule">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>546208A1-FA62-B885-D658-2E98F0C0FCF1</generatorID>
+<notes><![CDATA[	]]></notes>
+<ownerDesignName>model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Employee_schedule_id" id="7293285A-A8E6-0ABC-2BB1-568889CA24DC">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>BA68CECF-FD92-BA88-638E-EAFECD29EB69</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Start_date" id="81D3070C-3319-0F29-16B6-B5AEA1AC8B53">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<commentInRDBMS><![CDATA[Start_date < End_date]]></commentInRDBMS>
+<generatorID>09C3B8BE-FBE6-F33C-6C35-6440D011DCEC</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="End_date" id="48FE04DF-13B1-698A-A43A-DA6F305CCD3D">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<commentInRDBMS><![CDATA[Start_date < End_date]]></commentInRDBMS>
+<generatorID>AB7E7C29-4322-CCE0-B2B4-388A31B5AE11</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Accepted" id="D11679E3-8427-AE22-236A-05C5C99C9EB8">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>325BFB09-C2F7-E368-907C-0A3B9D44E47C</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT033</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Employee_Employee_ID" id="527E49E6-F074-9C3E-ACA1-1ADA72B4B745">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>DCBACA11-C8C8-A91F-6569-B89E2EF6940A</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C418DE5C-08E7-6B41-B24D-EDFE379BFAF9" referredColumn="10F43C35-632B-A899-C7C6-806356E1E244"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D97A2C5B-7DE2-9716-A2F6-1D35ACE0CB01" name="Employee_schedule_PK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>F4687DAD-F94A-609B-5DF4-29453EB45ABA</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7293285A-A8E6-0ABC-2BB1-568889CA24DC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2B476AAA-41E7-DB65-939C-7642D2E4B481" name="Employee_schedule_Employee_FK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>BE1FDA60-1083-6AF7-2BBC-4A6CBA518AC4</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="527E49E6-F074-9C3E-ACA1-1ADA72B4B745"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

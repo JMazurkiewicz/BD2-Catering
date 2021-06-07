@@ -1,0 +1,79 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FAACBCD3-75DB-28A3-4D1C-F1FFB040D3AE" name="Relation_4">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Order_Order_ID" id="C0CF299F-ED87-BD82-14A4-CC93C65A482C">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>32</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8857C3E2-66F2-0E5B-064B-2C658F934CB7" referredColumn="861C0A47-151B-C53D-0D0C-9239799F855C"/>
+</associations>
+</Column>
+<Column name="Employee_Employee_ID" id="84088DF7-15C2-3510-BFE6-2227AAE199D9">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FA7C6CBB-5D37-54C2-4261-7E45D01C6E95" referredColumn="10F43C35-632B-A899-C7C6-806356E1E244"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8D9FA82F-54B2-2B38-A156-3A7136CE7DFF" name="Relation_4_PK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C0CF299F-ED87-BD82-14A4-CC93C65A482C"/>
+<colUsage columnID="84088DF7-15C2-3510-BFE6-2227AAE199D9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="09429F58-37C8-CBB3-73B4-14AE13E676F1" name="Relation_4_Order_FK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>14A9CBA6-ABCF-A002-A745-C0EEA878D46D</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C0CF299F-ED87-BD82-14A4-CC93C65A482C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8C6470C3-68F4-1D83-B7F9-A452A7CE524C" name="Relation_4_Employee_FK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>14A9CBA6-ABCF-A002-A745-C0EEA878D46D</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="84088DF7-15C2-3510-BFE6-2227AAE199D9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

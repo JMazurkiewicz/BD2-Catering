@@ -1,0 +1,61 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7800BFA7-E23B-D210-7A84-430D97BB9714" name="Additional_information">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>37EBDB7B-7D6D-8D24-F0F1-F17C7CFB71D7</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Info_id" id="9FE8D1A0-611D-07CC-421F-0D43D7B54D9B">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>B52FD8D2-369B-FC0B-2B7D-9E3548FEF5D4</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Information" id="4AFEB4E3-7C6A-A515-92A6-102D831310F3">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>8F1AAA12-9630-0531-9FB2-F1F8A260980C</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C5592B7E-ADE2-77BB-022A-1688A4D4AFAA" name="Additional_information_PK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>D427C519-A2DF-2A63-158A-2E36A7F00F31</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9FE8D1A0-611D-07CC-421F-0D43D7B54D9B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6711A694-3898-D120-D576-850BDFC04C22" name="Additional_information_Information_UN">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>C65045A8-10A9-FD08-30AC-D2F3702E0356</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4AFEB4E3-7C6A-A515-92A6-102D831310F3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

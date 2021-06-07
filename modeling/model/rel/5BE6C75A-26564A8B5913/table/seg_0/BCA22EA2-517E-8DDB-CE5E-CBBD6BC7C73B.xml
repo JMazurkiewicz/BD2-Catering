@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BCA22EA2-517E-8DDB-CE5E-CBBD6BC7C73B" name="Relation_31">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Drink_sizes_Size_id" id="36883189-7E12-0F97-1C2F-2AE6263056F4">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="408DFE82-6048-6133-8B1F-4C29DE84AC1D" referredColumn="F9C3C2FD-7D4A-B43F-4DB7-2D322ACD9C7E"/>
+</associations>
+</Column>
+<Column name="Drinks_Item_ID" id="27CD7F57-BA5B-8208-5A94-62707B871FA9">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="195FFD09-E5D8-BD50-CBB6-28726E2D62A6" referredColumn="926AC1DC-EE3E-B22F-6A80-3618872601B9"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9282E1C7-F99A-1406-AE33-1FA1B5790690" name="Relation_31_PK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="36883189-7E12-0F97-1C2F-2AE6263056F4"/>
+<colUsage columnID="27CD7F57-BA5B-8208-5A94-62707B871FA9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C92DC060-90AE-BDF2-C8D6-B293FBACDBC2" name="Relation_31_Drink_sizes_FK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>CB725282-10B0-C282-0AA1-68EA6620D834</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="36883189-7E12-0F97-1C2F-2AE6263056F4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AFAD4D90-EC35-D8FD-D339-2ECA4C9022B7" name="Relation_31_Drinks_FK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>CB725282-10B0-C282-0AA1-68EA6620D834</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="27CD7F57-BA5B-8208-5A94-62707B871FA9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

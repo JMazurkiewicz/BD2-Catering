@@ -1,0 +1,78 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DCD5E5D3-C4D2-439E-96CB-F40F7F64DA69" name="Relation_8">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Delivery_Delivery_id" id="995FA333-8AC8-7EFD-3C4C-964CD829CC74">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3D5BB321-BD1B-70E6-5D97-C46B9B377DC9" referredColumn="8C445FF2-909E-3970-123B-5F647D265F0E"/>
+</associations>
+</Column>
+<Column name="Vehicles_Vehicle_ID" id="CE517AD6-3870-FBAD-EC42-EDFE7D0E02F3">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D2D4BFC9-7E9A-471A-11ED-F8357350B361" referredColumn="691D2822-A0C7-AC35-2930-B058E67A8AF3"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="32C584B2-567C-56FB-7DD1-FC64C766A7F6" name="Relation_8_PK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="995FA333-8AC8-7EFD-3C4C-964CD829CC74"/>
+<colUsage columnID="CE517AD6-3870-FBAD-EC42-EDFE7D0E02F3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C2C2223E-3AA7-C6B2-AE01-173A5D8AFC21" name="Relation_8_Delivery_FK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>2D68923A-38D6-37A4-41EB-99209C28AA3B</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="995FA333-8AC8-7EFD-3C4C-964CD829CC74"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="32D5A28E-318C-929F-C135-A08FBEEA75B0" name="Relation_8_Vehicles_FK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>2D68923A-38D6-37A4-41EB-99209C28AA3B</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CE517AD6-3870-FBAD-EC42-EDFE7D0E02F3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

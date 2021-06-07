@@ -1,0 +1,66 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C676FE76-3811-B83D-1F9A-2EEF596AA16C" name="Drinks">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>2ACAC1F9-38B5-1471-7A2F-924E74410EA7</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Item_ID" id="926AC1DC-EE3E-B22F-6A80-3618872601B9">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>7DE75B47-A0AC-B679-9AC9-CB41AB4E9C68</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E5D20164-118C-F5A6-97CB-AB2F11AA4868" referredColumn="ED054BD2-367B-D09C-7E48-3863C45BC697"/>
+</associations>
+</Column>
+<Column name="Alcohol_content" id="A20723A0-503D-0667-EFC6-491411CCE36A">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<commentInRDBMS><![CDATA[>= 0]]></commentInRDBMS>
+<generatorID>BE8B7E8D-1FA3-776B-3141-FC92F5597B05</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F18CA45C-6176-0A9B-84E0-7510681FCF50" name="Drinks_PK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>AB38C0D3-8067-A367-8849-40FB29B6DB9C</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="926AC1DC-EE3E-B22F-6A80-3618872601B9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A735DDA4-ECBA-9805-C6B8-C9A650ADCD68" name="Drinks_Item_on_the_menu_FK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>2C18EDF2-88B8-C71F-99A1-273D03804668</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="926AC1DC-EE3E-B22F-6A80-3618872601B9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

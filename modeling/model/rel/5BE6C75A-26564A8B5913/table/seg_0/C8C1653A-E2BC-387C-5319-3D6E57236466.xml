@@ -1,0 +1,194 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C8C1653A-E2BC-387C-5319-3D6E57236466" name="Order">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>7523BF6D-9D8B-5CDA-7FA0-A8138CE59016</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Order_ID" id="861C0A47-151B-C53D-0D0C-9239799F855C">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>57368E0A-91C0-EA81-0048-CF23CC88235F</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>32</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,32,4</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Start_date" id="C5E742EF-FF02-135E-4987-3D85D811812F">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<commentInRDBMS><![CDATA[Start_date < End_date]]></commentInRDBMS>
+<generatorID>EC82C862-EEA2-E9D6-345B-53613E318143</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="End_date" id="BAAB80FE-562C-38C6-1E13-DEBA0DF5E98A">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<commentInRDBMS><![CDATA[Start_date < End_date]]></commentInRDBMS>
+<generatorID>A08332B9-6E65-E63E-FE1C-E38D43494720</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Number_of_people" id="794064B3-D5A7-9BBD-4E76-9E3B74D371EB">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<commentInRDBMS><![CDATA[> 0 && < 400]]></commentInRDBMS>
+<generatorID>CAA315D8-387A-3221-9CC7-F5BD8DC3FDBC</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Base_price" id="C71A08E9-73FE-926C-04CE-8207973FC39E">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<commentInRDBMS><![CDATA[> 0]]></commentInRDBMS>
+<generatorID>0D6FE71E-BEE4-09AC-2C97-BC69F072476E</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Waiters_needed" id="FDC4DC05-0618-43EC-451D-91B5999FE84A">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>02E7E6EB-DA91-8ACB-5E17-F68AFDAA95FF</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT033</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Client_Client_ID" id="151146CA-9E38-517E-BCF8-27C75EA9A91C">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>B1C3614D-AAFA-3938-2FB7-2294603F7F0E</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="29D50B82-1991-CEDF-2CD1-E4F14CD4B8BB" referredColumn="8ACF3A45-5E68-507F-DC5E-5CCF7F4B3EAD"/>
+</associations>
+</Column>
+<Column name="Delivery_Delivery_id" id="23F938AD-9946-158E-BD5B-F10F5EB856B8">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>28CA51C0-BAF2-B74F-03B4-8F5305917015</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4B467A7F-B4D5-AEA3-EDCE-F43707E9115A" referredColumn="8C445FF2-909E-3970-123B-5F647D265F0E"/>
+</associations>
+</Column>
+<Column name="Event_type_Event_type_id" id="FA042C27-20B1-DFC1-490C-750D5A155C27">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>AB00241E-AE4D-6102-7A8D-9A218286D6AE</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4BF2EF90-399A-A138-C081-89066A5F3232" referredColumn="5C4D6304-5F21-70B9-A5B8-220981444869"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C5D7D10E-96EA-4570-7B78-43D2D92D2F57" name="Order_PK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>59A9E6E2-3999-5C55-5200-D156A9B01F94</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="861C0A47-151B-C53D-0D0C-9239799F855C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="976B9C7A-AEE3-552B-D128-7E677A61BA30" name="Order__IDX">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>A3D20921-2A25-CA33-07B6-750103824B12</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="23F938AD-9946-158E-BD5B-F10F5EB856B8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="692FC03D-C432-3D59-9295-2AF6EA88FDD1" name="Order_Client_FK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>36020552-4A5D-75F6-B90A-063CE310576D</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="151146CA-9E38-517E-BCF8-27C75EA9A91C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="183D40EE-E589-1C4B-FB5B-3835095116A2" name="Order_Event_type_FK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>46CEDAFD-5C6A-97CC-9237-9575420867C3</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FA042C27-20B1-DFC1-490C-750D5A155C27"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FD8DD845-B128-5976-59D5-EC7D73DEFB07" name="Order_Delivery_FK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>A3D20921-2A25-CA33-07B6-750103824B12</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="23F938AD-9946-158E-BD5B-F10F5EB856B8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

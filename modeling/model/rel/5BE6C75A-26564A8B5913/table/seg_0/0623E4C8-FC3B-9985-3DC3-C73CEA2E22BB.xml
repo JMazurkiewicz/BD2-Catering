@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0623E4C8-FC3B-9985-3DC3-C73CEA2E22BB" name="Client">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>4287648C-D4C4-C074-3B05-70B9F89124C2</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Client_ID" id="8ACF3A45-5E68-507F-DC5E-5CCF7F4B3EAD">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>D4016EA6-9565-2629-427E-69ABFDE7BC43</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Address_Address_ID" id="CF538D6B-0E09-356D-058A-204A5D490CB0">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>4708ED96-69ED-FEB4-C29D-E15E523DAA2C</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B13DC7E9-1579-2D5C-0D26-DA177A16832C" referredColumn="72C0BE0C-FB48-CBAF-E81A-15E65CF095B9"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5F50D38A-6D0D-8215-B21C-98F3FDBA8D95" name="Client_PK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>FAB7E935-F32E-DB46-D9F2-3A3F220B6D36</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8ACF3A45-5E68-507F-DC5E-5CCF7F4B3EAD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="81B9F9F9-D442-4CA4-60A8-5F72E96F9313" name="Client__IDX">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>667B173C-A0F6-1548-E685-DEE60A828568</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="CF538D6B-0E09-356D-058A-204A5D490CB0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="69A7F7EF-336F-BD96-F75A-96FDA1468A7A" name="Client_Address_FK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>667B173C-A0F6-1548-E685-DEE60A828568</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CF538D6B-0E09-356D-058A-204A5D490CB0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

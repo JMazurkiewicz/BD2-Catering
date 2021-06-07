@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DD82EF0D-76ED-21F2-278F-602F2FD2597F" name="Business">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>00CECA5F-004F-00FC-C730-A52B50A1BA53</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Client_ID" id="14C8BF8E-F42C-1440-C671-C3C217799C62">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>D4016EA6-9565-2629-427E-69ABFDE7BC43</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AC5B5079-B25C-E858-C69C-75090EF8AF3D" referredColumn="8ACF3A45-5E68-507F-DC5E-5CCF7F4B3EAD"/>
+</associations>
+</Column>
+<Column name="NIP" id="32659762-7B89-0451-F4F5-9D1971197B73">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<commentInRDBMS><![CDATA[Algorytm na wiki.]]></commentInRDBMS>
+<generatorID>1945E8FC-B085-7FE7-8FAA-648039D21600</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 CHAR</dataTypeSize>
+<ownDataTypeParameters>15 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A785A4B4-B8E0-70CA-A3DA-A5B76FE963E1" name="Business_PK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>FAB7E935-F32E-DB46-D9F2-3A3F220B6D36</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="14C8BF8E-F42C-1440-C671-C3C217799C62"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="91B772F7-D9AF-4BB5-6499-B25D4AC012DD" name="Business_NIP_UN">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>A4E099ED-D3B8-ECEC-4176-1A8BB049E2C5</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="32659762-7B89-0451-F4F5-9D1971197B73"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A279C1FB-5E40-4D2F-1261-3B76C94EC124" name="Business_Client_FK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>8B397E87-EDA9-B7EB-CE65-3E49E056E1B4</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="14C8BF8E-F42C-1440-C671-C3C217799C62"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

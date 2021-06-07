@@ -1,0 +1,195 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D8976639-6A6D-3BFA-90AF-00BB4E044098" name="Employee">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>FA82F00A-45B4-3DAD-FDA2-6EA9838F2C78</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Employee_ID" id="10F43C35-632B-A899-C7C6-806356E1E244">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<commentInRDBMS><![CDATA[aS]]></commentInRDBMS>
+<generatorID>2C4FA7C2-A579-230B-6268-6053CD7707DD</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,8,4</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Name" id="D5AED35E-B1F1-B952-319B-EDA1EDFDC3B6">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<commentInRDBMS><![CDATA[Zaczyna się wielką literą.]]></commentInRDBMS>
+<generatorID>29D6E972-3274-B613-7F1A-47BFDBB260E9</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32 CHAR</dataTypeSize>
+<ownDataTypeParameters>32 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Surname" id="A23ABBCD-5DFF-613D-C07E-7692F6BE648F">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<commentInRDBMS><![CDATA[Zaczyna się wielką literą.]]></commentInRDBMS>
+<generatorID>1DD20555-B78B-310E-9C6E-29D2F51C315A</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32 CHAR</dataTypeSize>
+<ownDataTypeParameters>32 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Pesel" id="32E78A3C-B939-B738-C92E-96965FCDBCFD">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<commentInRDBMS><![CDATA[Weryfikacja numeru PESEL (algorytm na wikipedii).]]></commentInRDBMS>
+<generatorID>614AB9D8-4DFA-ED63-11F0-F3D477704C2E</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>32</dataTypePrecision>
+<ownDataTypeParameters>,32,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Phone_number" id="B084845C-D860-24AB-3F8D-EA8D424FA955">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<commentInRDBMS><![CDATA[Weryfikacja regexem.]]></commentInRDBMS>
+<generatorID>E8658A30-42E1-5AB5-112C-831AC878E7B1</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<ownDataTypeParameters>,12,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Bank_account_number" id="5456A7A6-30DF-A687-F280-9013AFDFC73C">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<commentInRDBMS><![CDATA[Weryfikacja numeru konta (na wiki).]]></commentInRDBMS>
+<generatorID>2691B598-14E2-F11B-BD57-8C6C62ACCC88</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>32</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,32,4</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Address_Address_ID" id="7B5DDEB5-8A57-40B9-DD0C-E16AC0E28723">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>C270C45C-ADFC-FD11-96D8-86A233AFF0A0</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="728C35DA-D49F-0244-E005-AE77C1E9CE0A" referredColumn="72C0BE0C-FB48-CBAF-E81A-15E65CF095B9"/>
+</associations>
+</Column>
+<Column name="Employee_type_Employee_type_id" id="E7F07919-05A9-EF7E-0148-B295655BFB54">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>20099C64-3A7E-4D15-F499-8E1EE495CF3F</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2069DF95-8A64-F5F4-5DC1-8413235C4C72" referredColumn="23D0964A-101F-3993-F2CB-2BEB13AAE6AF"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9AB84C4F-9BF5-817A-63E3-D5824FF1361C" name="Employee_PK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>50191D1C-B292-3F37-DF12-B8137484CB8E</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="10F43C35-632B-A899-C7C6-806356E1E244"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="899E7658-B421-B173-A735-B7CE7B4B6236" name="Employee_Pesel_UN">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>1AAFF605-2070-A517-27EC-99EDA7BCBF39</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="32E78A3C-B939-B738-C92E-96965FCDBCFD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1AA43C31-8A2A-A6E8-B145-4263D7F933A5" name="Employee_Bank_account_number_UN">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>CAC31552-CC27-5196-B1FF-9225FC96AAD2</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5456A7A6-30DF-A687-F280-9013AFDFC73C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FDEAEE4A-5F86-A9A7-E29F-EFC9D66C1CF9" name="Employee_Phone_number_UN">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>F7CB7810-DBFF-F466-F094-3D522500ADFD</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B084845C-D860-24AB-3F8D-EA8D424FA955"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CBF6C97D-2EC2-C4F9-665F-823AF0670579" name="Employee_Employee_type_FK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>BF4A4FD5-7D5E-300D-D55B-F4FA215E3036</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E7F07919-05A9-EF7E-0148-B295655BFB54"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="201C0F8F-0A0A-DCD1-64A7-51FD631ABBAA" name="Employee_Address_FK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>77FF02C2-6C7C-68AD-687D-509C677515E5</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7B5DDEB5-8A57-40B9-DD0C-E16AC0E28723"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

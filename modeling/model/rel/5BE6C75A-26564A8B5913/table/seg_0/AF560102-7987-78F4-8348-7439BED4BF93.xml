@@ -1,0 +1,142 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AF560102-7987-78F4-8348-7439BED4BF93" name="Delivery">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>B6647B64-544B-6EE2-D38B-C670E23326B8</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Delivery_id" id="8C445FF2-909E-3970-123B-5F647D265F0E">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>19797ECE-122B-1365-3018-C937DAB190BF</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Cost" id="D9388C59-591F-8A10-7673-BBBCE8054925">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<commentInRDBMS><![CDATA[>= 0]]></commentInRDBMS>
+<generatorID>24E6AE0D-8513-A701-209B-C26988CAC0B8</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>16</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,16,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Delivery_hints" id="676E0EAB-63A9-ABF8-3F4D-584C20DCD12C">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>065EEEBE-D0C3-1651-404C-4C4C2CCC3646</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40 CHAR</dataTypeSize>
+<ownDataTypeParameters>40 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Order_Order_ID" id="5516E4C5-BDFA-4F89-38D4-03DAAE58AA63">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>71E2F8D4-A467-4D3C-2573-4D1B4408D872</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>32</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8F7BE09C-E1EB-9C16-1466-C9EB8CDCD79D" referredColumn="861C0A47-151B-C53D-0D0C-9239799F855C"/>
+</associations>
+</Column>
+<Column name="Address_Address_ID" id="4536A194-84C1-052B-99E4-866A77B2F3F8">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>74D0D494-F137-6FDB-C44B-FDEA1E0437D0</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="ECE92E0B-9EFE-D49C-5906-46D56D978E61" referredColumn="72C0BE0C-FB48-CBAF-E81A-15E65CF095B9"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5EC9E3E3-AFFD-9BDC-D8D0-A06B23F651FA" name="Delivery_PK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>6AB5FE78-4DD3-98A9-47F5-992480EE108B</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8C445FF2-909E-3970-123B-5F647D265F0E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="77538E0C-A4A7-4444-74CE-93F62A5494A2" name="Delivery__IDX">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>8CB679A2-6CF4-90C4-B45C-C43EF260DD2D</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="4536A194-84C1-052B-99E4-866A77B2F3F8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="44E97B5A-83B5-CEF7-C8C5-99DD88837724" name="Delivery__IDXv1">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>A3D20921-2A25-CA33-07B6-750103824B12</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="5516E4C5-BDFA-4F89-38D4-03DAAE58AA63"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DB6F5766-9303-C171-5C78-4FF0287BD6F7" name="Delivery_Address_FK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>8CB679A2-6CF4-90C4-B45C-C43EF260DD2D</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4536A194-84C1-052B-99E4-866A77B2F3F8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B1938894-B90E-3AF4-D5AD-37EE448AF365" name="Delivery_Order_FK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>A3D20921-2A25-CA33-07B6-750103824B12</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5516E4C5-BDFA-4F89-38D4-03DAAE58AA63"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

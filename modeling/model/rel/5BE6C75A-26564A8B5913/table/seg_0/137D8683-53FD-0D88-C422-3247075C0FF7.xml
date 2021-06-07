@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="137D8683-53FD-0D88-C422-3247075C0FF7" name="Relation_12">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Additional_information_Info_id" id="647CA76A-49D8-F033-CC5E-CCAF4D6948FF">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A7264924-E2C2-E92E-8AB1-88B3114826C5" referredColumn="9FE8D1A0-611D-07CC-421F-0D43D7B54D9B"/>
+</associations>
+</Column>
+<Column name="Item_on_the_menu_Item_ID" id="085599AE-5F83-235F-8FC4-84C1D7DA4520">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="30F77FB9-2617-0FEC-AA12-EDE49C709152" referredColumn="ED054BD2-367B-D09C-7E48-3863C45BC697"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="56981DA4-93AE-5BCB-8528-EC1BB62DD975" name="Relation_12_PK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="647CA76A-49D8-F033-CC5E-CCAF4D6948FF"/>
+<colUsage columnID="085599AE-5F83-235F-8FC4-84C1D7DA4520"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8606ACF2-5B0F-3AFB-9975-317B053EED3B" name="Relation_12_Additional_information_FK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>65235AE0-9D54-39B5-80DA-20B1C2D5BE10</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="647CA76A-49D8-F033-CC5E-CCAF4D6948FF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="036E135C-2445-B2B6-66B1-9C1A3941BAEA" name="Relation_12_Item_on_the_menu_FK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>65235AE0-9D54-39B5-80DA-20B1C2D5BE10</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="085599AE-5F83-235F-8FC4-84C1D7DA4520"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

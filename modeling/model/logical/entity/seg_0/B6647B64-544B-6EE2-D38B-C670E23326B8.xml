@@ -75,6 +75,21 @@
 <dataTypeScale>4</dataTypeScale>
 <ownDataTypeParameters>,32,4</ownDataTypeParameters>
 </Attribute>
+<Attribute name="Address_ID" id="74D0D494-F137-6FDB-C44B-FDEA1E0437D0">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:02:47 UTC</createdTime>
+<generatorID>8CB679A2-6CF4-90C4-B45C-C43EF260DD2D</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
+</engineerTo>
+<referedAttribute>0B885956-7A59-2E73-5B6A-CD7CBBC0DCA3</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="6AB5FE78-4DD3-98A9-47F5-992480EE108B" name="Delivery PK">

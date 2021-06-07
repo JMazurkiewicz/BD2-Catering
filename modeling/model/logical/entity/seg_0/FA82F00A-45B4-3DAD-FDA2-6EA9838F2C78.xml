@@ -109,23 +109,6 @@
 <dataTypeScale>4</dataTypeScale>
 <ownDataTypeParameters>,32,4</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Order_ID" id="C6193B92-497E-DF47-7C9B-6BD831587EFC">
-<createdBy>arsze</createdBy>
-<createdTime>2021-05-13 08:07:36 UTC</createdTime>
-<generatorID>14A9CBA6-ABCF-A002-A745-C0EEA878D46D</generatorID>
-<ownerDesignName>model</ownerDesignName>
-<engineerTo>
-<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<referedAttribute>57368E0A-91C0-EA81-0048-CF23CC88235F</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>32</dataTypePrecision>
-<dataTypeScale>4</dataTypeScale>
-<ownDataTypeParameters>,32,4</ownDataTypeParameters>
-</Attribute>
 <Attribute name="Address_ID" id="C270C45C-ADFC-FD11-96D8-86A233AFF0A0">
 <createdBy>damia</createdBy>
 <createdTime>2021-05-18 21:04:59 UTC</createdTime>
@@ -142,22 +125,6 @@
 <dataTypePrecision>5</dataTypePrecision>
 <ownDataTypeParameters>,5,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Delivery_id" id="D1826D83-B7BB-7DE5-A78F-F53AEBCC804F">
-<createdBy>mazku</createdBy>
-<createdTime>2021-05-19 18:43:42 UTC</createdTime>
-<generatorID>3D50D184-9251-03E1-1CE4-519E2C15E9EB</generatorID>
-<ownerDesignName>model</ownerDesignName>
-<engineerTo>
-<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<referedAttribute>19797ECE-122B-1365-3018-C937DAB190BF</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>7</dataTypePrecision>
-<ownDataTypeParameters>,7,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="Employee_type_id" id="20099C64-3A7E-4D15-F499-8E1EE495CF3F">
 <createdBy>mazku</createdBy>
 <createdTime>2021-05-27 12:27:30 UTC</createdTime>
@@ -167,10 +134,11 @@
 <item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
 </engineerTo>
 <referedAttribute>B20E55B4-5B96-F4E9-5EE7-63B8112B43A2</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>4</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

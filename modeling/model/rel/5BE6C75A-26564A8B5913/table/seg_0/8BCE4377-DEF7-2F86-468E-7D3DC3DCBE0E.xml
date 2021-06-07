@@ -1,0 +1,89 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8BCE4377-DEF7-2F86-468E-7D3DC3DCBE0E" name="Storage">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>C8835797-34C2-1A73-674C-95DB67524845</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Storage_id" id="4EAA235D-6973-A619-91EA-433EC1AF538C">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>35BFA258-38A5-36B1-1A99-86A9A3FF184A</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Name" id="0E5B3442-7F8C-EC6C-5343-EB772B3C66DA">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>702C592A-6036-5550-12DD-E2DCC99C30A3</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Stored_products_Batch_number" id="FF1BCFF4-54DA-0C08-8DDB-1B7CF4D278FB">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>1C6C41EF-27E9-7122-4774-EEB8B3D09506</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1CC6828B-1D9E-F751-00FC-F8C0AEE807C3" referredColumn="62FC98EE-33CA-1802-CCC4-494F696C403D"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0636A85D-16A4-E4FC-951A-A5F601F9C311" name="Storage_PK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>AF99BA58-0C84-E227-0143-DD48C79014CB</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4EAA235D-6973-A619-91EA-433EC1AF538C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4A65DB58-CCCD-C07E-80A3-287F3EED15C5" name="Storage_Name_UN">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>F90956B3-37E2-6AD2-05D1-54324F514E39</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0E5B3442-7F8C-EC6C-5343-EB772B3C66DA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F7157D78-1F75-2832-1AB5-3D8806706888" name="Storage_Stored_products_FK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>4C2ED9B2-5647-E631-98D0-66C9B1B9D1C3</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FF1BCFF4-54DA-0C08-8DDB-1B7CF4D278FB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

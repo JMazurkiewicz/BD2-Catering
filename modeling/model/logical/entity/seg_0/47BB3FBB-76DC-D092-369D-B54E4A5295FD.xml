@@ -85,21 +85,6 @@
 <dataTypeSize>5 CHAR</dataTypeSize>
 <ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Client_ID" id="87F9D204-406A-E609-985F-581982A60AB3">
-<createdBy>damia</createdBy>
-<createdTime>2021-05-18 21:05:22 UTC</createdTime>
-<generatorID>667B173C-A0F6-1548-E685-DEE60A828568</generatorID>
-<ownerDesignName>model</ownerDesignName>
-<engineerTo>
-<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
-</engineerTo>
-<referedAttribute>D4016EA6-9565-2629-427E-69ABFDE7BC43</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>5</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="City_ID" id="E224DBFE-BC93-1209-272D-ACD52EC69951">
 <createdBy>damia</createdBy>
 <createdTime>2021-05-18 21:05:43 UTC</createdTime>
@@ -114,21 +99,6 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>5</dataTypePrecision>
 <ownDataTypeParameters>,5,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="Delivery_id" id="8C00A72F-E50C-9203-EE6B-F9FCF57907D6">
-<createdBy>mazku</createdBy>
-<createdTime>2021-05-19 18:43:42 UTC</createdTime>
-<generatorID>8CB679A2-6CF4-90C4-B45C-C43EF260DD2D</generatorID>
-<ownerDesignName>model</ownerDesignName>
-<engineerTo>
-<item key="5BE6C75A-9C76-4BE3-38A9-26564A8B5913" value="true"/>
-</engineerTo>
-<referedAttribute>19797ECE-122B-1365-3018-C937DAB190BF</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>7</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

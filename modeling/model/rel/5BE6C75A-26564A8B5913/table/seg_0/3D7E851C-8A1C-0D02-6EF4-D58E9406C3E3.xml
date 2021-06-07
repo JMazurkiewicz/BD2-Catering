@@ -1,0 +1,65 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3D7E851C-8A1C-0D02-6EF4-D58E9406C3E3" name="Meals">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>70A26225-D256-184A-2C79-3C5B04ADDFF9</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Item_ID" id="5B77587E-A1C8-FFAB-387F-08D4B69177AF">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>7DE75B47-A0AC-B679-9AC9-CB41AB4E9C68</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="46E9D3C8-D278-D245-C079-0CC4D8C14AE6" referredColumn="ED054BD2-367B-D09C-7E48-3863C45BC697"/>
+</associations>
+</Column>
+<Column name="Size_grams" id="699C551E-D71D-EB8F-DEEF-E4E643372D5A">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<commentInRDBMS><![CDATA[> 0]]></commentInRDBMS>
+<generatorID>C4B54B75-2821-E1CE-2BD2-DFBC1BBD2393</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3F528E20-E735-9753-14F8-3A1ED2C19091" name="Meals_PK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>AB38C0D3-8067-A367-8849-40FB29B6DB9C</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5B77587E-A1C8-FFAB-387F-08D4B69177AF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="93629545-7FE3-E5BF-058C-5FC753590540" name="Meals_Item_on_the_menu_FK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>2F90F24C-AEF3-9A9F-73C8-E54FC727F794</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5B77587E-A1C8-FFAB-387F-08D4B69177AF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

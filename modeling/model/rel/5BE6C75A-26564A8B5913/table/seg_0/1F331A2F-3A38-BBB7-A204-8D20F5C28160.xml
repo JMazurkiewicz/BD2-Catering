@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1F331A2F-3A38-BBB7-A204-8D20F5C28160" name="Relation_14">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Allergen_Allergen_id" id="A28A6D02-8B35-6775-52A8-70FF6C928EF8">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D6A1443B-0C2F-6347-2266-C0C68EE8A1D8" referredColumn="2C9CF055-5837-F7C1-B681-7FD6E4FFB43D"/>
+</associations>
+</Column>
+<Column name="Product_Catalog_number" id="CA4C791D-3B9C-C214-2001-99A8144AB2E2">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="49478BE3-4175-DCA3-6400-FB3517081502" referredColumn="3A86C70E-B4E2-7731-3AC8-805D9FA07082"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="71AE7E3B-B41C-56D6-A50F-C5609A807220" name="Relation_14_PK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A28A6D02-8B35-6775-52A8-70FF6C928EF8"/>
+<colUsage columnID="CA4C791D-3B9C-C214-2001-99A8144AB2E2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="81CB2CCF-9DBD-D4FF-D610-02EC0C5E9527" name="Relation_14_Allergen_FK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>DCA69A32-95F2-3738-14A3-B637ACC89AC1</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A28A6D02-8B35-6775-52A8-70FF6C928EF8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B0F4FC10-B586-51CB-7DAA-4D5A9C1F00D5" name="Relation_14_Product_FK">
+<createdBy>damia</createdBy>
+<createdTime>2021-06-07 18:17:27 UTC</createdTime>
+<generatorID>DCA69A32-95F2-3738-14A3-B637ACC89AC1</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CA4C791D-3B9C-C214-2001-99A8144AB2E2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
