@@ -7,7 +7,7 @@ from view.formview import FormView
 class AuthorizationView(FormView):
     def __init__(self, parent):
         FormView.__init__(self, parent)
-    
+
         self.main_label = tk.Label(self, anchor=tk.CENTER, text='Catering control panel')
         self.add_entry('login').set_description('Login')
         self.add_entry('password').set_description('Password')
@@ -20,12 +20,11 @@ class AuthorizationView(FormView):
         
         self.grid_rowconfigure(0, weight=1)
         self.grid_columnconfigure(0, weight=1)
-        self.grid(columnspan=10, rowspan=10)
 
 
     def __build_grid(self):
         self.main_label.grid(column=0, row=0)
-        self.entry_container.grid(column=0, row=1, rowspan=2)
+        self.entry_frame.grid(column=0, row=1, rowspan=2)
         self.login_button.grid(column=0, row=3)
         self.info_label.grid(column=0, row=4)
 

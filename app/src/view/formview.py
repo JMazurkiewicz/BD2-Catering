@@ -8,18 +8,19 @@ from view import View
 class FormView(View):
     def __init__(self, parent):
         View.__init__(self, parent)
-        
-        self.entry_container = tk.Frame(self)
+
+        self.entry_frame = tk.Frame(self)
+        self.entry_frame.grid_rowconfigure(0, weight=1)
+        self.entry_frame.grid_columnconfigure(0, weight=1)
+
         self.entries = {}
 
 
     def add_entry(self, entry_name):
-        self.entries[entry_name] = FormEntryView(self.entry_container)
-
         row_index = len(self.entries)
-        self.entries[entry_name].grid(row=row_index-1, column=0)
+        self.entries[entry_name] = FormEntryView(self.entry_frame, row_index)
 
-        self.grid(rowspan=row_index)
+        self.grid(rowspan=row_index+1)
 
         return self.entries[entry_name]
 

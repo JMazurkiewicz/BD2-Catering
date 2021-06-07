@@ -7,16 +7,17 @@ import tkinter as tk
 DEFAULT_FORM_ENTRY_WIDTH = 30
 
 class FormEntryView(View):
-    def __init__(self, parent, grid_style='default'):
+    def __init__(self, parent, row, grid_style='default'):
         View.__init__(self, parent)
 
-        self.description = tk.Label()
-        self.entry = tk.Entry(width=DEFAULT_FORM_ENTRY_WIDTH)
-        self.error_label = tk.Label(fg='red')
+        self.description = tk.Label(parent)
+        self.entry = tk.Entry(parent, width=DEFAULT_FORM_ENTRY_WIDTH)
+        self.error_label = tk.Label(parent, fg='red')
+        self.column_span = 0
 
         self.validator = lambda: None
 
-        self.__build_grid(grid_style)
+        self.__build_grid(row, grid_style)
 
 
     def set_description(self, description):
@@ -43,12 +44,17 @@ class FormEntryView(View):
         return self.entry.get()
 
 
-    def __build_grid(self, grid_style):
+    def __build_grid(self, row, grid_style):
         if grid_style == 'default':
-            self.__build_default_grid()
+            self.__build_default_grid(row)
+        else:
+            raise Exception('FormEntryView: invalid grid style')
 
 
-    def __build_default_grid(self):
-        self.description.grid(column=0, columnspan=2, row=0)
-        self.entry.grid(column=3, columnspan=5, row=0)
-        self.error_label.grid(column=8, columnspan=3, row=0)
+    def __build_default_grid(self, row):
+        self.description.grid(column=0, row=row)
+        self.entry.grid(column=1, row=row)
+        self.error_label.grid(column=2, row=row)
+
+        self.grid_rowconfigure(0, weight=1)
+        self.grid_columnconfigure(0, weight=1)
