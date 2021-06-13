@@ -1,6 +1,5 @@
 
 -- @author Konrad Wojewódzki
--- @TODO partycje
 
 CREATE TABLE additional_costs (
     additional_cost_id  NUMERIC(7) IDENTITY(1,1) NOT NULL,
@@ -12,7 +11,7 @@ CREATE TABLE additional_costs (
 --main constraints
 
 ALTER TABLE additional_costs ADD CONSTRAINT additional_costs_pk PRIMARY KEY ( additional_cost_id );
-ALTER TABLE additional_costs ADD CONSTRAINT value_is_not_zero CHECK (value > 0);
+ALTER TABLE additional_costs ADD CONSTRAINT a_c_value_is_not_zero CHECK (value > 0);
 
 --foreign keys
 
@@ -37,12 +36,11 @@ CREATE TABLE address (
     postal_code           VARCHAR(6 ) NOT NULL,
     street_name           VARCHAR(16) NOT NULL,
     building_number       VARCHAR(5)  NOT NULL,
-    apartment_number      VARCHAR(5),
+    apartment_number      NUMERIC(5),
     city_id				NUMERIC(5) NOT NULL,
 );
 
 --main constraints
-ALTER TABLE address ADD CONSTRAINT correct_build_num CHECK( building_number > 0);
 ALTER TABLE address ADD CONSTRAINT correct_apart_num CHECK( apartment_number > 0);
 ALTER TABLE address ADD CONSTRAINT address_pk PRIMARY KEY ( address_id );
 
@@ -78,7 +76,7 @@ ALTER TABLE business
 CREATE TABLE city (
     city_id   NUMERIC(5) IDENTITY(1,1) NOT NULL,
     name      VARCHAR(20) NOT NULL,
-    district  NUMERIC(20)
+    district  VARCHAR(20)
 );
 
 --main constraints
@@ -94,7 +92,7 @@ CREATE TABLE client (
 
 --main constraints
 ALTER TABLE client ADD CONSTRAINT client_pk PRIMARY KEY ( client_id );
-ALTER TABLE client ADD CONSTRAINT correct_type CHECK (type = 'P' OR type = 'B');
+ALTER TABLE client ADD CONSTRAINT client_correct_type CHECK (type = 'P' OR type = 'B');
 
 --foreign keys
 ALTER TABLE client ADD CONSTRAINT address_client_fk FOREIGN KEY ( address_id )
@@ -179,8 +177,7 @@ CREATE TABLE employee_schedule (
 );
 
 --main constraints
-ALTER TABLE employee_schedule ADD CONSTRAINT start_date_correct CHECK(start_date < end_date);
-ALTER TABLE employee_schedule ADD CONSTRAINT end_date_correct CHECK(start_date < end_date);
+ALTER TABLE employee_schedule ADD CONSTRAINT date_correct CHECK(start_date < end_date);
 ALTER TABLE employee_schedule ADD CONSTRAINT employee_schedule_pk PRIMARY KEY ( employee_schedule_id );
 
 --foreign keys
@@ -219,7 +216,7 @@ CREATE TABLE item_on_the_menu (
 
 --main constraints
 
-ALTER TABLE item_on_the_menu ADD CONSTRAINT correct_type CHECK (type = 'D' OR type = 'M');
+ALTER TABLE item_on_the_menu ADD CONSTRAINT item_correct_type CHECK (type = 'D' OR type = 'M');
 ALTER TABLE item_on_the_menu ADD CONSTRAINT cost_is_correct CHECK (cost > 0);
 ALTER TABLE item_on_the_menu ADD CONSTRAINT item_on_the_menu_pk PRIMARY KEY ( item_id );
 
@@ -253,7 +250,7 @@ CREATE TABLE "Order" (
 
 --main constraints
 ALTER TABLE "Order" ADD CONSTRAINT  start_date_is_correct CHECK (start_date < end_date);
-ALTER TABLE "Order" ADD CONSTRAINT num_od_ppl_is_corr CHECK ( 0 < number_of_people AND number_of_people < 400); 
+ALTER TABLE "Order" ADD CONSTRAINT num_of_ppl_is_corr CHECK ( 0 < number_of_people AND number_of_people < 400); 
 ALTER TABLE "Order" ADD CONSTRAINT base_price_is_not_negative CHECK ( base_price > 0);
 ALTER TABLE "Order" ADD CONSTRAINT order_pk PRIMARY KEY ( order_id );
 
@@ -332,6 +329,42 @@ ALTER TABLE product
         REFERENCES stored_products ( batch_number );
 
 -------------------------------------------------
+
+CREATE TABLE storage (
+    storage_id                    NUMERIC(2) NOT NULL,
+    name                          VARCHAR(20) NOT NULL,
+    stored_products_batch_number  VARCHAR(15)
+);
+
+ALTER TABLE storage ADD CONSTRAINT storage_pk PRIMARY KEY ( storage_id );
+ALTER TABLE storage ADD CONSTRAINT storage_name_un UNIQUE ( name );
+
+ALTER TABLE storage
+    ADD CONSTRAINT storage_stored_products_fk FOREIGN KEY ( stored_products_batch_number )
+        REFERENCES stored_products ( batch_number );
+
+--------------------------------------------------------
+CREATE TABLE stored_products (
+    batch_number      VARCHAR(15) NOT NULL,
+    available_amount  NUMERIC(10, 2) NOT NULL,
+    expiration_date   DATE NOT NULL
+);
+
+ALTER TABLE stored_products ADD CONSTRAINT available_amount_not_negative CHECK (available_amount >= 0);
+ALTER TABLE stored_products ADD CONSTRAINT stored_products_pk PRIMARY KEY ( batch_number );
+
+-----------------------------
+CREATE TABLE vehicles (
+    vehicle_id  NUMERIC(8) IDENTITY(1,1) NOT NULL,
+    capacity    NUMERIC(32, 4) NOT NULL,
+    fuel_usage  NUMERIC(8, 4) NOT NULL
+);
+
+ALTER TABLE vehicles ADD CONSTRAINT capacity_is_not_zero CHECK (capacity > 0);
+ALTER TABLE vehicles ADD CONSTRAINT fuel_usage_is_not_zero CHECK (fuel_usage > 0);
+ALTER TABLE vehicles ADD CONSTRAINT vehicles_pk PRIMARY KEY ( vehicle_id );
+
+----------------------------------------------------------------------
 CREATE TABLE info_about_item (
     info_id  NUMERIC(3) NOT NULL,
     item_id  NUMERIC(5) NOT NULL
@@ -451,41 +484,7 @@ ALTER TABLE cars_for_delivery
         REFERENCES vehicles ( vehicle_id );
 
 -------------------------------------------------------
-CREATE TABLE storage (
-    storage_id                    NUMERIC(2) NOT NULL,
-    name                          VARCHAR(20) NOT NULL,
-    stored_products_batch_number  VARCHAR(15)
-);
 
-ALTER TABLE storage ADD CONSTRAINT storage_pk PRIMARY KEY ( storage_id );
-ALTER TABLE storage ADD CONSTRAINT storage_name_un UNIQUE ( name );
-
-ALTER TABLE storage
-    ADD CONSTRAINT storage_stored_products_fk FOREIGN KEY ( stored_products_batch_number )
-        REFERENCES stored_products ( batch_number );
-
---------------------------------------------------------
-CREATE TABLE stored_products (
-    batch_number      VARCHAR(15) NOT NULL,
-    available_amount  NUMERIC(10, 2) NOT NULL,
-    expiration_date   DATE NOT NULL
-);
-
-ALTER TABLE stored_products ADD CONSTRAINT available_amount_not_negative CHECK (available_amount >= 0);
-ALTER TABLE stored_products ADD CONSTRAINT stored_products_pk PRIMARY KEY ( batch_number );
-
------------------------------
-CREATE TABLE vehicles (
-    vehicle_id  NUMERIC(8) IDENTITY(1,1) NOT NULL,
-    capacity    NUMERIC(32, 4) NOT NULL,
-    fuel_usage  NUMERIC(8, 4) NOT NULL
-);
-
-ALTER TABLE vehicles ADD CONSTRAINT capacity_is_not_zero CHECK (capacity > 0);
-ALTER TABLE vehicles ADD CONSTRAINT fuel_usage_is_not_zero CHECK (fuel_usage > 0);
-ALTER TABLE vehicles ADD CONSTRAINT vehicles_pk PRIMARY KEY ( vehicle_id );
-
-----------------------------------------------------------------------
 GO
 
 CREATE OR ALTER TRIGGER check_if_drink_trigg ON item_on_the_menu
