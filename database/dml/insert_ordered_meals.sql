@@ -1,0 +1,1 @@
+INSERT INTO ordered_meals VALUES (15, null, 1, 1)
