@@ -1,0 +1,78 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5B769B13-E157-101D-4C78-5F226561C617" name="Relation_8">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Delivery_Delivery_id" id="D525B547-B8DB-4C83-7C0E-23218ADD6937">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="696AC7D9-E52E-913B-18F4-27C4536A9B8F" referredColumn="9AC1DF9D-8C37-BF7D-1107-3C86B213B31A"/>
+</associations>
+</Column>
+<Column name="Vehicles_Vehicle_ID" id="6253B85C-B6DE-51CD-377A-2A17DFB87955">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="032F67B9-6AB4-2EE4-5736-3AB64E2F8735" referredColumn="ED45F6DB-20D8-2003-80AA-93E8277549DD"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="98990119-2A50-6AA9-DDF9-DAC2BA2174DF" name="Relation_8_PK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D525B547-B8DB-4C83-7C0E-23218ADD6937"/>
+<colUsage columnID="6253B85C-B6DE-51CD-377A-2A17DFB87955"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A68ACAA1-6EF3-8EB7-3D17-12FA59E5DDFC" name="Relation_8_Delivery_FK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>2D68923A-38D6-37A4-41EB-99209C28AA3B</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D525B547-B8DB-4C83-7C0E-23218ADD6937"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A3B19BF2-AC02-00EF-5B7D-8D498C270686" name="Relation_8_Vehicles_FK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>2D68923A-38D6-37A4-41EB-99209C28AA3B</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6253B85C-B6DE-51CD-377A-2A17DFB87955"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

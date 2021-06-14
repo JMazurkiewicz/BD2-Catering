@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E612B0D8-3066-E850-E51B-A9F9229D90EA" name="Business">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>00CECA5F-004F-00FC-C730-A52B50A1BA53</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Client_ID" id="5735F820-B568-B55B-EE76-0ADD64C45695">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>D4016EA6-9565-2629-427E-69ABFDE7BC43</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A3D29C39-A5F6-B817-DEE4-237091EB4626" referredColumn="3154B441-1AF4-3AB9-1AFF-6FC14FFAB0A2"/>
+</associations>
+</Column>
+<Column name="NIP" id="56A071FA-987B-C2BE-D014-ABE7C13E7763">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[Algorytm na wiki.]]></commentInRDBMS>
+<generatorID>1945E8FC-B085-7FE7-8FAA-648039D21600</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 CHAR</dataTypeSize>
+<ownDataTypeParameters>15 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="48E37E6A-BF63-E15B-1068-54754F029948" name="Business_PK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>FAB7E935-F32E-DB46-D9F2-3A3F220B6D36</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5735F820-B568-B55B-EE76-0ADD64C45695"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AD26852F-C119-913E-1001-24E64C9D7E36" name="Business_NIP_UN">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>A4E099ED-D3B8-ECEC-4176-1A8BB049E2C5</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="56A071FA-987B-C2BE-D014-ABE7C13E7763"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A471E33F-467B-4015-DED3-7DC574608DF6" name="Business_Client_FK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>8B397E87-EDA9-B7EB-CE65-3E49E056E1B4</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5735F820-B568-B55B-EE76-0ADD64C45695"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="180FFC87-2491-F5D5-7A0E-908C8878AA31" name="Relation_13">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Item_on_the_menu_Item_ID" id="F4315968-D33B-AFC0-2589-D7642DD846AD">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8E66D08E-3D01-6087-527F-C62CA1916E40" referredColumn="0490E589-631B-832F-278A-7392214ECCB2"/>
+</associations>
+</Column>
+<Column name="Product_Catalog_number" id="C873AB6E-1491-9FE9-2C4D-E543BE07F2A1">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="012B2B8A-A251-6C62-9847-4CCCE5A72C26" referredColumn="1F2BBC04-72D4-0C65-099A-D23766A1FD9A"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="42DAA353-4460-3D27-F7B3-96A0C0070342" name="Relation_13_PK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F4315968-D33B-AFC0-2589-D7642DD846AD"/>
+<colUsage columnID="C873AB6E-1491-9FE9-2C4D-E543BE07F2A1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B982B0C0-FA45-0D34-9BEA-433E63F28C9B" name="Relation_13_Item_on_the_menu_FK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>D8C3E68B-058C-1A5E-16F2-EC6E8AEB9161</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F4315968-D33B-AFC0-2589-D7642DD846AD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="41738DE1-FEA8-BCE6-B122-56A3B90547A3" name="Relation_13_Product_FK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>D8C3E68B-058C-1A5E-16F2-EC6E8AEB9161</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C873AB6E-1491-9FE9-2C4D-E543BE07F2A1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
