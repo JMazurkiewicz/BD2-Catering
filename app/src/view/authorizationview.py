@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # @author Jakub Mazurkiewicz
-
 import tkinter as tk
 from view.formview import FormView
 
