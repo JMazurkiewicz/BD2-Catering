@@ -5,6 +5,9 @@ import tkinter as tk
 from os import path
 
 from view.authorizationview import AuthorizationView
+from view.newmealview import NewMealView
+from view.neworderview import NewOrderView
+from view.newproductview import NewProductView
 from view.controlpanelview import ControlPanelView
 from model.connectionmodel import ConnectionModel
 
@@ -16,7 +19,7 @@ class MainWindow(tk.Tk):
         self.title('Catering app - BD2')
         self.geometry('800x600')
         self.iconphoto(False, tk.PhotoImage(file='view/img/cheese.png'))
-
+        
         self.main_container = tk.Frame(self)
         self.main_container.pack(side='top', fill='both', expand=True)
 
@@ -26,7 +29,7 @@ class MainWindow(tk.Tk):
         # SQL connection
         self.connection = ConnectionModel() 
 
-        for V in (AuthorizationView, ControlPanelView):
+        for V in (AuthorizationView, ControlPanelView, NewMealView, NewOrderView, NewProductView):
             view = V(self.main_container, self)
 
             if not isinstance(view, AuthorizationView):
@@ -44,3 +47,4 @@ class MainWindow(tk.Tk):
     def display_view(self, V):
         view = self.views[V]
         view.tkraise()
+        
