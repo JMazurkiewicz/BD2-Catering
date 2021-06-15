@@ -7,8 +7,12 @@ class Model:
         self.connection = None
 
 
-    def set_connection(self):
-        pass
+    def set_connection(self, connection):
+        self.connection = connection
+
+
+    def get_connection(self):
+        return self.connection
 
 
     def execute_sql(self, sql):
