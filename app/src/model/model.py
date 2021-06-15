@@ -14,6 +14,10 @@ class Model:
     def execute_sql(self, sql):
         if self.connection == None:
             raise Exception('No connection has been established!')
+        else:
+            with self.connection.cursor() as cursor:
+                cursor.execute(sql)
+                return cursor
         
 
     def add_view(self, view):

@@ -15,9 +15,10 @@ class MainWindow(tk.Tk):
 
         self.iconphoto(False, tk.PhotoImage(file='view/img/cheese.png'))
 
-        #self.authorization_model = AuthorizationModel()
+        self.authorization_model = AuthorizationModel()
         self.authorization_view = AuthorizationView(self)
+        self.authorization_view.set_model(self.authorization_model)
+        
         self.grid_columnconfigure(0, weight=1)
         self.grid_rowconfigure(0, weight=1)
-        #self.autorization_view.set_model(self.authorization_model)
         
