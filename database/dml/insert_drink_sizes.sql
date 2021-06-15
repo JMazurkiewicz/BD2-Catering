@@ -1,0 +1,3 @@
+INSERT INTO drink_sizes VALUES (333)
+INSERT INTO drink_sizes VALUES (500)
+INSERT INTO drink_sizes VALUES (1000)
