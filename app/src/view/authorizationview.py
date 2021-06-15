@@ -14,7 +14,10 @@ class AuthorizationView(FormView):
 
         self.main_label = tk.Label(self, anchor=tk.CENTER, text='Catering control panel')
         self.add_entry('login').set_description('Login')
+        
         self.add_entry('password').set_description('Password')
+        self.entries['password'].entry.configure(show='*')
+
 
         self.login_button = tk.Button(self, text='Log me in')
         self.info_label = tk.Label(self)
@@ -23,7 +26,6 @@ class AuthorizationView(FormView):
         self.__build_commands()
         
         self.grid_columnconfigure(0, weight=1)
-        self.grid_rowconfigure(0)
 
 
     def __build_grid(self):
