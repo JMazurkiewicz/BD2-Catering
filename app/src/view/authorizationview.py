@@ -63,6 +63,7 @@ class AuthorizationView(FormView):
             self.model.authorize()
             print('Success!')
 
+            self.connection = self.get_model().get_connection()
             self.controller.display_view(ControlPanelView)
 
         except Exception as e:

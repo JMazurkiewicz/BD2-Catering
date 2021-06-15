@@ -15,6 +15,10 @@ class View(tk.Frame):
         self.model = model
 
 
+    def get_model(self):
+        return self.model
+
+
     def set_parent_view(self, parent_view):
         self.parent_view = parent_view
 

@@ -6,6 +6,7 @@ from os import path
 
 from view.authorizationview import AuthorizationView
 from view.controlpanelview import ControlPanelView
+from model.connectionmodel import ConnectionModel
 
 # Class that represents main view AND main controller
 class MainWindow(tk.Tk):
@@ -19,10 +20,18 @@ class MainWindow(tk.Tk):
         self.main_container = tk.Frame(self)
         self.main_container.pack(side='top', fill='both', expand=True)
 
+        # List of views
         self.views = {}
+
+        # SQL connection
+        self.connection = ConnectionModel() 
 
         for V in (AuthorizationView, ControlPanelView):
             view = V(self.main_container, self)
+
+            if not isinstance(view, AuthorizationView):
+                view.set_model(self.connection)
+
             self.views[V] = view
             view.grid(row=0, column=0, sticky='nsew')
 
