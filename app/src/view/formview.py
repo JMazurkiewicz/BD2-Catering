@@ -6,8 +6,8 @@ from view.formentryview import FormEntryView
 from view import View
 
 class FormView(View):
-    def __init__(self, parent):
-        View.__init__(self, parent)
+    def __init__(self, parent, controller):
+        View.__init__(self, parent, controller)
 
         self.entry_frame = tk.Frame(self)
         self.entry_frame.grid_rowconfigure(0, weight=1)
