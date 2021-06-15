@@ -5,8 +5,8 @@ import tkinter as tk
 from view.calendarview import CalendarView
 
 class EmployeesScheduleView(CalendarView):
-    def __init__(self, parent):
-        CalendarView.__init__(self, parent)
+    def __init__(self, parent, controller):
+        CalendarView.__init__(self, parent, controller)
 
         self.show_order_location_button = tk.Button(self.button_frame, text='Show Order')
         self.add_extra_costs_button = tk.Button(self.button_frame, text='Add extra costs')

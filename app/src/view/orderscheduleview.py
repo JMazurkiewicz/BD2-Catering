@@ -6,8 +6,8 @@ from view.calendarview import CalendarView
 from view import View
 
 class OrderScheduleView(CalendarView):
-    def __init__(self, parent):
-        CalendarView.__init__(self, parent)
+    def __init__(self, parent, controller):
+        CalendarView.__init__(self, parent, controller)
 
         self.add_order_button = tk.Button(self.button_frame, text='Add order')
         self.edit_order_button = tk.Button(self.button_frame, text='Edit selected order')
