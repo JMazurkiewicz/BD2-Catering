@@ -24,6 +24,8 @@ class CalendarView(View):
 
         self.button_frame = tk.Frame(parent)
         self.__build_grid()
+
+        self.grid_columnconfigure(0, weight=1)
     
     def __build_grid(self):
         print('CalendarView::__build_grid')

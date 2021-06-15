@@ -36,3 +36,5 @@ class FormView(View):
     def reset_all_errors(self):
         for entry in self.entries.values():
             entry.set_error('')
+
+
