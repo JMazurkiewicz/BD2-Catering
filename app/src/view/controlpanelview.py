@@ -29,7 +29,7 @@ class ControlPanelView(View):
 
         button = tk.Button(self.button_frame, text='Magazine')
         button.grid(row=0, column=2)
-        self.buttons.append(button)sss
+        self.buttons.append(button)
 
 
         button = tk.Button(self.button_frame, text='Menu')
