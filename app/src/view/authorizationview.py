@@ -2,11 +2,15 @@
 # @author Jakub Mazurkiewicz
 
 import tkinter as tk
+from view.controlpanelview import ControlPanelView
 from view.formview import FormView
+from model import AuthorizationModel
 
 class AuthorizationView(FormView):
-    def __init__(self, parent):
-        FormView.__init__(self, parent)
+    def __init__(self, parent, controller):
+        FormView.__init__(self, parent, controller)
+
+        self.set_model(AuthorizationModel())
 
         self.main_label = tk.Label(self, anchor=tk.CENTER, text='Catering control panel')
         self.add_entry('login').set_description('Login')
@@ -58,6 +62,10 @@ class AuthorizationView(FormView):
             self.model.set_password(password)
             self.model.authorize()
             print('Success!')
+
+            control_panel_view = ControlPanelView(self.master)
+            control_panel_view.tkraise()
+
         except Exception as e:
             print('Authorization error: {}'.format(e))
             self.info_label.config(text='Authorization error', fg='red')
