@@ -1,0 +1,3 @@
+INSERT INTO client VALUES ('P', 2);
+INSERT INTO client VALUES ('B', 4);
+INSERT INTO client VALUES ('P', 5);

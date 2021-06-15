@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="0BB028B5-9FF5-31D3-7818-007BE4703F29" containerWithKeyObject="024FA039-7D65-6392-55E4-C41BA6445977" localFKIndex="F037FC64-8118-2C0E-2EDB-F35D48B7DC12" name="Relation_31_Drink_sizes_FK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>CB725282-10B0-C282-0AA1-68EA6620D834</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<referredTableLongName>Drink_sizes</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>A920DCC6-C72F-8506-992B-59A233DB6654</referredTableID>
+<keyObject>CF98EBA4-1DAD-D474-9497-A12E977339CF</keyObject>
+<referredKeyID>CF98EBA4-1DAD-D474-9497-A12E977339CF</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Size_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

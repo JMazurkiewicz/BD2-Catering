@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="14F8DDBE-543F-C29F-3BA2-ED6DAF10DF15" name="Relation_14">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Allergen_Allergen_id" id="0328E559-2593-6DEF-3329-8EDC20909A42">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="19629E3E-F13F-5F82-60F2-91B453158297" referredColumn="108797FF-4BAA-76C7-05D1-3F3CC96B3066"/>
+</associations>
+</Column>
+<Column name="Product_Catalog_number" id="947E293B-E269-E9DA-B952-5488BD0333AF">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="912AF7F0-052D-1F2B-A98D-DE99F2B0B607" referredColumn="1F2BBC04-72D4-0C65-099A-D23766A1FD9A"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7D5D11F3-2C18-D00A-D1CD-DDC55BF0D9F1" name="Relation_14_PK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0328E559-2593-6DEF-3329-8EDC20909A42"/>
+<colUsage columnID="947E293B-E269-E9DA-B952-5488BD0333AF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AF34DC23-8F15-6855-DB98-178E21F21E41" name="Relation_14_Allergen_FK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>DCA69A32-95F2-3738-14A3-B637ACC89AC1</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0328E559-2593-6DEF-3329-8EDC20909A42"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="86C72CAA-D250-2E6D-94AF-77FF4EF2F091" name="Relation_14_Product_FK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>DCA69A32-95F2-3738-14A3-B637ACC89AC1</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="947E293B-E269-E9DA-B952-5488BD0333AF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

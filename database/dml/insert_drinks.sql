@@ -1,0 +1,1 @@
+INSERT INTO drinks VALUES (3, 14)

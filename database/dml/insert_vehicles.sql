@@ -1,0 +1,2 @@
+INSERT INTO vehicles VALUES (100, 10);
+INSERT INTO vehicles VALUES (150, 17);

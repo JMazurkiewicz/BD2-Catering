@@ -1,0 +1,193 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DA4F398C-EC24-59FE-DC8A-93E54FF2472C" name="Address">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>47BB3FBB-76DC-D092-369D-B54E4A5295FD</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Address_ID" id="92AE9613-41EF-7BC0-663B-B40BF8DE95AC">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>0B885956-7A59-2E73-5B6A-CD7CBBC0DCA3</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Postal_code" id="E96BD6E4-94E7-FA53-2022-B32D86AFF402">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[Weryfikacja regexem.]]></commentInRDBMS>
+<generatorID>95839CA8-E3CD-AE20-A763-1E02643548BE</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>6 CHAR</dataTypeSize>
+<ownDataTypeParameters>6 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Street_name" id="FC02602F-E935-A2EF-6C60-03C0DC909A58">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>10439B01-157B-B362-6435-2B73314EB3C9</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>16 BYTE</dataTypeSize>
+<ownDataTypeParameters>16 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Building_number" id="DE33AB95-5EE0-64F4-B2AB-B3E03179E7E3">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[Czy jest to prawdilowy numer?]]></commentInRDBMS>
+<generatorID>A0B079BF-F364-E5CD-0CF6-D114A3859333</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Apartment_number" id="0C0DC1A2-FC93-1470-D293-078483DB4B0F">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[Czy jest to prawdilowy numer?]]></commentInRDBMS>
+<generatorID>7050FF73-C02C-5BF9-E527-D4E985937748</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Client_Client_ID" id="00664D41-C725-85D7-244C-E98377DBFC42">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>87F9D204-406A-E609-985F-581982A60AB3</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EF78CC19-F968-F028-25F5-8978F3FEF48D" referredColumn="3154B441-1AF4-3AB9-1AFF-6FC14FFAB0A2"/>
+</associations>
+</Column>
+<Column name="City_City_ID" id="AEFF09EF-9B8D-5168-FE27-406057433EA6">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>E224DBFE-BC93-1209-272D-ACD52EC69951</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BD4370CD-F7AD-A599-8310-1A66FA9AF3F9" referredColumn="CB2AAC98-9081-1479-D0F6-7948BF0B8EA3"/>
+</associations>
+</Column>
+<Column name="Delivery_Delivery_id" id="6A1109FC-BA2C-9832-7C02-FE2EFF4AC969">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>8C00A72F-E50C-9203-EE6B-F9FCF57907D6</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CFF85426-E836-D437-4B8A-5B32C3B58236" referredColumn="9AC1DF9D-8C37-BF7D-1107-3C86B213B31A"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6A881DE5-58DE-6758-B8C0-38C1B6EFE4F0" name="Address_PK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>12E3F7F2-4B49-69A3-6D2D-E2ADB9DE85E2</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="92AE9613-41EF-7BC0-663B-B40BF8DE95AC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="275DCDB7-B689-BD8E-1F72-3E7B2E657276" name="Address__IDX">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>667B173C-A0F6-1548-E685-DEE60A828568</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="00664D41-C725-85D7-244C-E98377DBFC42"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="02DA4ADD-2D2A-C551-A8CA-03FFE50C729E" name="Address__IDXv1">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>8CB679A2-6CF4-90C4-B45C-C43EF260DD2D</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="6A1109FC-BA2C-9832-7C02-FE2EFF4AC969"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0D3DDE32-9AD1-7F52-B35D-582CD200AF76" name="Address_Client_FK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>667B173C-A0F6-1548-E685-DEE60A828568</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="00664D41-C725-85D7-244C-E98377DBFC42"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B26A0C91-C66B-CCF5-72E2-AE4D7CAE230C" name="Address_City_FK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>A7A092EF-F538-EE60-5F61-0B7DA217D75B</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AEFF09EF-9B8D-5168-FE27-406057433EA6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="384EE230-E991-F7B2-9B3E-48FA94A9AFF1" name="Address_Delivery_FK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>8CB679A2-6CF4-90C4-B45C-C43EF260DD2D</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6A1109FC-BA2C-9832-7C02-FE2EFF4AC969"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

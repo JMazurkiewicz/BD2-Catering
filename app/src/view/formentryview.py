@@ -8,7 +8,7 @@ DEFAULT_FORM_ENTRY_WIDTH = 30
 
 class FormEntryView(View):
     def __init__(self, parent, row, grid_style='default'):
-        View.__init__(self, parent)
+        View.__init__(self, parent, None)
 
         self.description = tk.Label(parent)
         self.entry = tk.Entry(parent, width=DEFAULT_FORM_ENTRY_WIDTH)

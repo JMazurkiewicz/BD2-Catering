@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="024FA039-7D65-6392-55E4-C41BA6445977" name="Relation_31">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Drink_sizes_Size_id" id="976429FC-C7AB-0DCC-A26B-7C49AD036B93">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0BB028B5-9FF5-31D3-7818-007BE4703F29" referredColumn="D8496117-E3A2-F7DD-93EA-1E20FE90E74A"/>
+</associations>
+</Column>
+<Column name="Drinks_Item_ID" id="40A2AF9F-ED95-9540-EFB8-E45D8E588E3C">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7E06AF63-0CA6-B3C3-4DE6-4D76A3D4D75F" referredColumn="F770D34B-E481-E658-53A1-2F73CE470711"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="20CC0B04-A063-841A-DC94-82BB35B16EE9" name="Relation_31_PK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="976429FC-C7AB-0DCC-A26B-7C49AD036B93"/>
+<colUsage columnID="40A2AF9F-ED95-9540-EFB8-E45D8E588E3C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F037FC64-8118-2C0E-2EDB-F35D48B7DC12" name="Relation_31_Drink_sizes_FK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>CB725282-10B0-C282-0AA1-68EA6620D834</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="976429FC-C7AB-0DCC-A26B-7C49AD036B93"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E5242F27-48D3-7A1F-3D55-FC545901DAB4" name="Relation_31_Drinks_FK">
+<createdBy>arsze</createdBy>
+<createdTime>2021-06-05 13:50:06 UTC</createdTime>
+<generatorID>CB725282-10B0-C282-0AA1-68EA6620D834</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="40A2AF9F-ED95-9540-EFB8-E45D8E588E3C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

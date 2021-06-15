@@ -1,0 +1,1 @@
+INSERT INTO "Order" VALUES (GETDATE(), '25/06/2021', 230, 499.99, 1, 1, 1, 1, 2)
