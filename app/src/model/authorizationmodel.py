@@ -28,12 +28,7 @@ class AuthorizationModel(Model):
         print('Verification started...')
         str = 'DRIVER={};SERVER={};PORT=1433;DATABASE={};UID={};PWD={}'.format(self.driver, self.server, self.database, self.login, self.password)
         
-        try:
-            with pyodbc.connect(str) as connection:
-                self.connection = connection
-        except Exception as e:
-            print('Authorization error: {}'.format(e))
-            raise
+        self.connection = pyodbc.connect(str)
 
 
     def get_user_type(self):

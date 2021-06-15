@@ -40,17 +40,25 @@ class AuthorizationView(FormView):
         self.reset_all_errors()
         self.info_label.config(text='')
 
+        error_flag = False
+
         if len(login) == 0:
             self.set_error('login', 'Login cannot be empty')
+            error_flag = True
         
         if len(password) == 0:
             self.set_error('password', 'Password cannot be empty')
+            error_flag = True
+
+        if error_flag:
+            return
 
         try:
             self.model.set_login(login)
             self.model.set_password(password)
-            response = self.model.authorize()
-            print('SUKCES')
-        except Exception:
+            self.model.authorize()
+            print('Success!')
+        except Exception as e:
+            print('Authorization error: {}'.format(e))
             self.info_label.config(text='Authorization error', fg='red')
             return
