@@ -34,34 +34,23 @@ class AuthorizationView(FormView):
 
 
     def on_button_click(self):
-        return None
-        login = self.login_entry.get()
-        password = self.password_entry.get()
+        login = self.get_input('login')
+        password = self.get_input('password')
+
+        self.reset_all_errors()
+        self.info_label.config(text='')
 
         if len(login) == 0:
-            self.__print_error_info('Login cannot be empty')
-            return
-        elif len(password) == 0:
-            self.__print_error_info('Password cannot be empty')
-            return
-        else:
-            self.__print_info('')
+            self.set_error('login', 'Login cannot be empty')
+        
+        if len(password) == 0:
+            self.set_error('password', 'Password cannot be empty')
 
         try:
             self.model.set_login(login)
             self.model.set_password(password)
             response = self.model.authorize()
-            self.__print_info(response)
+            print('SUKCES')
         except Exception:
-            self.__print_error_info('Authorization error!')
+            self.info_label.config(text='Authorization error', fg='red')
             return
-
-
-    def __print_error_info(self, str):
-        self.info_label.configure(fg='red')
-        self.info_label.configure(text=str)
-
-
-    def __print_info(self, str):
-        self.info_label.configure(fg='black')
-        self.info_label.config(text=str)
