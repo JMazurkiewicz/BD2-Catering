@@ -16,7 +16,6 @@ class ControlPanelView(View):
     def __build_buttons(self):
         self.__add_button(text='Show orders')
         self.__add_button(text='New order')
-        self.__add_button(text='xD')
 
     
     def __add_button(self, *args, **kwargs):

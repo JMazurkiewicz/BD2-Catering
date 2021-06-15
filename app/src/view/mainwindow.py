@@ -17,8 +17,7 @@ class MainWindow(tk.Tk):
         self.iconphoto(False, tk.PhotoImage(file='view/img/cheese.png'))
 
         self.main_container = tk.Frame(self)
-        self.main_container.grid_columnconfigure(0, weight=1)
-        self.main_container.grid_rowconfigure(0, weight=1)
+        self.main_container.pack(side='top', fill='both', expand=True)
 
         self.views = {}
 
@@ -26,6 +25,11 @@ class MainWindow(tk.Tk):
             view = V(self.main_container, self)
             self.views[V] = view
             view.grid(row=0, column=0, sticky='nsew')
+
+        self.main_container.grid_columnconfigure(0, weight=1)
+        self.main_container.grid_rowconfigure(0, weight=1)
+
+        self.display_view(AuthorizationView)
         
     
     def display_view(self, V):
