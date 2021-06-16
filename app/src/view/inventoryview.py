@@ -17,5 +17,5 @@ class InventoryView(View):
         
 
     def __build_grid(self):
-        self.description.grid(row=0, column=0)
-        self.description.grid(row=0, column=1)
+        self.description.grid(row=0, column=0, padx=(0, 50))
+        self.button_frame.grid(row=0, column=1)

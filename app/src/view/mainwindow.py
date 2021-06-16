@@ -2,7 +2,7 @@
 # @author Jakub Mazurkiewicz
 
 import tkinter as tk
-
+from view.magazineview import MagazineView
 from view.authorizationview import AuthorizationView
 from view.newmealview import NewMealView
 from view.neworderview import NewOrderView
@@ -30,7 +30,7 @@ class MainWindow(tk.Tk):
         # Database connection
         self.connection = None
 
-        for V in (AuthorizationView, ControlPanelView, NewMealView, NewOrderView, NewProductView, EmployeesScheduleView, OrderScheduleView):
+        for V in (AuthorizationView, ControlPanelView, NewMealView, NewOrderView, NewProductView, EmployeesScheduleView, OrderScheduleView, MagazineView):
             view = V(self.main_container, self)
 
             if not isinstance(view, AuthorizationView):
