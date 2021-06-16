@@ -2,18 +2,18 @@
 # @author Jakub Mazurkiewicz
 
 import tkinter as tk
-from os import path
-
+from view.newemployeeview import NewEmployeeView
+from view.magazineview import MagazineView
 from view.authorizationview import AuthorizationView
 from view.newmealview import NewMealView
 from view.neworderview import NewOrderView
 from view.newproductview import NewProductView
 from view.newstorageentryview import NewStorageEntryView
 from view.controlpanelview import ControlPanelView
-from model.connectionmodel import ConnectionModel
 from view.calendarview import CalendarView
 from view.employeesscheduleview import EmployeesScheduleView
 from view.orderscheduleview import OrderScheduleView
+from view.menuview import MenuView
 
 # Class that represents main view AND main controller
 class MainWindow(tk.Tk):
@@ -30,14 +30,14 @@ class MainWindow(tk.Tk):
         # List of views
         self.views = {}
 
-        # SQL connection
-        self.connection = ConnectionModel() 
+        # Database connection
+        self.connection = None
 
-        for V in (AuthorizationView, ControlPanelView, NewMealView, NewOrderView, NewProductView, NewStorageEntryView, EmployeesScheduleView, OrderScheduleView):
+        for V in (AuthorizationView, ControlPanelView, NewMealView, NewOrderView, NewProductView, EmployeesScheduleView, OrderScheduleView, MagazineView, MenuView, NewStorageEntryView, NewEmployeeView):
             view = V(self.main_container, self)
 
             if not isinstance(view, AuthorizationView):
-                view.set_model(self.connection)
+                view.get_model().set_connection(self.connection)
 
             self.views[V] = view
             view.grid(row=0, column=0, sticky='nsew')
@@ -45,15 +45,17 @@ class MainWindow(tk.Tk):
         self.main_container.grid_columnconfigure(0, weight=1)
         self.main_container.grid_rowconfigure(0, weight=1)
 
-        self.display_view(AuthorizationView)
+        self.display_view(ControlPanelView)
         
     
     def display_view(self, V):
         view = self.views[V]
         view.tkraise()
+        
 
-    def go_to_control_panel(self):
+    def display_control_panel(self):
         self.display_view(ControlPanelView)
 
     
-        
+    def update_connection(self, connection):
+        self.connection = connection

@@ -42,7 +42,7 @@ class OrderScheduleView(CalendarView):
 
         button = tk.Button(self.button_frame, text='Main Menu')
         button.grid(row=5, column=5)
-        button.configure(command=self.controller.go_to_control_panel)
+        button.configure(command=self.controller.display_control_panel)
         self.buttons.append(button)
 
 

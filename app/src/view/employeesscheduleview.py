@@ -27,7 +27,7 @@ class EmployeesScheduleView(CalendarView):
 
         button = tk.Button(self.button_frame, text='Main menu')
         button.grid(row=0, column=2)
-        button.configure(command=self.controller.go_to_control_panel)
+        button.configure(command=self.controller.display_control_panel)
         self.buttons.append(button)
 
 

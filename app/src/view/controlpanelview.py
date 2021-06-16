@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # @author Jakub Mazurkiewicz
 
+from view.newemployeeview import NewEmployeeView
+from view.menuview import MenuView
+from view.magazineview import MagazineView
 from view.employeesscheduleview import EmployeesScheduleView
 from view.orderscheduleview import OrderScheduleView
 from view.newmealview import NewMealView
@@ -27,38 +30,33 @@ class ControlPanelView(View):
         button.configure(command=self.on_product_button)
         self.buttons.append(button)
 
-
         button = tk.Button(self.button_frame, text='Vehicles')
         button.grid(row=0, column=1)
         self.buttons.append(button)
 
-
         button = tk.Button(self.button_frame, text='Magazine')
+        button.configure(command=self.on_magazine_button_click)
         button.grid(row=0, column=2)
         self.buttons.append(button)
 
-
         button = tk.Button(self.button_frame, text='Menu')
         button.grid(row=0, column=3)
-        button.configure(command=self.on_meal_button)
+        button.configure(command=self.on_menu_button_click)
         self.buttons.append(button)
-
 
         button = tk.Button(self.button_frame, text='Edit employees')
         button.grid(row=1, column=0)
         self.buttons.append(button)
 
-
         button = tk.Button(self.button_frame, text='Add employee')
         button.grid(row=1, column=1)
+        button.configure(command=self.on_add_employee_button_click)
         self.buttons.append(button)
-
 
         button = tk.Button(self.button_frame, text='Order calendar')
         button.grid(row=1, column=2)
         button.configure(command=self.on_order_button)
         self.buttons.append(button)
-
 
         button = tk.Button(self.button_frame, text='Employee calendar')
         button.grid(row=1, column=3)
@@ -66,24 +64,37 @@ class ControlPanelView(View):
         self.buttons.append(button)
 
 
-    def __add_button(self, text, command):
-        button = tk.Button(self.button_frame, text=text, command=command)
-
     def on_order_button(self):
        self.controller.display_view(OrderScheduleView)
+
 
     def on_vehicles_button(self):
         self.controller.display_view(NewProductView)
 
+
     def on_meal_button(self):
         self.controller.display_view(NewMealView)
+
 
     def on_employee_button(self):
         self.controller.display_view(EmployeesScheduleView)
 
+
     def on_product_button(self):
         self.controller.display_view(NewProductView)
 
-    #def on_product_button(self):
-    #    self.controller.display_view(NewProductView)
-        
+
+    def on_product_button(self):
+        self.controller.display_view(NewProductView)
+
+
+    def on_magazine_button_click(self):
+        self.controller.display_view(MagazineView)
+
+
+    def on_menu_button_click(self):
+        self.controller.display_view(MenuView)
+
+    
+    def on_add_employee_button_click(self):
+        self.controller.display_view(NewEmployeeView)
