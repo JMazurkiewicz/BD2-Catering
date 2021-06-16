@@ -10,7 +10,7 @@ class AuthorizationModel(Model):
         self.password = ''
         self.user_type = -1
 
-        self.server = 'bd2-grupa11.database.windows.net'
+        self.server = 'bd2-catering.database.windows.net'
         self.database = 'Catering'
         self.driver = '{SQL Server}'
         self.connection = None
