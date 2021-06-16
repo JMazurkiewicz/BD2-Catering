@@ -3,7 +3,7 @@
 
 from model import Model
 
-class InventoryModel(Model):
+class StorageModel(Model):
     def __init__(self):
         pass
 
