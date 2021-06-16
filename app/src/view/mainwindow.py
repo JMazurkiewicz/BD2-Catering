@@ -2,6 +2,7 @@
 # @author Jakub Mazurkiewicz
 
 
+
 import tkinter as tk
 from view.addextracostsview import ExtraCostsView
 from view.newemployeeview import NewEmployeeView
@@ -16,8 +17,9 @@ from view.calendarview import CalendarView
 from view.employeesscheduleview import EmployeesScheduleView
 from view.orderscheduleview import OrderScheduleView
 from view.menuview import MenuView
+from view.addclientview import NewClientView
 
-TYPES = (AuthorizationView, ControlPanelView, NewMealView, NewOrderView, NewProductView, EmployeesScheduleView, OrderScheduleView, MagazineView, MenuView, NewStorageEntryView, NewEmployeeView, ExtraCostsView)
+TYPES = (AuthorizationView, ControlPanelView, NewMealView, NewOrderView, NewProductView, EmployeesScheduleView, OrderScheduleView, MagazineView, MenuView, NewStorageEntryView, NewEmployeeView, ExtraCostsView, NewClientView)
 
 # Class that represents main view AND main controller
 class MainWindow(tk.Tk):

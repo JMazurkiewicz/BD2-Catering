@@ -32,22 +32,34 @@ class OrderScheduleModel(Model):
         order_id = self.execute_sql(get_order.format(date))
 
         get_employee = 'SELECT employee_id FROM employee WHERE name = {} AND surname = {}'
-        employee_id = self.execute_sql(get_employee.format(name, surname))
+        employee_id_cur = self.execute_sql(get_employee.format(name, surname))
+        employee_id = employee_id_cur.fetchone()[0]
+
+
 
         sql = 'INSERT INTO employees_for_order VALUES ({}, {})'
         self.execute_sql(sql.format(employee_id, order_id))
 
 
     def delete_order(self, date):
-        sql = 'DELETE FROM "Order" WHERE start_date = {}'
+        sql = 'DELETE FROM "Order" WHERE start_date = \'{}\''
         self.execute_sql(sql.format(date))
 
 
     def show_order_info(self, date):
-        get_address = 'SELECT address_id, base_price FROM "Order" WHERE start_date = {}'
-        adress_id, base_price = self.execute_sql(get_address.format(date))
+        get_address = """SELECT address_id 
+                         FROM "Order"
+                         WHERE start_date = \'{}\'"""
+        adress_id_cur = self.execute_sql(get_address.format(date))
+        adress_id = adress_id_cur.fetchone()
 
-        get_address_info = 'SELECT a.postal_code, a.street_name, a.building_number, a.apartment_number, c.name, c.district FROM address AS a JOIN city AS c ON (c.city_id = a.city_id) WHERE a.address_id = {}'
-        address_info = self.execute_sql(get_address_info.format(adress_id))
-        print("Adres:", address_info)
-        #@TODO poprawic troszku xD
+        get_address_info = """SELECT a.postal_code, a.street_name, a.building_number, a.apartment_number, c.name, c.district 
+                                FROM address AS a 
+                                JOIN city AS c 
+                                ON (c.city_id = a.city_id) 
+                                WHERE a.address_id = {}"""
+        address_info_cur = self.execute_sql(get_address_info.format(adress_id[0]))
+        address_info =  address_info_cur.fetchone()
+        while address_info:
+            print("Adres:", address_info.postal_code, address_info.street_name, address_info.building_number, address_info.apartment_number, address_info.name, address_info.district)
+            address_info =  address_info_cur.fetchone()

@@ -22,9 +22,10 @@ class Model:
         if self.connection is None:
             raise Exception('No connection has been established!')
         else:
-            with self.connection.cursor() as cursor:
-                cursor.execute(sql)
-                return cursor
+            cursor = self.connection.cursor()
+            cursor.execute(sql)
+            return cursor
+
         
 
     def add_view(self, view):
