@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# @author Jakub Mazurkiewicz
+# @author Jakub Mazurkiewicz / Konrad  Wojewódzki
 
 from view.addextracostsview import ExtraCostsView
 import tkinter as tk

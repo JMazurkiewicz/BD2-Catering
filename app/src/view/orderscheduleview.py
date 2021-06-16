@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# @author Jakub Mazurkiewicz
+# @author Jakub Mazurkiewicz / Konrad Wojewódzki
 
 from view.neworderview import NewOrderView
 import tkinter as tk
@@ -59,14 +59,16 @@ class OrderScheduleView(CalendarView):
     
     def on_delete_order_button_click(self):
         date = self.get_date()
-        print(date)
         self.get_model().delete_order(date)
         print('delete order')
 
 
     def on_add_employee_button_click(self):
+        #@TODO Dodac widok dodawania
         print('add employee to order')
 
 
     def on_show_order_button_click(self):
+        date = self.get_date()
+        self.get_model().show_order_info(date)
         print('show order info')

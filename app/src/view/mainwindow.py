@@ -17,6 +17,8 @@ from view.employeesscheduleview import EmployeesScheduleView
 from view.orderscheduleview import OrderScheduleView
 from view.menuview import MenuView
 
+TYPES = (AuthorizationView, ControlPanelView, NewMealView, NewOrderView, NewProductView, EmployeesScheduleView, OrderScheduleView, MagazineView, MenuView, NewStorageEntryView, NewEmployeeView, ExtraCostsView)
+
 # Class that represents main view AND main controller
 class MainWindow(tk.Tk):
     def __init__(self):
@@ -35,13 +37,8 @@ class MainWindow(tk.Tk):
         # Database connection
         self.connection = None
 
-        for V in (AuthorizationView, ControlPanelView, NewMealView, NewOrderView, NewProductView, EmployeesScheduleView, OrderScheduleView, MagazineView, MenuView, NewStorageEntryView, NewEmployeeView, ExtraCostsView):
+        for V in TYPES:
             view = V(self.main_container, self)
-
-            print (V)
-
-            if not isinstance(view, AuthorizationView):
-                view.get_model().set_connection(self.connection)
 
             self.views[V] = view
             view.grid(row=0, column=0, sticky='nsew')
@@ -62,4 +59,8 @@ class MainWindow(tk.Tk):
 
     
     def update_connection(self, connection):
-        self.connection = connection
+        if connection is None:
+            raise Exception('Connection cannot be none!')
+        else:
+            for V in TYPES:
+                self.views[V].model.set_connection(connection)

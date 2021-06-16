@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# @author Damian Piotrowski
+# @author Konrad Wojewódzki
 
 from model.addextracostsmodel import ExtraCostsModel
 import tkinter as tk

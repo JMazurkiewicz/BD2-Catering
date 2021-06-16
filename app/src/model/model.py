@@ -8,7 +8,10 @@ class Model:
 
 
     def set_connection(self, connection):
-        self.connection = connection
+        if connection is None:
+            raise Exception('Connection cannot be None')
+        else:
+            self.connection = connection
 
 
     def get_connection(self):

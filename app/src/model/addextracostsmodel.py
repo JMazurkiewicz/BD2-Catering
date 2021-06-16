@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# @author Konrad
+# @author Damian Piotrowski / Konrad Wojewódzki
 
 from tkcalendar.calendar_ import Calendar
 from model import Model

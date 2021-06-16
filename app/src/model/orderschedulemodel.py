@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# @author Jakub Mazurkiewicz
+# @author Jakub Mazurkiewicz / Konrad Wojewódzki
 
 from model import Model
 from tkcalendar import DateEntry
@@ -26,6 +26,7 @@ class OrderScheduleModel(Model):
     def __make_order_message(self, order_id, start_date, end_date):
         return "Order id: {}\nStart date: {}\nEnd date: {}".format(order_id, start_date, end_date)
 
+
     def add_employee_to_event(self, date, name, surname):
         get_order = 'SELECT order_id FROM "Order" WHERE start_date = {}'
         order_id = self.execute_sql(get_order.format(date))
@@ -35,6 +36,7 @@ class OrderScheduleModel(Model):
 
         sql = 'INSERT INTO employees_for_order VALUES ({}, {})'
         self.execute_sql(sql.format(employee_id, order_id))
+
 
     def delete_order(self, date):
         sql = 'DELETE FROM "Order" WHERE start_date = {}'
@@ -48,3 +50,4 @@ class OrderScheduleModel(Model):
         get_address_info = 'SELECT a.postal_code, a.street_name, a.building_number, a.apartment_number, c.name, c.district FROM address AS a JOIN city AS c ON (c.city_id = a.city_id) WHERE a.address_id = {}'
         address_info = self.execute_sql(get_address_info.format(adress_id))
         print("Adres:", address_info)
+        #@TODO poprawic troszku xD
