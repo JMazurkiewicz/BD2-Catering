@@ -30,7 +30,7 @@ class NewOrderView(FormView):
         self.save_button.grid(column=1, row=1)
         self.go_back_button.grid(column=0, row=1)
 
-    def on_save_button():
+    def on_save_button(self):
         apetizer = self.get_input('apetizer')
         main_course = self.get_input('main_course')
         soup = self.get_input('soup')
