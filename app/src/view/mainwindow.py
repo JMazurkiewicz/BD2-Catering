@@ -45,7 +45,7 @@ class MainWindow(tk.Tk):
         self.main_container.grid_columnconfigure(0, weight=1)
         self.main_container.grid_rowconfigure(0, weight=1)
 
-        self.display_view(ControlPanelView)
+        self.display_view(AuthorizationView)
         
     
     def display_view(self, V):
