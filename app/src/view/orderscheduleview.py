@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # @author Jakub Mazurkiewicz
 
+from view.neworderview import NewOrderView
 import tkinter as tk
 from view.calendarview import CalendarView
 from model.orderschedulemodel import OrderScheduleModel
@@ -49,7 +50,7 @@ class OrderScheduleView(CalendarView):
 
 
     def on_add_order_button_click(self):
-        self.get_model().load_month('06','2021')
+        self.controller.display_view(NewOrderView)
 
 
     def on_edit_order_button_click(self):
@@ -57,6 +58,9 @@ class OrderScheduleView(CalendarView):
 
     
     def on_delete_order_button_click(self):
+        date = self.get_date()
+        print(date)
+        self.get_model().delete_order(date)
         print('delete order')
 
 

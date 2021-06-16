@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 # @author Jakub Mazurkiewicz
 
+
 import tkinter as tk
+from view.addextracostsview import ExtraCostsView
 from view.newemployeeview import NewEmployeeView
 from view.magazineview import MagazineView
 from view.authorizationview import AuthorizationView
@@ -33,7 +35,7 @@ class MainWindow(tk.Tk):
         # Database connection
         self.connection = None
 
-        for V in (AuthorizationView, ControlPanelView, NewMealView, NewOrderView, NewProductView, EmployeesScheduleView, OrderScheduleView, MagazineView, MenuView, NewStorageEntryView, NewEmployeeView):
+        for V in (AuthorizationView, ControlPanelView, NewMealView, NewOrderView, NewProductView, EmployeesScheduleView, OrderScheduleView, MagazineView, MenuView, NewStorageEntryView, NewEmployeeView, ExtraCostsView):
             view = V(self.main_container, self)
 
             print (V)
