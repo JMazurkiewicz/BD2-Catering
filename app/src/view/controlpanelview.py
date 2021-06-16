@@ -30,40 +30,33 @@ class ControlPanelView(View):
         button.configure(command=self.on_product_button)
         self.buttons.append(button)
 
-
         button = tk.Button(self.button_frame, text='Vehicles')
         button.grid(row=0, column=1)
         self.buttons.append(button)
-
 
         button = tk.Button(self.button_frame, text='Magazine')
         button.configure(command=self.on_magazine_button_click)
         button.grid(row=0, column=2)
         self.buttons.append(button)
 
-
         button = tk.Button(self.button_frame, text='Menu')
         button.grid(row=0, column=3)
         button.configure(command=self.on_menu_button_click)
         self.buttons.append(button)
 
-
         button = tk.Button(self.button_frame, text='Edit employees')
         button.grid(row=1, column=0)
         self.buttons.append(button)
-
 
         button = tk.Button(self.button_frame, text='Add employee')
         button.grid(row=1, column=1)
         button.configure(command=self.on_add_employee_button_click)
         self.buttons.append(button)
 
-
         button = tk.Button(self.button_frame, text='Order calendar')
         button.grid(row=1, column=2)
         button.configure(command=self.on_order_button)
         self.buttons.append(button)
-
 
         button = tk.Button(self.button_frame, text='Employee calendar')
         button.grid(row=1, column=3)

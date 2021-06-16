@@ -27,6 +27,11 @@ class MenuView(InventoryView):
         button.configure(command=self.on_edit_meal_button_click)
         self.buttons.append(button)
 
+        button = tk.Button(self.button_frame, text='Back to main menu')
+        button.grid(row=3, column=0)
+        button.configure(command=self.controller.display_control_panel)
+        self.buttons.append(button)
+
 
     def on_add_new_meal_button_click(self):
         print('on_add_new_meal_button_click')
