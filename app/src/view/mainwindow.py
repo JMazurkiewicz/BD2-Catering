@@ -11,6 +11,7 @@ from view.controlpanelview import ControlPanelView
 from view.calendarview import CalendarView
 from view.employeesscheduleview import EmployeesScheduleView
 from view.orderscheduleview import OrderScheduleView
+from view.menuview import MenuView
 
 # Class that represents main view AND main controller
 class MainWindow(tk.Tk):
@@ -30,7 +31,7 @@ class MainWindow(tk.Tk):
         # Database connection
         self.connection = None
 
-        for V in (AuthorizationView, ControlPanelView, NewMealView, NewOrderView, NewProductView, EmployeesScheduleView, OrderScheduleView, MagazineView):
+        for V in (AuthorizationView, ControlPanelView, NewMealView, NewOrderView, NewProductView, EmployeesScheduleView, OrderScheduleView, MagazineView, MenuView):
             view = V(self.main_container, self)
 
             if not isinstance(view, AuthorizationView):
