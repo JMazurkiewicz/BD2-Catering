@@ -13,7 +13,6 @@ class AuthorizationModel(Model):
         self.server = 'bd2-catering.database.windows.net'
         self.database = 'Catering'
         self.driver = '{SQL Server}'
-        self.connection = None
 
 
     def set_login(self, login):

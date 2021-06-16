@@ -31,3 +31,6 @@ class CalendarView(View):
     def __build_grid(self):
         self.calendar.grid(column=0, row=0)
         self.button_frame.grid(column=0, row=1)
+
+    def get_date(self):
+        return self.calendar.selection_get()

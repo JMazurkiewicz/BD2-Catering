@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 # @author Jakub Mazurkiewicz
 
+
 import tkinter as tk
+from view.addextracostsview import ExtraCostsView
 from view.newemployeeview import NewEmployeeView
 from view.magazineview import MagazineView
 from view.authorizationview import AuthorizationView
@@ -14,6 +16,8 @@ from view.calendarview import CalendarView
 from view.employeesscheduleview import EmployeesScheduleView
 from view.orderscheduleview import OrderScheduleView
 from view.menuview import MenuView
+
+TYPES = (AuthorizationView, ControlPanelView, NewMealView, NewOrderView, NewProductView, EmployeesScheduleView, OrderScheduleView, MagazineView, MenuView, NewStorageEntryView, NewEmployeeView, ExtraCostsView)
 
 # Class that represents main view AND main controller
 class MainWindow(tk.Tk):
@@ -33,11 +37,8 @@ class MainWindow(tk.Tk):
         # Database connection
         self.connection = None
 
-        for V in (AuthorizationView, ControlPanelView, NewMealView, NewOrderView, NewProductView, EmployeesScheduleView, OrderScheduleView, MagazineView, MenuView, NewStorageEntryView, NewEmployeeView):
+        for V in TYPES:
             view = V(self.main_container, self)
-
-            if not isinstance(view, AuthorizationView):
-                view.get_model().set_connection(self.connection)
 
             self.views[V] = view
             view.grid(row=0, column=0, sticky='nsew')
@@ -58,4 +59,8 @@ class MainWindow(tk.Tk):
 
     
     def update_connection(self, connection):
-        self.connection = connection
+        if connection is None:
+            raise Exception('Connection cannot be none!')
+        else:
+            for V in TYPES:
+                self.views[V].model.set_connection(connection)

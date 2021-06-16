@@ -8,7 +8,10 @@ class Model:
 
 
     def set_connection(self, connection):
-        self.connection = connection
+        if connection is None:
+            raise Exception('Connection cannot be None')
+        else:
+            self.connection = connection
 
 
     def get_connection(self):
@@ -16,7 +19,7 @@ class Model:
 
 
     def execute_sql(self, sql):
-        if self.connection == None:
+        if self.connection is None:
             raise Exception('No connection has been established!')
         else:
             with self.connection.cursor() as cursor:

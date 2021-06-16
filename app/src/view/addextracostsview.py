@@ -1,26 +1,27 @@
 #!/usr/bin/env python
-# @author Damian Piotrowski
+# @author Konrad Wojewódzki
 
+from model.addextracostsmodel import ExtraCostsModel
 import tkinter as tk
 from model.newproductmodel import NewProductModel
 from view.formview import FormView
 
-class NewProductView(FormView):
+class ExtraCostsView(FormView):
 
     def __init__(self, parent, controller):
         FormView.__init__(self, parent, controller)
 
-        self.add_entry('catalog_number').set_description('Catalog Number')
-        self.add_entry('name').set_description('Name')
-        self.add_entry('price').set_description('Price')
+        self.add_entry('cost').set_description('Cost')
+        self.add_entry('cause').set_description('Cause')
 
         self.save_button = tk.Button(self, text='Save')
         self.save_button.configure(command=self.on_save_click)
         self.go_back_button = tk.Button(self, text='Main menu')
         self.go_back_button.configure(command=self.controller.display_control_panel)
 
-        self.set_model(NewProductModel())
         self.__build_grid()
+
+        self.set_model(ExtraCostsModel())
 
     def __build_grid(self):
         self.entry_frame.grid(column=0, row=0)
@@ -28,8 +29,7 @@ class NewProductView(FormView):
         self.go_back_button.grid(column=0, row=1)
 
     def on_save_click(self):
-        catalog_number = self.get_input('catalog_number')
-        name = self.get_input('name')
-        price = self.get_input('price')
-        self.get_model().insert_new_product(catalog_number, name, price)
+        cost = self.get_input('cost')
+        cause = self.get_input('cause')
+        self.get_model().add_extra_cost(cost, cause)
 
