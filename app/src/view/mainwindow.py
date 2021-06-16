@@ -51,7 +51,7 @@ class MainWindow(tk.Tk):
         view = self.views[V]
         view.tkraise()
 
-    def go_to_control_panel(self):
+    def display_control_panel(self):
         self.display_view(ControlPanelView)
 
     

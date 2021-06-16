@@ -29,6 +29,5 @@ class CalendarView(View):
     
 
     def __build_grid(self):
-        print('CalendarView::__build_grid')
         self.calendar.grid(column=0, row=0)
         self.button_frame.grid(column=0, row=1)

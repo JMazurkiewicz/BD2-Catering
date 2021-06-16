@@ -15,7 +15,7 @@ class NewMealView(FormView):
 
         self.save_button = tk.Button(self, text='Save')
         self.go_back_button = tk.Button(self, text='Main menu')
-        self.go_back_button.configure(command=self.controller.go_to_control_panel)
+        self.go_back_button.configure(command=self.controller.display_control_panel)
 
         self.__build_grid()
         self.__build_commands
