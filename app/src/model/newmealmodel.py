@@ -5,13 +5,14 @@ from model import Model
 from tkcalendar import DateEntry
 import datetime
 
-class NewProductModel(Model):
+class NewMealModel(Model):
     def __init__(self):
         Model.__init__(self)
   
-    def insert_new_product(self, catalog, name, price):
-        sql = 'INSERT INTO product VALUES ({},{},{},null,\'A\')'
+    def insert_new_meal(self, name, weight, ingridient):
+        sql = 'INSERT INTO meals VALUES ({},{},{})'
         #sql = 'SELECT * FROM PRODUCT'
-        self.execute_sql(sql.format(catalog, name, price))
+        self.execute_sql(sql.format(name, weight, ingridient))
 
         
+

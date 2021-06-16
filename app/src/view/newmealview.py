@@ -14,6 +14,8 @@ class NewMealView(FormView):
         self.add_entry('ingridient').set_description('Ingridients')
 
         self.save_button = tk.Button(self, text='Save')
+        self.save_button.configure(command=self.on_save_click)
+
         self.go_back_button = tk.Button(self, text='Main menu')
         self.go_back_button.configure(command=self.controller.display_control_panel)
 
@@ -28,7 +30,10 @@ class NewMealView(FormView):
     def __build_commands(self):
         self.save_button.configure(command=self.on_button_click)
 
-    def on_button_click(self):
-        return None
+    def on_save_click(self):
+        name = self.get_input('name')
+        weight = self.get_input('weight')
+        ingridient = self.get_input('ingridient')
+        self.get_model().insert_new_product(name, weight, ingridient)
 
         
