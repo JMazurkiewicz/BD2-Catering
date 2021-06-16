@@ -8,8 +8,8 @@ from tkcalendar import Calendar, DateEntry
 from view import View
 
 class CalendarView(View):
-    def __init__(self, parent):
-        View.__init__(self, parent)
+    def __init__(self, parent, controller):
+        View.__init__(self, parent, controller)
         
         self.mindate = datetime.date.today() - datetime.timedelta(days = 30)
 
@@ -22,10 +22,10 @@ class CalendarView(View):
         self.calendar.tag_config('spotkanie_biznesowe', background = 'blue', foreground = 'white')
         self.calendar.tag_config('urodziny', background = 'black', foreground = 'yellow')
 
-        #cal.calevent_create(date, 'Hello World', 'message')
-
         self.button_frame = tk.Frame(parent)
         self.__build_grid()
+
+        self.grid_columnconfigure(0, weight=1)
     
     def __build_grid(self):
         print('CalendarView::__build_grid')

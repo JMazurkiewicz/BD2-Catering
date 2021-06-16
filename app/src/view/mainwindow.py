@@ -10,6 +10,9 @@ from view.neworderview import NewOrderView
 from view.newproductview import NewProductView
 from view.controlpanelview import ControlPanelView
 from model.connectionmodel import ConnectionModel
+from view.calendarview import CalendarView
+from view.employeesscheduleview import EmployeesScheduleView
+from view.orderscheduleview import OrderScheduleView
 
 # Class that represents main view AND main controller
 class MainWindow(tk.Tk):
@@ -29,7 +32,7 @@ class MainWindow(tk.Tk):
         # SQL connection
         self.connection = ConnectionModel() 
 
-        for V in (AuthorizationView, ControlPanelView, NewMealView, NewOrderView, NewProductView):
+        for V in (AuthorizationView, ControlPanelView, NewMealView, NewOrderView, NewProductView, EmployeesScheduleView, OrderScheduleView):
             view = V(self.main_container, self)
 
             if not isinstance(view, AuthorizationView):
@@ -47,4 +50,9 @@ class MainWindow(tk.Tk):
     def display_view(self, V):
         view = self.views[V]
         view.tkraise()
+
+    def go_to_control_panel(self):
+        self.display_view(ControlPanelView)
+
+    
         

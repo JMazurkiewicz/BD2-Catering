@@ -5,28 +5,49 @@ import tkinter as tk
 from view.calendarview import CalendarView
 from view import View
 
+#@TODO poprawić buttony
+
 class OrderScheduleView(CalendarView):
-    def __init__(self, parent):
-        CalendarView.__init__(self, parent)
+    def __init__(self, parent, controller):
+        CalendarView.__init__(self, parent, controller)
 
-        self.add_order_button = tk.Button(self.button_frame, text='Add order')
-        self.edit_order_button = tk.Button(self.button_frame, text='Edit selected order')
-        self.delete_order_button = tk.Button(self.button_frame, text='Delete selected order')
-        self.add_employee_button = tk.Button(self.button_frame, text='Add employee to selected order')
-        self.show_order_button = tk.Button(self.button_frame, text='Show info about selected order')
+        self.button_frame = tk.Frame(self)
+        self.button_frame.grid(row=0, column=0)
 
-        self.add_order_button.config(command=self.on_add_order_button_click)
-        self.edit_order_button.config(command=self.on_edit_order_button_click)
-        self.delete_order_button.config(command=self.on_delete_order_button_click)
-        self.add_employee_button.config(command=self.on_add_employee_button_click)
-        self.show_order_button.config(command=self.on_show_order_button_click)
+        self.buttons = []
+        self.__build_buttons()
+        self.grid_columnconfigure(0, weight=1)
 
-        self.add_order_button.grid(row=0, column=0)
-        self.edit_order_button.grid(row=0, column=1)
-        self.delete_order_button.grid(row=0, column=2)
-        self.add_employee_button.grid(row=0, column=3)
-        self.show_order_button.grid(row=0, column=4)
+    def __build_buttons(self):
+        button = tk.Button(self.button_frame, text='Add Order')
+        button.grid(row=5, column=0)
+        button.configure(command=self.on_add_order_button_click)
+        self.buttons.append(button)
 
+        button = tk.Button(self.button_frame, text='Edit Order')
+        button.grid(row=5, column=1)
+        button.configure(command=self.on_edit_order_button_click)
+        self.buttons.append(button)
+
+        button = tk.Button(self.button_frame, text='Delete Order')
+        button.grid(row=5, column=2)
+        button.configure(command=self.on_delete_order_button_click)
+        self.buttons.append(button)
+
+        button = tk.Button(self.button_frame, text='Add Employee')
+        button.grid(row=5, column=3)
+        button.configure(command=self.on_add_employee_button_click)
+        self.buttons.append(button)
+
+        button = tk.Button(self.button_frame, text='Show Order Info')
+        button.grid(row=5, column=4)
+        button.configure(command=self.on_show_order_button_click)
+        self.buttons.append(button)
+
+        button = tk.Button(self.button_frame, text='Main Menu')
+        button.grid(row=5, column=5)
+        button.configure(command=self.controller.go_to_control_panel)
+        self.buttons.append(button)
 
     def on_add_order_button_click(self):
         print('add order')
