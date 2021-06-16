@@ -1,5 +1,5 @@
 
--- @author Konrad Wojewódzki
+-- @author Konrad Wojewï¿½dzki
 
 
 CREATE TABLE "Order" (
@@ -132,9 +132,11 @@ ALTER TABLE drink_sizes ADD CONSTRAINT drink_sizes_pk PRIMARY KEY ( size_id );
 
 -------------------
 CREATE TABLE drinks (
-    item_id          NUMERIC(7) IDENTITY(1,1) NOT NULL,
-    alcohol_content  NUMERIC(2)
+    item_id          NUMERIC(7) NOT NULL,
+    alcohol_content  NUMERIC(2),
 );
+
+
 
 --main constraints
 
@@ -218,7 +220,7 @@ ALTER TABLE item_on_the_menu ADD CONSTRAINT item_on_the_menu_pk PRIMARY KEY ( it
 
 --------------------------
 CREATE TABLE meals (
-    item_id     NUMERIC(7) IDENTITY(1,1) NOT NULL,
+    item_id     NUMERIC(7) NOT NULL,
     size_grams  NUMERIC(4) NOT NULL
 );
 
@@ -270,7 +272,6 @@ ALTER TABLE product ADD CONSTRAINT product_pk PRIMARY KEY ( catalog_number );
 CREATE TABLE storage (
     storage_id                    NUMERIC(7) NOT NULL,
     name                          VARCHAR(20) NOT NULL,
-    stored_products_batch_number  VARCHAR(15)
 );
 
 ALTER TABLE storage ADD CONSTRAINT storage_pk PRIMARY KEY ( storage_id );
@@ -279,7 +280,8 @@ ALTER TABLE storage ADD CONSTRAINT storage_name_un UNIQUE ( name );
 CREATE TABLE stored_products (
     batch_number      VARCHAR(15) NOT NULL,
     available_amount  NUMERIC(10, 2) NOT NULL,
-    expiration_date   DATE NOT NULL
+    expiration_date   DATE NOT NULL,
+	storage_id		  NUMERIC(7) NOT NULL
 );
 
 ALTER TABLE stored_products ADD CONSTRAINT available_amount_not_negative CHECK (available_amount >= 0);
@@ -469,9 +471,9 @@ ALTER TABLE person
     ADD CONSTRAINT person_client_fk FOREIGN KEY ( client_id )
         REFERENCES client ( client_id );
 
-ALTER TABLE storage
-    ADD CONSTRAINT storage_stored_products_fk FOREIGN KEY ( stored_products_batch_number )
-        REFERENCES stored_products ( batch_number );
+ALTER TABLE stored_products
+    ADD CONSTRAINT storage_stored_products_fk FOREIGN KEY ( storage_id )
+        REFERENCES storage ( storage_id );
 
 
 ALTER TABLE info_about_item
@@ -492,51 +494,75 @@ ALTER TABLE ingredients
 
 GO
 
-CREATE OR ALTER TRIGGER check_if_drink_trigg ON item_on_the_menu
+CREATE OR ALTER TRIGGER check_if_drink_trigg ON drinks
 	FOR INSERT
 	AS
+	IF EXISTS (
+		SELECT *
+		FROM item_on_the_menu AS c
+		JOIN inserted AS i
+		ON (i.item_id = c.item_id)
+		WHERE c.type != 'D'
+		)
+	
 	BEGIN
-		SET NOCOUNT ON;
-		INSERT INTO drinks (item_id)
-		SELECT item_id
-		FROM INSERTED
-		WHERE type = 'D';
+	raiserror('Inccoret item type', 16, 1);
+	ROLLBACK TRANSACTION;
+	RETURN	
 END;
 GO
 
-CREATE OR ALTER TRIGGER check_if_meal_trigg ON item_on_the_menu
+CREATE OR ALTER TRIGGER check_if_meal_trigg ON meals
 	FOR INSERT
 	AS
+	IF EXISTS (
+		SELECT *
+		FROM item_on_the_menu AS c
+		JOIN inserted AS i
+		ON (i.item_id = c.item_id)
+		WHERE c.type != 'M'
+		)
+	
 	BEGIN
-		SET NOCOUNT ON;
-		INSERT INTO meals (item_id)
-		SELECT item_id
-		FROM INSERTED
-		WHERE type = 'M';
+	raiserror('Inccoret item type', 16, 1);
+	ROLLBACK TRANSACTION;
+	RETURN	
 END;
 
 GO
 
-CREATE OR ALTER TRIGGER check_if_person_trigg ON client
+CREATE OR ALTER TRIGGER check_if_person_trigg ON person
 	FOR INSERT
 	AS
+	IF EXISTS (
+		SELECT *
+		FROM client AS c
+		JOIN inserted AS i
+		ON (i.client_id = c.client_id)
+		WHERE c.type != 'P'
+		)
+	
 	BEGIN
-		SET NOCOUNT ON;
-		INSERT INTO person (client_id)
-		SELECT client_id
-		FROM INSERTED
-		WHERE type = 'P';
+	raiserror('Inccoret client type', 16, 1);
+	ROLLBACK TRANSACTION;
+	RETURN	
 END;
 
 GO
 
-CREATE OR ALTER TRIGGER check_if_business_trigg ON client
+CREATE OR ALTER TRIGGER check_if_business_trigg ON business
 	FOR INSERT
 	AS
+	IF EXISTS (
+		SELECT *
+		FROM client AS c
+		JOIN inserted AS i
+		ON (i.client_id = c.client_id)
+		WHERE c.type != 'B'
+		)
+	
 	BEGIN
-		SET NOCOUNT ON;
-		INSERT INTO business(client_id)
-		SELECT client_id
-		FROM INSERTED
-		WHERE type = 'B';
+	raiserror('Inccoret client type', 16, 1);
+	ROLLBACK TRANSACTION;
+	RETURN		
 END;
