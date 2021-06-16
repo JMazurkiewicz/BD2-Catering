@@ -14,6 +14,7 @@ class OrderScheduleView(CalendarView):
 
         self.__build_buttons()
         self.grid_columnconfigure(0, weight=1)
+        
         self.set_model(OrderScheduleModel())
 
 

@@ -10,12 +10,11 @@ class NewProductModel(Model):
         Model.__init__(self)
   
     def insert_new_product(self, catalog, name, price):
-        #sql = 'INSERT INTO product VALUES ({},{},{},null,\'A\')'
-        sql = 'SELECT * FROM PRODUCT'
-        cursor = self.execute_sql(sql.format(catalog, name, price))
-
-        print(cursor)
         
-
-    def __make_order_message(self, order_id, start_date, end_date):
-        return "Order id: {}\nStart date: {}\nEnd date: {}".format(order_id, start_date, end_date)
+        try:
+            sql = 'INSERT INTO product VALUES (\'{}\',{},{},null,\'A\')'
+            self.execute_sql(sql.format(catalog, name, price))
+            print('Product added!')
+        except Exception as e:
+            print('While adding product error occured'.format(e))
+            return
