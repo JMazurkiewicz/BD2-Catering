@@ -19,6 +19,7 @@ class ControlPanelView(View):
         self.buttons = []
         self.__build_buttons()
         self.grid_columnconfigure(0, weight=1)
+
    
     def __build_buttons(self):
         button = tk.Button(self.button_frame, text='Products')
