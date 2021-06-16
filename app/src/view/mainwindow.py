@@ -8,6 +8,7 @@ from view.authorizationview import AuthorizationView
 from view.newmealview import NewMealView
 from view.neworderview import NewOrderView
 from view.newproductview import NewProductView
+from view.newstorageentryview import NewStorageEntryView
 from view.controlpanelview import ControlPanelView
 from view.calendarview import CalendarView
 from view.employeesscheduleview import EmployeesScheduleView
@@ -32,7 +33,7 @@ class MainWindow(tk.Tk):
         # Database connection
         self.connection = None
 
-        for V in (AuthorizationView, ControlPanelView, NewMealView, NewOrderView, NewProductView, EmployeesScheduleView, OrderScheduleView, MagazineView, MenuView, NewEmployeeView):
+        for V in (AuthorizationView, ControlPanelView, NewMealView, NewOrderView, NewProductView, EmployeesScheduleView, OrderScheduleView, MagazineView, MenuView, NewStorageEntryView, NewEmployeeView):
             view = V(self.main_container, self)
 
             if not isinstance(view, AuthorizationView):
