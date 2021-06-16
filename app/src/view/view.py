@@ -2,12 +2,13 @@
 # @author Jakub Mazurkiewicz
 
 import tkinter as tk
+from model import Model
 
 class View(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         self.parent_view = None
-        self.model = None
+        self.model = Model() # dummy model
         self.controller = controller
 
 

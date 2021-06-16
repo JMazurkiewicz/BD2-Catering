@@ -2,14 +2,12 @@
 # @author Jakub Mazurkiewicz
 
 import tkinter as tk
-from os import path
 
 from view.authorizationview import AuthorizationView
 from view.newmealview import NewMealView
 from view.neworderview import NewOrderView
 from view.newproductview import NewProductView
 from view.controlpanelview import ControlPanelView
-from model.connectionmodel import ConnectionModel
 from view.calendarview import CalendarView
 from view.employeesscheduleview import EmployeesScheduleView
 from view.orderscheduleview import OrderScheduleView
@@ -29,14 +27,14 @@ class MainWindow(tk.Tk):
         # List of views
         self.views = {}
 
-        # SQL connection
-        self.connection = ConnectionModel() 
+        # Database connection
+        self.connection = None
 
         for V in (AuthorizationView, ControlPanelView, NewMealView, NewOrderView, NewProductView, EmployeesScheduleView, OrderScheduleView):
             view = V(self.main_container, self)
 
             if not isinstance(view, AuthorizationView):
-                view.set_model(self.connection)
+                view.get_model().set_connection(self.connection)
 
             self.views[V] = view
             view.grid(row=0, column=0, sticky='nsew')
@@ -50,9 +48,11 @@ class MainWindow(tk.Tk):
     def display_view(self, V):
         view = self.views[V]
         view.tkraise()
+        
 
-    def go_to_control_panel(self):
+    def display_control_panel(self):
         self.display_view(ControlPanelView)
 
     
-        
+    def update_connection(self, connection):
+        self.connection = connection

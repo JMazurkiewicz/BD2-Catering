@@ -66,24 +66,25 @@ class ControlPanelView(View):
         self.buttons.append(button)
 
 
-    def __add_button(self, text, command):
-        button = tk.Button(self.button_frame, text=text, command=command)
-
     def on_order_button(self):
        self.controller.display_view(OrderScheduleView)
+
 
     def on_vehicles_button(self):
         self.controller.display_view(NewProductView)
 
+
     def on_meal_button(self):
         self.controller.display_view(NewMealView)
+
 
     def on_employee_button(self):
         self.controller.display_view(EmployeesScheduleView)
 
+
     def on_product_button(self):
         self.controller.display_view(NewProductView)
 
-    #def on_product_button(self):
-    #    self.controller.display_view(NewProductView)
-        
+
+    def on_product_button(self):
+        self.controller.display_view(NewProductView)
