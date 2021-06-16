@@ -51,6 +51,7 @@ class MainWindow(tk.Tk):
     
     def display_view(self, V):
         view = self.views[V]
+        view.update()
         view.tkraise()
         
 
