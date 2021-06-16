@@ -2,7 +2,6 @@
 # @author Jakub Mazurkiewicz
 
 import tkinter as tk
-from view.controlpanelview import ControlPanelView
 from view.formview import FormView
 
 class NewEmployeeView(FormView):
@@ -36,9 +35,9 @@ class NewEmployeeView(FormView):
 
     def on_add_button_click(self):
         # TODO: submit 
-        self.controller.display_view(ControlPanelView)
+        self.controller.display_control_panel()
 
     
     def on_cancel_button_click(self):
-        self.controller.display_view(ControlPanelView)
+        self.controller.display_control_panel()
         

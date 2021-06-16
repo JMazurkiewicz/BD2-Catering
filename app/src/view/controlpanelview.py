@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # @author Jakub Mazurkiewicz
 
+from view.newemployeeview import NewEmployeeView
 from view.menuview import MenuView
 from view.magazineview import MagazineView
 from view.employeesscheduleview import EmployeesScheduleView
@@ -54,6 +55,7 @@ class ControlPanelView(View):
 
         button = tk.Button(self.button_frame, text='Add employee')
         button.grid(row=1, column=1)
+        button.configure(command=self.on_add_employee_button_click)
         self.buttons.append(button)
 
 
@@ -99,3 +101,7 @@ class ControlPanelView(View):
 
     def on_menu_button_click(self):
         self.controller.display_view(MenuView)
+
+    
+    def on_add_employee_button_click(self):
+        self.controller.display_view(NewEmployeeView)
