@@ -1,6 +1,7 @@
 #!/usr/bin/env python
-# @author Jakub Mazurkiewicz
+# @author Jakub Mazurkiewicz / Konrad  Wojewódzki
 
+from view.addextracostsview import ExtraCostsView
 import tkinter as tk
 from view.calendarview import CalendarView
 
@@ -36,4 +37,4 @@ class EmployeesScheduleView(CalendarView):
 
 
     def on_add_extra_costs_button(self):
-        print('add extra costs')
+        self.controller.display_view(ExtraCostsView)

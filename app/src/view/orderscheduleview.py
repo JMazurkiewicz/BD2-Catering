@@ -1,6 +1,7 @@
 #!/usr/bin/env python
-# @author Jakub Mazurkiewicz
+# @author Jakub Mazurkiewicz / Konrad Wojewódzki
 
+from view.neworderview import NewOrderView
 import tkinter as tk
 from view.calendarview import CalendarView
 from model.orderschedulemodel import OrderScheduleModel
@@ -13,6 +14,7 @@ class OrderScheduleView(CalendarView):
 
         self.__build_buttons()
         self.grid_columnconfigure(0, weight=1)
+        
         self.set_model(OrderScheduleModel())
 
 
@@ -49,7 +51,7 @@ class OrderScheduleView(CalendarView):
 
 
     def on_add_order_button_click(self):
-        self.get_model().load_month('06','2021')
+        self.controller.display_view(NewOrderView)
 
 
     def on_edit_order_button_click(self):
@@ -57,12 +59,17 @@ class OrderScheduleView(CalendarView):
 
     
     def on_delete_order_button_click(self):
+        date = self.get_date()
+        self.get_model().delete_order(date)
         print('delete order')
 
 
     def on_add_employee_button_click(self):
+        #@TODO Dodac widok dodawania
         print('add employee to order')
 
 
     def on_show_order_button_click(self):
+        date = self.get_date()
+        self.get_model().show_order_info(date)
         print('show order info')

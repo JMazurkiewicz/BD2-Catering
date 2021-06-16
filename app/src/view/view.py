@@ -7,13 +7,15 @@ from model import Model
 class View(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-        self.parent_view = None
         self.model = Model() # dummy model
         self.controller = controller
 
 
     def set_model(self, model):
-        self.model = model
+        if model is None:
+            raise Exception('model cannot be None')
+        else:
+            self.model = model
 
 
     def get_model(self):
