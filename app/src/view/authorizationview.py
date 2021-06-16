@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # @author Jakub Mazurkiewicz
+
 import tkinter as tk
 from view.controlpanelview import ControlPanelView
 from view.formview import FormView

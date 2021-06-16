@@ -3,7 +3,6 @@
 
 import tkinter as tk
 from view.calendarview import CalendarView
-from view import View
 
 #@TODO poprawić buttony
 
@@ -11,12 +10,9 @@ class OrderScheduleView(CalendarView):
     def __init__(self, parent, controller):
         CalendarView.__init__(self, parent, controller)
 
-        self.button_frame = tk.Frame(self)
-        self.button_frame.grid(row=0, column=0)
-
-        self.buttons = []
         self.__build_buttons()
         self.grid_columnconfigure(0, weight=1)
+
 
     def __build_buttons(self):
         button = tk.Button(self.button_frame, text='Add Order')
@@ -49,6 +45,7 @@ class OrderScheduleView(CalendarView):
         button.configure(command=self.controller.go_to_control_panel)
         self.buttons.append(button)
 
+
     def on_add_order_button_click(self):
         print('add order')
 
@@ -59,6 +56,7 @@ class OrderScheduleView(CalendarView):
     
     def on_delete_order_button_click(self):
         print('delete order')
+
 
     def on_add_employee_button_click(self):
         print('add employee to order')
