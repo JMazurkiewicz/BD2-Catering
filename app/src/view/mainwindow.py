@@ -36,6 +36,8 @@ class MainWindow(tk.Tk):
         for V in (AuthorizationView, ControlPanelView, NewMealView, NewOrderView, NewProductView, EmployeesScheduleView, OrderScheduleView, MagazineView, MenuView, NewStorageEntryView, NewEmployeeView):
             view = V(self.main_container, self)
 
+            print (V)
+
             if not isinstance(view, AuthorizationView):
                 view.get_model().set_connection(self.connection)
 

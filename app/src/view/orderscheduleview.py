@@ -3,6 +3,7 @@
 
 import tkinter as tk
 from view.calendarview import CalendarView
+from model.orderschedulemodel import OrderScheduleModel
 
 #@TODO poprawić buttony
 
@@ -12,6 +13,7 @@ class OrderScheduleView(CalendarView):
 
         self.__build_buttons()
         self.grid_columnconfigure(0, weight=1)
+        self.set_model(OrderScheduleModel())
 
 
     def __build_buttons(self):
@@ -47,7 +49,7 @@ class OrderScheduleView(CalendarView):
 
 
     def on_add_order_button_click(self):
-        print('add order')
+        self.get_model().load_month('06','2021')
 
 
     def on_edit_order_button_click(self):
