@@ -5,25 +5,37 @@ from model import Model
 from tkcalendar import DateEntry
 import datetime
 
-class NewMealModel(Model):
+class NewEmployeeModel(Model):
     def __init__(self):
         Model.__init__(self)
   
-    def insert_new_employee(self, name, surname, pesel, phone_nbumber, bank_acc_number, street_name, building_number, apartment_number, city, district):
-        try:
-            sql1 = 'INSERT INTO employee VALUES ({},{},{},{},{})'
-            self.execute_sql(sql1.format(name, surname, pesel, phone_nbumber, bank_acc_number))
+    def insert_new_employee(self, name, surname, pesel, phone_nbumber, bank_acc_number, postal_code, street_name, building_number, apartment_number, city, district):
+        #try:
+        sql1 = 'INSERT INTO city VALUES (\'{}\',\'{}\')'
+        self.execute_sql(sql1.format(city, district))
 
-            sql2 = 'INSERT INTO address VALUES ({},{},{})'
-            self.execute_sql(sql2.format(street_name, building_number, apartment_number))
+        get_city = """SELECT city_id
+                          FROM city
+                          WHERE name = \'{}\' """
+        city_id_cur = self.execute_sql(get_city.format(city))
+        city_id = city_id_cur.fetchone()
 
-            sql3 = 'INSERT INTO address VALUES ({},{})'
-            self.execute_sql(sql3.format(city, district))
-            print('Employee added!')
+        sql2 = 'INSERT INTO address VALUES (\'{}\', \'{}\', {}, {})'
+        self.execute_sql(sql2.format(postal_code, street_name, building_number, apartment_number, city_id.city_id))
 
-        except Exception as e:
-            print('While adding employee error occured'.format(e))
-            return
+        get_address = """SELECT address_id
+                          FROM address
+                          WHERE postal_code = \'{}\' AND street_name = \'{}\' AND building_number = \'{}\' """
+        address_id_cur = self.execute_sql(get_address.format(postal_code, street_name, building_number))
+        address_id = address_id_cur.fetchone()
+
+        sql3 = 'INSERT INTO employee VALUES (\'{}\', \'{}\', {}, {}, {}, {}, 1)'
+        self.execute_sql(sql3.format(name, surname, pesel, phone_nbumber, bank_acc_number, address_id.address_id))
+        print('Employee added!')
+
+        #except Exception as e:
+            #print('While adding employee error occured'.format(e))
+            #return
 
         
 
