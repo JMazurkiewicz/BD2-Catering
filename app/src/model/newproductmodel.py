@@ -10,7 +10,7 @@ class NewProductModel(Model):
         Model.__init__(self)
   
     def insert_new_product(self, catalog, name, price):       
-            sql = 'INSERT INTO product VALUES (\'{}\',\'{}\',{},null,\'A\')'
-            self.execute_sql(sql.format(catalog, name, price)).commit()
-            print('Product added!')
+        sql = 'INSERT INTO product VALUES (\'{}\',\'{}\',{},null,\'A\')'
+        self.execute_sql(sql.format(catalog, name, price)).commit()
+        print('Product added!')
 
