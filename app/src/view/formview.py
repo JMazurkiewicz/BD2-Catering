@@ -24,6 +24,15 @@ class FormView(View):
 
         return self.entries[entry_name]
 
+    def remove_entry(self, entry_name):
+        entry = self.entries[entry_name]
+        for widget in entry.winfo_children():
+            widget.destroy()
+        entry.grid_forget()
+
+    def check_entry(self, entry_name):
+        return True if entry_name in self.entries else False
+
 
     def get_input(self, entry_name):
         return self.entries[entry_name].get_input()

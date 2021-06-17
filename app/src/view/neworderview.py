@@ -55,13 +55,22 @@ class NewOrderView(FormView):
 
 
     def on_person_button(self):
-        self.add_entry('name').set_description('Name')
-        self.add_entry('surname').set_description('Surname')
-        self.type = "Person"
-        self.entry_frame.grid(column=0, row=0)
+        if(self.check_entry('business')):
+            self.remove_entry('business')
+
+        if(not self.check_entry('name')):
+            self.add_entry('name').set_description('Name')
+            self.add_entry('surname').set_description('Surname')
+            self.type = "Person"
+            self.entry_frame.grid(column=0, row=0)
         
 
     def on_business_button(self):
-        self.add_entry('business').set_description('NIP')
-        self.type = "Business"
-        self.entry_frame.grid(column=0, row=0)
+        if(self.check_entry('name')):
+            self.remove_entry('name')
+            self.remove_entry('surname')
+
+        if(not self.check_entry('business')):
+            self.add_entry('business').set_description('NIP')
+            self.type = "Business"
+            self.entry_frame.grid(column=0, row=0)
