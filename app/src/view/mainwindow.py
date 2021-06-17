@@ -18,8 +18,9 @@ from view.employeesscheduleview import EmployeesScheduleView
 from view.orderscheduleview import OrderScheduleView
 from view.menuview import MenuView
 from view.addclientview import NewClientView
+from view.addemployeetoeventview import AddEmployeeToOrder
 
-TYPES = (AuthorizationView, ControlPanelView, NewMealView, NewOrderView, NewProductView, EmployeesScheduleView, OrderScheduleView, MagazineView, MenuView, NewStorageEntryView, NewEmployeeView, ExtraCostsView, NewClientView)
+TYPES = (AuthorizationView, ControlPanelView, NewMealView, AddEmployeeToOrder ,NewOrderView, NewProductView, EmployeesScheduleView, OrderScheduleView, MagazineView, MenuView, NewStorageEntryView, NewEmployeeView, ExtraCostsView, NewClientView)
 
 # Class that represents main view AND main controller
 class MainWindow(tk.Tk):
