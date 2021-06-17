@@ -16,7 +16,6 @@ class NewOrderView(FormView):
         self.add_entry('number_of_ppl').set_description('Number of people')
         self.add_entry('base_price').set_description('Base price')
         self.add_entry('waiters_needed').set_description('Waiters needed')
-        self.add_entry('event_type_id').set_description('Event type')
 
         self.save_button = tk.Button(self, text='Save')
         self.save_button.configure(command=self.on_save_button)
