@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # @author Jakub Mazurkiewicz
 
+from model.magazinemodel import MagazineModel
 import tkinter as tk
 from view.inventoryview import InventoryView
 
@@ -8,6 +9,7 @@ class MagazineView(InventoryView):
     def __init__(self, parent, controller):
         InventoryView.__init__(self, parent, controller)
         self.__build_buttons()
+        self.set_model(MagazineModel())
         self.description.configure(text='Loading data from external DB...')
 
 
@@ -26,6 +28,11 @@ class MagazineView(InventoryView):
         button.grid(row=2, column=0)
         button.configure(command=self.controller.display_control_panel)
         self.buttons.append(button)
+
+
+    def update(self):
+        description = self.get_model().get_inventory_description()
+        self.description.configure(text=description)
 
 
     def on_add_product_to_magazine_button_click(self):
