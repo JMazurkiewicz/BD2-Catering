@@ -59,10 +59,8 @@ class OrderScheduleModel(Model):
                                 WHERE a.address_id = {}"""
         address_info_cur = self.execute_sql(get_address_info.format(adress_id[0]))
 
-        address_info =  address_info_cur.fetchone()
-        while address_info:
-            print("Adres:", address_info.postal_code, address_info.street_name, address_info.building_number, address_info.apartment_number, address_info.name, address_info.district)
-            address_info =  address_info_cur.fetchone()
+        return address_info_cur
+        
 
 
     def get_date_and_type(self):
