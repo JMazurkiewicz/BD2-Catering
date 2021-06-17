@@ -14,3 +14,4 @@ class NewProductModel(Model):
         self.execute_sql(sql.format(catalog, name, price)).commit()
         print('Product added!')
 
+
