@@ -95,7 +95,16 @@ class OrderScheduleView(CalendarView):
 
     def on_show_order_button_click(self):
         date = self.get_date()
-        self.get_model().show_order_info(date)
+        cursor = self.get_model().show_order_info(date)
+        description = ''
+        
+        row = cursor.fetchone()
+        for i in range(0, len(row)):
+            description += str(row[i]) + ' '
+
+        description = tk.Label(self, text = description)
+        description.grid(row = 7, column=0)
+
         print('show order info')
 
     def save_changes(self):
