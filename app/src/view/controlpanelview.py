@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # @author Jakub Mazurkiewicz
 
+from view.addclientview import NewClientView
 from view.newemployeeview import NewEmployeeView
 from view.menuview import MenuView
 from view.magazineview import MagazineView
@@ -63,6 +64,11 @@ class ControlPanelView(View):
         button.configure(command=self.on_employee_button)
         self.buttons.append(button)
 
+        button = tk.Button(self.button_frame, text='Add Client')
+        button.grid(row=2, column=0)
+        button.configure(command=self.on_client_button)
+        self.buttons.append(button)
+
 
     def on_order_button(self):
        self.controller.display_view(OrderScheduleView)
@@ -98,3 +104,6 @@ class ControlPanelView(View):
     
     def on_add_employee_button_click(self):
         self.controller.display_view(NewEmployeeView)
+
+    def on_client_button(self):
+        self.controller.display_view(NewClientView)
