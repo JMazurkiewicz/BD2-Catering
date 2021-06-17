@@ -29,3 +29,7 @@ python main.py
 ```bash
 pytest app/tests
 ```
+
+## Dokumentacja
+
+Katalog `docs` zawiera pliki `.pdf` z dokumentacją oraz plik `README.md` zawierający odnośniki do dodatkowych części projektu.
