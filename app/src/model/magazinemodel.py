@@ -7,11 +7,13 @@ class MagazineModel(Model):
     def __init__(self):
         pass
 
-        
+
     def get_inventory_description(self):
         sql = """
             SELECT catalog_number, batch_number, products.name, available_amount, expiration_date, storage.name
-            FROM products RIGHT JOIN stored_products LEFT JOIN storage ON 
+            FROM
+                (product RIGHT JOIN stored_products ON product.batch_number = ) 
+                LEFT JOIN storage ON 
             ORDER BY expiration_date DESCENDING
         """
 
@@ -25,4 +27,3 @@ class MagazineModel(Model):
             row = cursor.fetchone()
 
         return description
-
