@@ -3,12 +3,14 @@
 
 import tkinter as tk
 from view.inventoryview import InventoryView
+from model.menumodel import MenuModel
 
 class MenuView(InventoryView):
     def __init__(self, parent, controller):
         InventoryView.__init__(self, parent, controller)
         self.__build_buttons()
         self.description.configure(text='Loading data from external DB...')
+        self.set_model(MenuModel())
 
 
     def __build_buttons(self):
@@ -33,13 +35,18 @@ class MenuView(InventoryView):
         self.buttons.append(button)
 
 
+    def update(self):
+        self.description.configure(text=self.get_model().get_inventory_description())
+
+
     def on_add_new_meal_button_click(self):
-        print('on_add_new_meal_button_click')
+        print('Niezaimplementowane :(')
+        #self.controller.display_view()
 
 
     def on_delete_meal_button_click(self):
-        print('on_delete_meal_button_click')
+        print('Niezaimplementowane :(')
 
     
     def on_edit_meal_button_click(self):
-        print('on_edit_meal_button_click')
+        print('Niezaimplementowane :(')
