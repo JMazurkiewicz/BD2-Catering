@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # @author Jakub Mazurkiewicz / Konrad Wojewódzki
 
-from view.addemployeetoeventview import AddEmployeeToOrder
 from view.formview import FormView
 from view.neworderview import NewOrderView
 import tkinter as tk
+import datetime
 from view.calendarview import CalendarView
 from model.orderschedulemodel import OrderScheduleModel
 
@@ -15,14 +15,15 @@ class OrderScheduleView(CalendarView):
         FormView.__init__(self, parent, controller)
         CalendarView.__init__(self, parent, controller)
 
+        self.set_model(OrderScheduleModel())
         self.__build_buttons()
         self.grid_columnconfigure(0, weight=1)
 
         
         self.name = tk.Entry(self, width = 30)
         self.surname = tk.Entry(self, width = 30)
-        
-        self.set_model(OrderScheduleModel())
+
+
 
     def __build_buttons(self):
         button = tk.Button(self.button_frame, text='Add Order')
@@ -30,7 +31,7 @@ class OrderScheduleView(CalendarView):
         button.configure(command=self.on_add_order_button_click)
         self.buttons.append(button)
 
-        button = tk.Button(self.button_frame, text='Edit Order')
+        button = tk.Button(self.button_frame, text='Show Event')
         button.grid(row=5, column=1)
         button.configure(command=self.on_edit_order_button_click)
         self.buttons.append(button)
@@ -63,6 +64,7 @@ class OrderScheduleView(CalendarView):
 
 
     def on_edit_order_button_click(self):
+        self.__set_events()
         print('edit order (TODO)')
 
     
@@ -101,5 +103,13 @@ class OrderScheduleView(CalendarView):
         name = self.name.get()
         surname = self.surname.get()
         print('adding...')
-        self.get_model().add_employee_to_event(self, date, name, surname)
+        self.get_model().add_employee_to_event(date, name, surname)
+
+    def __set_events(self):
+        cursor = self.get_model().get_date_and_type()
+        info = cursor.fetchone()
+        while info:
+            date = datetime.date(year=int(info.year), month=int(info.month), day=int(info.day))
+            self.calendar.calevent_create(date, info.event_name ,info.event_name)
+            info = cursor.fetchone()
 

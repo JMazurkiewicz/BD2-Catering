@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # @author Konrad Wojewódzki
 
+from view.calendarview import CalendarView
 from model.addextracostsmodel import ExtraCostsModel
 import tkinter as tk
 from model.newproductmodel import NewProductModel
