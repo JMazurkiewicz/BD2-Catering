@@ -10,9 +10,14 @@ class NewMealModel(Model):
         Model.__init__(self)
   
     def insert_new_meal(self, name, weight, ingridient):
-        sql = 'INSERT INTO meals VALUES ({},{},{})'
-        #sql = 'SELECT * FROM PRODUCT'
-        self.execute_sql(sql.format(name, weight, ingridient))
+        try:
+            sql = 'INSERT INTO meals VALUES ({},{},{})'
+            self.execute_sql(sql.format(name, weight, ingridient))
+            print('Meal added!')
+
+        except Exception as e:
+            print('While adding meal error occured'.format(e))
+            return
 
         
 
