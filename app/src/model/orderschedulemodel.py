@@ -59,6 +59,7 @@ class OrderScheduleModel(Model):
                                 ON (c.city_id = a.city_id) 
                                 WHERE a.address_id = {}"""
         address_info_cur = self.execute_sql(get_address_info.format(adress_id[0]))
+        
         address_info =  address_info_cur.fetchone()
         while address_info:
             print("Adres:", address_info.postal_code, address_info.street_name, address_info.building_number, address_info.apartment_number, address_info.name, address_info.district)

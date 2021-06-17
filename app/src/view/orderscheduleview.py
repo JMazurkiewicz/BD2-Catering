@@ -17,6 +17,10 @@ class OrderScheduleView(CalendarView):
 
         self.__build_buttons()
         self.grid_columnconfigure(0, weight=1)
+
+        
+        self.name = tk.Entry(self, width = 30)
+        self.surname = tk.Entry(self, width = 30)
         
         self.set_model(OrderScheduleModel())
 
@@ -53,6 +57,7 @@ class OrderScheduleView(CalendarView):
 
 
 
+
     def on_add_order_button_click(self):
         self.controller.display_view(NewOrderView)
 
@@ -68,21 +73,21 @@ class OrderScheduleView(CalendarView):
 
 
     def on_add_employee_button_click(self):
-        name = tk.Entry(self, width = 30)
-        surname = tk.Entry(self, width = 30)
         
+
         description = tk.Label(self, text = "Name: ")
         description.grid(row = 7, column=0)
-        name.grid(row = 8, column=0)
+        self.name.grid(row = 8, column=0)
 
         description = tk.Label(self, text = "Surname: ")
         description.grid(row = 9, column=0)
-        surname.grid(row = 10, column=0)
+        self.surname.grid(row = 10, column=0)  
 
-        button = tk.Button(self.button_frame, text='Main Menu')
-        button.grid(row=5, column=5)
-        button.configure(command=self.controller.display_control_panel)
+        button = tk.Button(self.button_frame, text='Save')
+        button.grid(row=11, column=0)
+        button.configure(command=self.save_changes)
         self.buttons.append(button)
+
         print('add employee to order')
 
 
@@ -90,3 +95,11 @@ class OrderScheduleView(CalendarView):
         date = self.get_date()
         self.get_model().show_order_info(date)
         print('show order info')
+
+    def save_changes(self):
+        date = self.get_date()
+        name = self.name.get()
+        surname = self.surname.get()
+        print('adding...')
+        self.get_model().add_employee_to_event(self, date, name, surname)
+
