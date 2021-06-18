@@ -1,5 +1,7 @@
 # BD2-Catering
 
+[![verify-app](https://github.com/JMazurkiewicz/BD2-Catering/actions/workflows/app.yml/badge.svg)](https://github.com/JMazurkiewicz/BD2-Catering/actions/workflows/app.yml)
+
 ## Aplikacja
 
 ### Instalowanie zależności
