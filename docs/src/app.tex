@@ -1,4 +1,4 @@
-\documentclass[10pt]{article}
+\documentclass[8pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[polish]{babel}
@@ -38,12 +38,13 @@
 \begin{document}
 
 \maketitle 
+\tableofcontents
 
 \section{Projekt aplikacji}
 
-\subsection{Implementowane przypadki użycia}
+\subsection{Planowane przypadki użycia}
 
-\subsubsection{Przypadki użycia dla recepcjonisty}
+\subsubsection{Planowane przypadki użycia dla recepcjonisty}
 
 \usecase{
     Dodawanie zamówienia
@@ -174,7 +175,7 @@
 
 \pagebreak % ^^^ Recepcjonista / Szef kuchni i kucharz vvv
 
-\subsubsection{Przypadki użycia dla szefa kuchni i kucharza}
+\subsubsection{Planowane przypadki użycia dla szefa kuchni i kucharza}
 
 \usecase{
     Uzyskiwanie informacji o zamówieniu
@@ -307,7 +308,7 @@
 
 \pagebreak % ^^^ Szef kuchni i kucharz / Dostawca vvv
 
-\subsubsection{Przypadki użycia dla dostawcy}
+\subsubsection{Planowane przypadki użycia dla dostawcy}
 
 \usecase{
     Sprawdzanie dań/produktów, które należy załadować do pojazdu
@@ -344,7 +345,7 @@
     1. Błąd połączenia z DBMS - prośba o przeładowanie. 
 }
 
-\subsubsection{Przypadki użycia dla kelnera}
+\subsubsection{Planowane przypadki użycia dla kelnera}
 
 \usecase{
     Uwzględnianie dodatkowych kosztów zamówienia (np. z powodu uszkodzenia mienia)
@@ -364,7 +365,7 @@
     1. Błąd połączenia z DBMS - prośba o przeładowanie.
 }
 
-\subsubsection{Przypadki dla różnych aktorów}
+\subsubsection{Planowane przypadki dla różnych aktorów}
 
 \usecase{
     Sprawdzanie swojego grafiku
@@ -389,13 +390,13 @@
 \pagebreak % ^^^ Diagram stanów / Diagram sekwencji vvv
 
 \subsection{Diagram sekwencji}
-\texttt{\href{https://drive.google.com/drive/folders/1AHW_von91aril9y62uCa9vJiyDRlB0I8?usp=sharing}{LINK DO DIAGRAMU SEKWENCJI}}
+Dysk z diagramami sekwencji: \texttt{\href{https://drive.google.com/drive/folders/1AHW_von91aril9y62uCa9vJiyDRlB0I8?usp=sharing}{LINK}}
 
 \subsection{Diagram klas}
-\texttt{\href{https://miro.com/app/board/o9J_lL81GTA=/}{LINK DO DIAGRAMU KLAS}}
+Link do diagramu klas w \texttt{Miro}: \texttt{\href{https://miro.com/app/board/o9J_lL81GTA=/}{LINK}}
 
 \section{Projekt ekranów}
-\texttt{\href{https://miro.com/welcomeonboard/SLn3IxMquzxConVpUMeYinhwTCstNizbIMqoJ5DmRT7SJ334ayztDhFYqNAvMOP7}{LINK DO MIRO}}
+Link do projektu ekranów w \texttt{Miro}: \texttt{\href{https://miro.com/welcomeonboard/SLn3IxMquzxConVpUMeYinhwTCstNizbIMqoJ5DmRT7SJ334ayztDhFYqNAvMOP7}{LINK}}
 
 \section{Wybór narzędzi}
 \begin{table}[h!]
@@ -406,9 +407,7 @@
             Język programowania & \texttt{Python} & 3.9.5 \\
             Biblioteka do pracy z DBMS & \texttt{pyodbc} & 4.0.30 \\
             Biblioteka GUI & \texttt{tkinter} & 8.6 \\
-            Mapa & \texttt{Google Maps} & - \\
-            Widok kalendarza & \texttt{tkcalendar} & 1.6.1 \\
-            Tworzenie wykresów dla raportów & \texttt{matplotlib} & 3.4.2
+            Widok kalendarza & \texttt{tkcalendar} & 1.6.1
         \end{tabular}
     \end{center}
 \end{table}

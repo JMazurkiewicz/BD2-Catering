@@ -1,30 +1,41 @@
-\documentclass[10pt]{article}
+\documentclass[12pt]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{indentfirst}
 \usepackage[T1]{fontenc}
-\usepackage{isodate}
+%\usepackage{isodate}
 \usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{array}
+
+\renewcommand{\arraystretch}{1.2}
+
+\newcommand{\etap}[1]{[\texttt{Etap #1}]}
 \newcommand{\quotes}[1]{``#1''}
+\newcommand{\doselect}{\texttt{SELECT}}
+\newcommand{\doinsert}{\texttt{INSERT}}
+\newcommand{\dodelete}{\texttt{DELETE}}
 
 \title{BD2 - Katering}
 
-\author{Jakub Mazurkiewicz, Damian Piotrowski,\\Konrad Wojewódzki, Przemysław Wieczorkowski}
+\author{Jakub Mazurkiewicz (300226), Damian Piotrowski,\\Konrad Wojewódzki(300286), Przemysław Wieczorkowski}
 \date{Semestr 21L}
 
 \begin{document}
 \maketitle
+\tableofcontents
+
+\pagebreak
 
 \section{Wstęp}
 
-\subsection{Przedsiębiorstwo}
-
-\subsubsection{Historia}
+\subsection{Historia przedsiębiorstwa}
 
 Przedsiębiorstwo \quotes{Cabbage Catering} zajmuje się dostarczaniem smacznych i pożywnych posiłków na imprezy okolicznościowe. Przedsiębiorstwo zostało założone w 2015 roku przez Przemysława Kapustkę, którego celem było stworzenie dobrze prosperującej firmy kateringowej. Nie spodziewał się on jednak, że firma urośnie do rozmiarów kateringowego królestwa i będzie realizowała bardzo duże ilości zamówień dla zróżnicowanych grup klientów. Z tego też powodu pojawiła się potrzeba stworzenia systemu komputerowego, który będzie wspomagał przedsiębiorstwo w sprawnym realizowaniu zamówień.
 
-\subsubsection{Zasoby firmy}
+\subsection{Zasoby firmy}
 
 Siedziba firmy umiejscowiona jest przy ulicy Urzędniczej 2 w Toruniu. W budynku znajduje się biuro, kuchnia, chłodnia oraz magazyn. W firmie są zatrudnieni: 8 kucharzy w tym 2 szefów kuchni, 3 cukierników, 2 dostawców oraz 15 kelnerów obsługujących gości na wydarzeniach. Przedsiębiorstwo dysponuje dwoma pojazdami transportowymi typu Mercedes Sprinter oraz dwoma pojazdami typu Mercedes AMG G63 dla przedstawicieli. Firma nabywa produkty spożywcze w sieci hurtowni Makro. Dzięki naszej infrastrukturze jesteśmy w stanie obsłużyć wydarzenia nawet do 400 osób. W ofercie znajduje się szeroki wybór dań, w tym dania wegańskie, wegetariańskie, bezglutenowe i tym podobne.
 
@@ -32,13 +43,15 @@ Siedziba firmy umiejscowiona jest przy ulicy Urzędniczej 2 w Toruniu. W budynku
 
 Celem projektu jest stworzenie relacyjnej bazy danych do wspomagania obsługi klientów oraz logistyki przedsiębiorstwa. Powstanie także aplikacja, która wspomoże harmonogramowanie zamówień oraz monitorowanie stanu magazynu.
 
-\pagebreak % ^^^ ETAP 0 / ETAP 1 vvv
+% \pagebreak % ^^^ ETAP 0 / ETAP 1 vvv
 
 \section{Etap pierwszy}
 
 \subsection{Model behawioralny}
 
 \subsubsection{Aktorzy i ich przypadki użycia}
+
+\noindent Przypadki użycia implementowane w aplikacji opisane są w pliku \texttt{app.pdf}.
 
 \begin{enumerate}
     \item \textbf{Pracownik recepcjonista} - przyjmuje od klientów zamówienia na dostarczanie usług kateringowych (za pośrednictwem telefonu) i wprowadza za pośrednictwem SZBD zlecenie do systemu. W razie wypadku informuje klienta o braku możliwości realizacji zamówienia. Przypadki użycia:
@@ -152,11 +165,11 @@ Alternatywa:
 
 \subsubsection{Model ER}
 
-\noindent\texttt{\href{https://miro.com/app/board/o9J_lL9uIOo=/}{LINK DO MODELU ER}}
+\noindent Link do modelu ER w \texttt{Miro}: \noindent\texttt{\href{https://miro.com/app/board/o9J_lL9uIOo=/}{LINK}}
 
 \subsubsection{Macierz CRUD}
 
-\noindent\texttt{\href{https://wutwaw-my.sharepoint.com/:x:/g/personal/01143627_pw_edu_pl/EWBP5IBfqCFLiPvmQnpEDcAB0eGgw4UuIhm6bPNvxlSkyA?e=69XRhd}{LINK DO MACIERZY CRUD}}
+\noindent Link do macierzy CRUD w arkuszu: \texttt{\href{https://wutwaw-my.sharepoint.com/:x:/g/personal/01143627_pw_edu_pl/EWBP5IBfqCFLiPvmQnpEDcAB0eGgw4UuIhm6bPNvxlSkyA?e=69XRhd}{LINK}}
 
 \subsection{Wybór narzędzi}
 \begin{table}[!h]
@@ -164,51 +177,47 @@ Alternatywa:
         \begin{tabular}{c|c}
             \textbf{Element} & \textbf{Narzędzie} \\
             \hline
-            Storyboard/UML & \texttt{Miro} \\
+            Ekrany/UML & \texttt{Miro} \\
             Dokumentacja & \LaTeX{} \\
             System zarządzania bazą danych & \texttt{MS SQL} \\
-            Język programowania aplikacji & \texttt{Python} \\
-            Chmura & \texttt{Microsoft Azure}
+            Język programowania aplikacji & \texttt{Python 3.9.5} \\
+            Chmura & \texttt{Microsoft Azure} \\
+            Repozytorium kodu & \texttt{Github}
         \end{tabular}
     \end{center}
 \end{table}
 
 \pagebreak % ^^^ ETAP 1 / ETAP 2 vvv
 
-\section{Etap 2}
+\section{Etap drugi}
 
 \subsection{Model logiczny}
-\noindent \texttt{\href{https://github.com/JMazurkiewicz/BD2-Catering/blob/modeling/docs/logical-model.pdf}{LINK DO MODELU LOGICZNEGO}}
+\noindent Model logiczny dostępny jest w pliku \texttt{pdf} w repozytorium \texttt{Github}:
+\texttt{\href{https://github.com/JMazurkiewicz/BD2-Catering/blob/master/docs/logical-model.pdf}{LINK}}
 
-\subsubsection{Trzecia postać normalna}
+\subsection{Trzecia postać normalna}
 Stworzony przez nas model logiczny został sprowadzony do trzeciej postaci normalnej. Świadczy o tym fakt, że w encjach żaden atrybut niekluczowy nie zależy od innych atrybutów niekluczowych.
 
-\subsubsection{Opis więzów integralności}
-\noindent \texttt{\href{https://wutwaw-my.sharepoint.com/:x:/g/personal/01143627_pw_edu_pl/ESLyg2i21LRBgUp8RWfRSLgB-xCOXny2bD24kXWuZf6KzA?rtime=QEzI1x4e2Ug}{LINK DO OPISU WIĘZÓW INTEGRALNOŚCI}}
+\subsection{Opis więzów integralności}
+\noindent Opis więzów integralności znajduje się pod adresem: \texttt{\href{https://wutwaw-my.sharepoint.com/:x:/g/personal/01143627_pw_edu_pl/ESLyg2i21LRBgUp8RWfRSLgB-xCOXny2bD24kXWuZf6KzA?rtime=QEzI1x4e2Ug}{LINK}}
 
 \subsection{Projekt aplikacji}
 
-\noindent Projekt aplikacji znajduje się w pliku \texttt{app.pdf} (\texttt{app.tex}).
+\noindent Projekt aplikacji (realizowane przypadki użycia oraz dodatkowe diagramy) znajduje się w pliku \texttt{app.pdf}.
 
 \subsection{Opis wymagań funkcjonalnych}
+
 \subsubsection{Bezpieczeństwo}
 Każdy użytkownik bazy danych ma generowane swój własny login i hasło do logowania do aplikacji oraz do bazy danych. Każdemu użytkownikowi nadawana jest rola i idą za nią uprawnienia. Oprócz tego konta administratorów są chronione \quotes{firewallem} i niezbędne jest podanie swojego adresu IP i wprowadzenie go w panelu administratora na stronie Microsoft Azure.
 
 \subsubsection{Szybkość}
 W aplikacji obsługującej harmonogram dostaw i układanie jadłospisów prędkość nie jest kluczowa. Pewne opóźnienia w działaniu zarówno aplikacji jak i bazy danych nie są krytyczne i w prawie żaden sposób nie wpływają na jakość usługi. Drobne opóźnienia wystąpią ze względu na to, że baza danych znajduje się w chmurze i synchronizacja zachodzących zmian nie jest natychmiastowa, w niektórych przypadkach może zająć to nawet kilka minut.
 
-\subsubsection{Wolumetria}
-%\begin{itemize}
- %   \item Order - Encja zajmująca bardzo dużo miejsca w bazie danych. Dla każdego nowego zamówienia tworzony jest nowy wiersz. Co więcej encja ma aż 6 kolumn
-  %  \item Client(Person/Business) - Encja zawierająca dane o klientach. Encja \quotes{Business}
-%\end{itemize}
 
-%\section{Projekt testów}
-
-\subsection{Scenariusze testowe}
+\subsection{Projekt testów}
 \begin{itemize}
     \item Ładujemy poprawnie wygenerowane dane w ilości zgodnej z wymaganiami
-    \item Przeprowadzenie testów jednostkowych sprawdzających poprawność działania wyzwalaczy i checków:
+    \item Przeprowadzenie testów jednostkowych sprawdzających poprawność działania wyzwalaczy i weryfikacji:
         \begin{itemize}
             \item Dodanie wydarzenia na konkretny dzień i godzinę;
             \item Dodanie wydarzenia na zarezerwowany wcześniej termin;
@@ -227,7 +236,7 @@ W aplikacji obsługującej harmonogram dostaw i układanie jadłospisów prędko
  
 Testy przeprowadzane są z pomocą skryptu w języku Python.
 
-\subsection{Raporty analityczne}
+\subsection{Projekt raportów analitycznych}
 
 \subsubsection{Analiza ilości zamawianych produktów}
 Chcemy przeanalizować ilość zamawianych z hurtowni produktów pod kątem realnego zapotrzebowania na nie. Pozwoli to lepiej oszacować zapotrzebowanie na produkty, zaplanować dostawy i ograniczyć straty związane z upłynięciem terminu przydatności.
@@ -266,5 +275,154 @@ Chcemy przeanalizować świadczone przez firmę usługi pod kątem opłacalnośc
     6 & Firmowe      & 67123 & 59999 & 10.6\% \\
     \end{tabular}
 \end{center}
+
+\pagebreak % ^^^ ETAP 2 / ETAP 3 vvv
+
+\section{Etap trzeci}
+Etap trzeci polegał na utworzeniu modelu fizycznego, implementacji bazy danych i aplikacji, oraz na utworzeniu przykładowych danych.
+
+\subsection{Wolumetria utworzonych tabel}
+
+\begin{longtable}{|p{8em}|p{9em}|p{15em}|}
+    \hline
+    \textbf{Nazwa tabeli} & \textbf{Zawartość} & \textbf{Wolumetria} \\
+    \hline
+    \texttt{order} & Zawiera wszystkie złożone zamówienia. & Jest to jedna z większych tabel w bazie danych. Wykonuje się na niej zapytania \texttt{SELECT} i \texttt{INSERT}. \\
+    \hline
+    \texttt{additional\_}\newline\texttt{costs} & Zawiera dodatkowe koszty dotyczące konkretnego zamówienia. & Może być to dosyć duża tabela. Wykonuje się na niej zapytania \texttt{INSERT} (wstawianie dodatkowych kosztów zamówień) oraz \texttt{SELECT}. \\
+    \hline
+    \texttt{additional\_}\newline\texttt{information} & Zawiera informacje o rodzaju jedzenia (np. czy jest wegańskie). & Jest to stosunkowo mała tabela, na której wykonuje się przeważnie operację \texttt{SELECT}. \\
+    \hline
+    \texttt{address} & Zawiera wszystkie używane w bazie adresy budynków i mieszkań. &  Jest to duża tabela przechowująca informacje o adresie dla każdego pracownika, klienta oraz dostawy. Bardzo często wykonywane złączenie z tabelą \texttt{City}. Oprócz tego przy każdym nowym kliencie, zamówieniu oraz pracowniku wykonywane jest zapytanie \texttt{INSERT} oraz \texttt{SELECT} w celu pobrania \texttt{id} adresu i wstawienia go do odpowiedniej tabeli.\\ 
+    \hline
+    \texttt{allergen} & Zawiera alergeny występujące w produktach. & Jest to mała tabela na której wykonujemy tylko zapytanie \texttt{SELECT} (lista alergenów nie zmienia się). \\
+    \hline
+    \texttt{business} & Zawiera firmy będące klientami naszego przedsiębiorstwa. &  Jest to dosyć duża tabela. Wykonujemy na niej zarówno operacje \texttt{INSERT} jak i \texttt{SELECT}.\\
+    \hline
+    \texttt{city} & Zawiera wszystkie miasta używane w bazie danych. & Jest to nieduża tabela niezbędna dla tabeli \texttt{address}. Najczęściej wykonywanym zapytaniem jest \texttt{SELECT}, ponieważ miasta i dzielnice do których dostarczamy pożywnie nie zmieniają się. Zapytanie \texttt{INSERT} wykonywane jest tylko w przypadku otwarcia nowej filii. \\
+    \hline
+    \texttt{client} & Zawiera wszystkich klientów, niezależnie od tego czy są firmą czy osobą fizyczną. & Jest to duża tabela łącząca tabele \texttt{person} oraz \texttt{business}. Przechowuje informacje o id, rodzaju klienta oraz jego adresie. Główne zapytania wykonywane na tej tabli to \texttt{INSERT} oraz \texttt{SELECT}. \texttt{SELECT} jest wykonywane za każdym razem, gdy dodajemy do którejś z tabel dziedziczącej (\texttt{business} lub \texttt{person}) nową wartość. Jest to skutek działania wyzwalacza sprawdzającego czy przypisujemy klienta do odpowiedniego id.  \\
+    \hline
+    \texttt{delivery} & Zawiera wszystkie zapisane w bazie dostawy. &  Jest to duża tabela, niewiele mniejsza od tabeli \texttt{Order}. Wykonujemy na niej zapytania \texttt{SELECT} (sprawdzanie dostaw) oraz \texttt{INSERT} (dodawanie dostaw). \\
+    \hline
+    \texttt{drink\_sizes} & Zawiera dostępne rozmiary napojów. & Jest to mała tabela (mniej niż 10 rzędów). Wykonujemy na niej zapytania \texttt{SELECT} w po  \\
+    \hline
+    \texttt{drinks} & Zawiera wszystkie dostępne w menu napoje. &  Jest to tabela średniej wielkości. Ilość rzędów zależy od ilości oferowanych napojów. Najczęściej wykonywanym zapytaniem jest \texttt{SELECT}. Rzadziej wykonywane jest zapytanie \texttt{INSERT} (tylko w przypadku zmiany menu).\\
+    \hline
+    \texttt{employee} & Zawiera wszystkich pracowników naszego przedsiębiorstwa. & Jest to tabela średniego rozmiaru. Głównie wykonujemy na niej zapytania \texttt{SELECT} w celu przypisania pracownika do konkretnego zamówienia lub dostawy. Zapytanie \texttt{INSERT} wykonywane jest tylko gdy zatrudniamy nowego pracownika. \\
+    \hline
+    \texttt{employee\_}\newline\texttt{schedule} & Zawiera zadania pracowników wraz z godzinami pracy. & Jest to duża tabela rosnąca w czasie. Częstym zapytaniem jest \doinsert, ponieważ przypisywanie pracownika do zamówienia wiąże się z dodaniem nowego wydarzenia w jego grafiku. Innym częstym zapytaniem \doselect wykonywane w celu naniesienia zadań pracownika na jego kalendarz. \\
+    \hline
+    \texttt{employee\_type} & Zawiera rodzaje pracowników (np. recepcjonista, dostawca). & Jest to tabela o stałym rozmiarze - w zasadzie nigdy nie powinno dojść do sytuacji, w której pojawia się nowy rodzaj pracownika. Najczęściej wykonywanym zapytaniem jest \texttt{SELECT} w celu znalezienia pracownika odpowiedniego rodzaju. \\
+    \hline
+    \texttt{event\_type} & Zawiera wszystkie rodzaje wydarzeń. & Jest to tabela o niedużym rozmiarze. Najczęściej wykonywanym zapytaniem jest \texttt{SELECT} w celu pobranie znalezienia wydarzeń o konkretnym typie. \\
+    \hline
+    \texttt{item\_on\_the\_menu} & Zawiera wszystkie pozycje dostępne w menu. & Rozmiar tej tabeli zależy od ilości oferowanych dań i napoi. Najczęściej wykonywanym zapytaniem jest \texttt{SELECT} (sprawdzanie dostępnych dań). Rzadziej wykonywane są \texttt{INSERT} i \texttt{DELETE} (edycja menu). \\
+    \hline
+    \texttt{meals} & Zawiera wszystkie dania dostępne w ofercie. & Rozmiar tej tabeli zależy od ilości dostępnych pozycji w menu. Najczęściej wykonywanym zapytaniem jest \doselect. \\
+    \hline
+    \texttt{ordered\_meals} & Zawiera listę posiłków wybranych w konkretnym zamówieniu. & Jest to duża tabela - jej rozmiar rośnie wraz ze wzrostem rozmiaru tabeli \texttt{order}. Najczęściej wykonywanym zapytaniem na tej tabeli jest \doselect. \\
+    \hline
+    \texttt{person} & Zawiera wszystkich klientów będących osobami fizycznymi. & Rozmiar tej tabeli będzie rósł z czasem (im więcej zamówień tym więcej klientów). Najczęściej wykonywane zapytania to \texttt{SELECT} i \texttt{INSERT}. \\
+    \hline
+    \texttt{product} & Zawiera wszystkie produkty spożywcze, które \textbf{mogą} pojawić się w magazynie. & Jest to tabela średniej wielkości, najczęściej wykonywanym zapytaniem jest \doselect. Zapytanie \texttt{INSERT} (uwzględnianie nowych produktów) jest wykonywane dużo rzadziej.\\
+    \hline
+    \texttt{storage} & Zawiera możliwe przechowalnie. & Jest to mała tabela (2 rzędy), gdyż przedsiębiorstwo przechowuje produkty w chłodni lub w magazynie. \\
+    \hline
+    \texttt{stored\_products} & Zawiera listę produktów przechowywanych obecnie w dostępnych przechowalniach. & Jest to tabela średniego rozmiaru, gdyż odwzorowuje ona stan magazynu. Często wykonuje się na niej operacje \texttt{SELECT} (sprawdzanie dostępności produktu) oraz \texttt{INSERT} i \texttt{DELETE} (aktualizacja zawartości magazynu). \\
+    \hline
+    \texttt{vehicles} & Zawiera wszystkie dostępne do w firmie pojazdy dostawcze. & Jest to mała tabela, operacje \texttt{SELECT} i \texttt{DELETE} wykonuje się na niej bardzo rzadko. \\
+    \hline
+    \texttt{ingredients} & Zawiera wszystkie produkty potrzebne do wytworzenia konkretnego dania. & Rozmiar tej tabeli zależy od rozmiaru tabeli \texttt{item\_on\_the\_menu} i tego z ilu produktów składa się dane danie. \\
+    \hline
+    \texttt{employees\_for\_}\newline\texttt{order} & Zawiera wszystkich pracowników (kelnerów) przypisanych do obsługi konkretnego zamówienia. & Rozmiar tej tabeli rośnie w czasie, wraz z rozmiarem tabeli \texttt{order} (im więcej zamówień tym więcej kelnerów z czasem). \\
+    \hline
+    \texttt{employees\_for\_}\newline\texttt{delivery} & Jest to tabela zawierająca pracowników (dostawców) przypisanych do konkretnych dostaw. & Rozmiar tej tabeli rośnie w czasie, wraz z rozmiarem tabeli \texttt{delivery}. \\
+    \hline
+    \texttt{allergens\_in\_}\newline\texttt{product} & Jest to tabela łącząca tabele \texttt{allergen} i \texttt{product}. & Rozmiar tej tabeli zależy głównie od rozmiaru tabeli \texttt{product} (jeden produkt może mieć wiele alergenów).  \\
+    \hline
+    \texttt{size\_of\_drink} & Zawiera możliwe rozmiary dostępnych napoi. & Rozmiar tej tabeli zależy od rozmiarów tabel \texttt{drinks} i \texttt{drink\_sizes} \\
+    \hline
+\end{longtable}
+
+\pagebreak
+
+\subsection{Denormalizacja}
+\begin{enumerate}
+    \item Tabelę \texttt{drink\_sizes} należy usunąć i w tabeli \texttt{drinks} dodać kolumnę \texttt{drink\_size}. Przyspieszy to zapytania pobierające informacje o aktualnym menu. Z perspektywy aplikacji ułatwi to też edycję menu - operacja \texttt{INSERT} będzie w zasadzie wymagała podania rozmiaru napoju bez konieczności sprawdzania czy taki rozmiar istnieje w tabeli \texttt{drink\_sizes}.
+    
+    \item Tabelę \texttt{employee\_type} należy usunąć i w tabeli \texttt{employee} dodać kolumnę \texttt{type}. Usunie to konieczność wykonywania zapytania \texttt{SELECT} gdy chcemy dodać pracownika odpowiedniego typu do obsługi zamówienia lub dostawy.
+    
+    \item Tabelę \texttt{storage} należy usunąć i w tabeli \texttt{stored\_products} dodać kolumnę \texttt{storage\_type}. Ułatwi to wyszukiwanie produktów, ponieważ nie będzie konieczności wykonania operacji \texttt{JOIN} podczas wykonywania zapytania \texttt{SELECT}.
+    
+    \item Warto rozważyć usunięcie tabeli \texttt{event\_type} i dodanie kolumny \\ \texttt{event\_type} do tabeli \texttt{order}. Ułatwi to tworzenie zapytań wyszukujących wydarzenia danego typu. Pozytywnym skutkiem takiej denormalizacji może być przyspieszenie analizy przychodów z konkretnych rodzajów wydarzeń.
+\end{enumerate}
+
+
+\subsection{Najczęstsze zapytania}
+
+\noindent Zapytania najczęściej wykonywane przez aplikację:
+\begin{enumerate}
+    \item \textbf{Pobieranie listy wydarzeń}. Zapytanie to wybiera wszystkie wydarzenia z danego miesiąca konkretnego roku z wykorzystaniem operacji \texttt{SELECT}. Ilość zwróconych rekordów może wahać się od 0 (brak zamówień w danym miesiącu) do około 31 (nasze małe przedsiębiorstwo realizuje zazwyczaj jedno większe zamówienie na dzień). W tym wypadku kolumnę \texttt{start\_date} z tabeli \texttt{order} należy zaindeksować dla przyspieszenia tego zapytania (może być ono wykonywane wyjątkowo często przez recepcjonistę).
+    
+    \item \textbf{Pobieranie informacji o adresie z konkretnego zamówienia}. Zapytanie to wykorzystuje operację \texttt{SELECT} w celu pobrania informacji o adresie (uzyskiwane kolumny to m.in ulica, kod pocztowy, number budynku i mieszkania). Zapytanie to powinno zwrócić jeden rekord - dane jednego, konkretnego zamówienia.
+    
+    \item \textbf{Dodawanie pracownika oraz jego adresu do bazy danych}. Zapytanie to wykorzystuje operacje \texttt{INSERT} w celu dodania nowego pracownika oraz jego adresu do bazy danych. Operacja dodania wykonuje się więc na trzech tabelach: \texttt{employee}, \texttt{address} oraz \texttt{city}. Operacja ta wykorzystuje również zapytania \texttt{SELECT}, aby znaleźć numery id nowo dodanych miast oraz adresów.
+    
+    \item \textbf{Dodawanie nowego zamówienia}. Operacja ta polega na wykonaniu instrukcji \doinsert. Dane o zamówieniu przenoszone są z formularza do zapytania po czym po DBMS sprawdza prawidłowość wprowadzonych danych.
+    
+    \item \textbf{Pobieranie listy dań dostępnych w bazie}. Zapytanie to pobiera wszystkie dostępne pozycje w menu, w celu wyświetlenia ich nazw oraz cen. W tym wypadku nie warto rozważać indeksów pomocniczych - pobierane są wszystkie dane z tabeli \texttt{item\_on\_the\_menu} (tabela ta nie jest też specjalnie duża).
+    
+    \item \textbf{Przypisywanie pracowników do konkretnego zamówienia}. Operacja ta polega na pobraniu id zamówienia o wybranej dacie startowej, pobraniu id pracownika o danych podanych przez użytkownika, a następnie wstawieniu obu wartości do tabeli łączącej obie tabele. Operacja wykonuje się zatem na 3 tabelach.
+    
+\end{enumerate}
+
+\subsection{Przykładowe dane}
+Skrypty DML generujące przykładowe dane zostały umieszczone w katalogu \texttt{/database/dml} w repozytorium \texttt{\href{https://github.com/JMazurkiewicz/BD2-Catering/tree/master/database/dml}{Github}}.
+
+\subsection{Aplikacja użytkowa}
+
+\subsubsection{Zrealizowane przypadki użycia}
+\noindent Przypadki użycia, które zostały zrealizowane aplikacji użytkowej (nazwy takie same jak w pliku \texttt{app.pdf}:
+\begin{enumerate}
+    \item Dodawanie zamówienia,
+    \item Usuwanie zamówienia,
+    \item Sprawdzanie dostępności terminu,
+    \item Przypisywanie pracowników do wydarzenia,
+    \item Dodawanie pracowników do bazy danych,
+    \item Uzyskiwanie informacji o zamówieniu (częściowo),
+    \item Sprawdzanie aktualnego menu,
+    \item Sprawdzanie stanu magazynu,
+    \item Edycja listy produktów (częściowo),
+    \item Sprawdzanie lokalizacji wydarzenia, do którego należy dostarczyć jedzenie,
+    \item Uwzględnianie dodatkowych kosztów zamówienia (np. z powodu uszkodzenia mienia).
+\end{enumerate}
+
+\subsubsection{Korzystanie z aplikacji}
+
+Pierwszym widokiem który widzi użytkownik jest ekran autoryzacji. Po podaniu nieprawidłowych danych użytkownikowi pokazuje się błąd. Po poprawnym zalogowaniu aplikacja przechodzi do panelu głównego. Zaimplementowany został ekran który widzi recepcjonista. Na ekranie widnieje kilka przycisków, między innymi pobranie listy dań, dodawanie nowego produktu, klienta i pracownika. Oprócz tego użytkownik ma możliwość przejścia do widoku kalendarza zamówień.
+
+W widoku kalendarza użytkownikowi ukazuje się terminarz. Po kliknięciu przycisku \texttt{Show Events} na kalendarz nanoszone są wydarzenia i zostają zaznaczone kolorem żółtym. Po wybraniu daty zamówienia na kalendarzu użytkownik może kliknąć przycisk \texttt{Add Employee}. Po jego naciśnięciu na ekranie pojawiają się dwa formularze na wprowadzenie imienia i nazwiska oraz przycisk \texttt{Save}. Po wprowadzeniu danych i naciśnięciu przycisku \texttt{Save} pracownik zostaje przypisany do wybranego zamówienia. Z tego widoku można również dodać zamówienie do bazy danych. W formularzu wprowadzamy adres zamówienia oraz dane klienta, który może być firmą lub osobą fizyczną (rodzaj klienta wybieramy odpowiednim przyciskiem).
+
+Z panelu głównego możemy także zobaczyć aktualne menu. Służy do tego przycisk \texttt{Menu}, po którego kliknięciu ukaże się ekran z listą aktualnie dostępnych dań i napoi. Inną możliwą opcją jest dodanie nowego produktu, który \textbf{może} pojawić się w magazynie. Służy do tego przycisk \texttt{Products} w panelu głównym.
+
+W panelu głównym możemy także znaleźć przycisk \texttt{Add Employee} (nie jest to ten sam przycisk co w kalendarzu). Jego naciśnięcie powoduje otworzenie formularza dodawania nowego pracownika do bazy danych. Podajemy w nim podstawowe dane, czyli imię i nazwisko, adres e-mail, numer telefonu i konta oraz adres. Formularz dodawania nowego klienta (przycisk \texttt{Add Client} w panelu głównym) jest bardzo podobny. Różni się w zasadzie podaniem rodzaju klienta i ewentualnym numerem NIP w przypadku firmy.
+    
+\pagebreak
+
+\section{Podsumowanie}
+
+\noindent Zrealizowane zadania:
+\begin{enumerate}
+    \item Opracowanie modelu pojęciowego (E-R) \etap{1},
+    \item Zaprojektowanie funkcjonalności aplikacji: części operacyjnej oraz części raportowej \etap{2},
+    \item Na podstawie modelu pojęciowego opracowanie relacyjnego logicznego modelu danych \etap{2},
+    \item Optymalizacja modelu logicznego (w szczególności denormalizacja) w celu maksymalizacji wydajności systemu \etap{2},
+    \item Dobór technologii bazodanowej \etap{1}, instalacja i konfiguracja środowiska \etap{3},
+    \item Dobór technologii realizacji aplikacji \etap{2}, instalacja i konfiguracja środowiska rozwojowego \etap{3},
+    \item Opracowanie, wdrożenie i optymalizacja modelu fizycznego \etap{3},
+    \item Opracowanie dokumentacji analityczno-projektowej (w szczególności diagramów modeli danych z opisami) \etap{3},
+    \item Opracowanie dokumentacji użytkowej aplikacji \etap{3}.
+\end{enumerate}
 
 \end{document}
